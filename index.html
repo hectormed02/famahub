@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAMA | Protección Industrial</title>
+    
+    <!-- SEO y Meta Etiquetas -->
+    <meta name="keywords" content="pisos, pisos industriales, pavimentos, poliméricos, cementicios, epóxicos, poliuretano, impermeabilización, industria, alimentos, automotriz, farmacéutica, química, campos deportivos" />
+    <meta name="description" content="FAMA HUB EIRL: Empresa especializada en la ejecución, reparación y mantenimiento de Pisos Industriales y Comerciales, impermeabilización y pavimentos." />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración de colores basados en el logo de FAMA -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'fama-dark': '#0d474d',   /* Verde azulado muy oscuro */
+                        'fama-mid': '#1d5e66',    /* Verde azulado medio */
+                        'fama-light': '#9bb4b8',  /* Gris azulado claro */
+                        'fama-bg': '#f4f7f8',     /* Fondo muy claro para secciones */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome para Íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Estilos personalizados adicionales */
+        canvas.fama-canvas {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none; /* Asegura que el canvas no bloquee clicks a los botones */
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Chatbot Custom Scrollbar */
+        #chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+        #chat-messages::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        #chat-messages::-webkit-scrollbar-thumb {
+            background: #9bb4b8; 
+            border-radius: 10px;
+        }
+        #chat-messages::-webkit-scrollbar-thumb:hover {
+            background: #1d5e66; 
+        }
+
+        .logo-text {
+            font-family: 'Arial Black', Impact, sans-serif;
+            letter-spacing: -1px;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans antialiased relative">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#inicio" class="block transition-transform hover:scale-105">
+                        <img src="logo.webp" alt="FAMA Protección Industrial" class="h-12 w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/200x80/0d474d/ffffff?text=FAMA+LOGO';">
+                    </a>
+                </div>
+
+                <!-- Menú Desktop -->
+                <div class="hidden lg:flex space-x-6 xl:space-x-8 items-center">
+                    <a href="#inicio" class="text-gray-600 hover:text-fama-mid font-medium transition-colors">Inicio</a>
+                    <a href="#nosotros" class="text-gray-600 hover:text-fama-mid font-medium transition-colors">Nosotros</a>
+                    
+                    <!-- Dropdown Servicios Desktop -->
+                    <div class="relative group">
+                        <button class="flex items-center text-gray-600 hover:text-fama-mid font-medium transition-colors focus:outline-none pb-2 pt-2">
+                            Servicios <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div class="absolute left-0 mt-0 w-64 bg-[#0d474d] rounded-sm shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left -translate-y-2 group-hover:translate-y-0 z-50 border-t-4 border-fama-mid">
+                            <ul class="py-2">
+                                <li><button onclick="openModal('modal-preparacion')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors border-b border-fama-mid/30">Preparación De Pisos</button></li>
+                                <li><button onclick="openModal('modal-revestimiento')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors border-b border-fama-mid/30">Revestimiento De Pisos</button></li>
+                                <li><button onclick="openModal('modal-zocalos')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors border-b border-fama-mid/30">Zócalos Sanitarios</button></li>
+                                <li><button onclick="openModal('modal-mantenimiento')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors border-b border-fama-mid/30">Mantenimiento De Pisos</button></li>
+                                <li><button onclick="openModal('modal-impermeabilizacion')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors border-b border-fama-mid/30">Impermeabilización</button></li>
+                                <li><button onclick="openModal('modal-proyectos')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors">Proyectos Y Desarrollo</button></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="#proyectos" class="text-gray-600 hover:text-fama-mid font-medium transition-colors">Proyectos</a>
+                    <a href="#clientes" class="text-gray-600 hover:text-fama-mid font-medium transition-colors">Clientes</a>
+                    <a href="#certificados" class="text-gray-600 hover:text-fama-mid font-medium transition-colors">Certificados</a>
+                    <a href="#blog" class="text-gray-600 hover:text-fama-mid font-medium transition-colors">Blog</a>
+                    <a href="#contacto" class="text-gray-600 hover:text-fama-mid font-medium transition-colors">Contacto</a>
+                </div>
+
+                <!-- Botón Menú Móvil -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-fama-dark hover:text-fama-mid focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full max-h-[85vh] overflow-y-auto z-40">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#inicio" class="block px-3 py-3 text-gray-700 hover:bg-fama-light/20 hover:text-fama-dark font-medium rounded-md transition-colors">Inicio</a>
+                <a href="#nosotros" class="block px-3 py-3 text-gray-700 hover:bg-fama-light/20 hover:text-fama-dark font-medium rounded-md transition-colors">Nosotros</a>
+                
+                <!-- Dropdown Servicios Móvil -->
+                <div class="bg-gray-50 rounded-md shadow-sm border border-gray-100">
+                    <button onclick="document.getElementById('mobile-submenu').classList.toggle('hidden'); document.getElementById('chev-icon').classList.toggle('rotate-180');" class="w-full text-left flex justify-between items-center px-3 py-3 text-gray-700 hover:text-fama-dark font-medium transition-colors focus:outline-none">
+                        <span>Servicios</span>
+                        <i id="chev-icon" class="fas fa-chevron-down text-sm transition-transform duration-300 text-fama-mid"></i>
+                    </button>
+                    <!-- Submenu items -->
+                    <div id="mobile-submenu" class="hidden pb-2 px-3 border-l-2 border-fama-mid ml-3 space-y-1 mb-1">
+                        <button onclick="openModal('modal-preparacion'); document.getElementById('mobile-menu').classList.add('hidden');" class="w-full text-left block px-3 py-2.5 text-sm text-gray-600 hover:text-fama-dark hover:bg-fama-light/10 rounded-md transition-colors">Preparación De Pisos</button>
+                        <button onclick="openModal('modal-revestimiento'); document.getElementById('mobile-menu').classList.add('hidden');" class="w-full text-left block px-3 py-2.5 text-sm text-gray-600 hover:text-fama-dark hover:bg-fama-light/10 rounded-md transition-colors">Revestimiento De Pisos</button>
+                        <button onclick="openModal('modal-zocalos'); document.getElementById('mobile-menu').classList.add('hidden');" class="w-full text-left block px-3 py-2.5 text-sm text-gray-600 hover:text-fama-dark hover:bg-fama-light/10 rounded-md transition-colors">Zócalos Sanitarios</button>
+                        <button onclick="openModal('modal-mantenimiento'); document.getElementById('mobile-menu').classList.add('hidden');" class="w-full text-left block px-3 py-2.5 text-sm text-gray-600 hover:text-fama-dark hover:bg-fama-light/10 rounded-md transition-colors">Mantenimiento De Pisos</button>
+                        <button onclick="openModal('modal-impermeabilizacion'); document.getElementById('mobile-menu').classList.add('hidden');" class="w-full text-left block px-3 py-2.5 text-sm text-gray-600 hover:text-fama-dark hover:bg-fama-light/10 rounded-md transition-colors">Impermeabilización</button>
+                        <button onclick="openModal('modal-proyectos'); document.getElementById('mobile-menu').classList.add('hidden');" class="w-full text-left block px-3 py-2.5 text-sm text-gray-600 hover:text-fama-dark hover:bg-fama-light/10 rounded-md transition-colors">Proyectos Y Desarrollo</button>
+                    </div>
+                </div>
+
+                <a href="#proyectos" class="block px-3 py-3 text-gray-700 hover:bg-fama-light/20 hover:text-fama-dark font-medium rounded-md transition-colors">Proyectos</a>
+                <a href="#clientes" class="block px-3 py-3 text-gray-700 hover:bg-fama-light/20 hover:text-fama-dark font-medium rounded-md transition-colors">Clientes</a>
+                <a href="#certificados" class="block px-3 py-3 text-gray-700 hover:bg-fama-light/20 hover:text-fama-dark font-medium rounded-md transition-colors">Certificados</a>
+                <a href="#blog" class="block px-3 py-3 text-gray-700 hover:bg-fama-light/20 hover:text-fama-dark font-medium rounded-md transition-colors">Blog</a>
+                <a href="#contacto" class="block px-3 py-3 text-gray-700 hover:bg-fama-light/20 hover:text-fama-dark font-medium rounded-md transition-colors">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- INICIO (Hero Section con Canvas 1) -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center bg-fama-dark overflow-hidden canvas-container">
+        <!-- Canvas Background 1 -->
+        <canvas class="fama-canvas"></canvas>
+        
+        <!-- Overlay Oscuro -->
+        <div class="absolute inset-0 bg-gradient-to-r from-fama-dark/95 to-fama-mid/80 z-0 pointer-events-none"></div>
+
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto hero-content mt-16 w-full pointer-events-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
+                Especialistas en <span class="text-fama-light">Revestimiento de Pisos</span> y Campos Deportivos
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto font-light">
+                Brindamos soluciones integrales de protección industrial, asegurando durabilidad, resistencia y el más alto estándar de calidad.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#servicios" class="px-8 py-4 bg-fama-mid hover:bg-fama-light text-white hover:text-fama-dark rounded-full font-bold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center">
+                    Nuestros Servicios
+                </a>
+                <a href="#contacto" class="px-8 py-4 bg-transparent border-2 border-fama-light text-white hover:bg-fama-light hover:text-fama-dark rounded-full font-bold transition-all text-center">
+                    Solicitar Cotización
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CIFRAS FLOTANTES -->
+    <div class="relative z-20 max-w-5xl mx-auto px-4 -mt-12 md:-mt-16 mb-20 hidden md:block pointer-events-auto">
+        <div class="bg-white rounded-xl shadow-xl p-8 flex justify-around items-center border border-gray-100">
+            <div class="text-center w-1/3 border-r border-gray-200">
+                <h4 class="text-4xl font-extrabold text-fama-dark mb-1">+10</h4>
+                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest">AÑOS DE EXPERIENCIA</p>
+            </div>
+            <div class="text-center w-1/3 border-r border-gray-200">
+                <h4 class="text-4xl font-extrabold text-fama-dark mb-1">+500</h4>
+                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest">PROYECTOS ENTREGADOS</p>
+            </div>
+            <div class="text-center w-1/3">
+                <h4 class="text-4xl font-extrabold text-fama-dark mb-1">50k</h4>
+                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest">M2 REVESTIDOS</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="py-12 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <!-- Columna Izquierda: Texto Principal -->
+                <div class="lg:w-1/2 w-full flex flex-col justify-center">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-fama-dark mb-6 leading-tight">
+                        FAMA HUB EIRL
+                    </h2>
+                    
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        FAMA HUB EIRL es una empresa peruana de ingeniería y construcción que, pese a su reciente creación, participa en proyectos de gran envergadura gracias a su equipo de ingenieros, arquitectos y técnicos con amplia experiencia.
+                    </p>
+                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                        Ofrecemos servicios de diseño, planificación, ejecución y supervisión de obras como pavimentación de concreto, mantenimiento, impermeabilización y pisos industriales. Destacamos por nuestra calidad, confiabilidad y cumplimiento de normas de seguridad, brindando soluciones eficientes tanto para el sector privado como público.
+                    </p>
+                    
+                    <div class="bg-fama-bg p-8 rounded-2xl border border-fama-light/30 shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow mt-auto">
+                        <div class="absolute -right-10 -top-10 w-32 h-32 bg-fama-light/10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+                        <h4 class="text-xl font-bold text-fama-dark mb-4 flex items-center gap-3">
+                            <i class="fas fa-handshake text-fama-mid text-2xl"></i> Compromiso y Calidad
+                        </h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            En FAMA HUB EIRL trabajamos bajo estándares técnicos y de seguridad, utilizando equipos y maquinarias adecuadas para cada proyecto. Nuestra atención es personalizada, directa y confiable.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Collage de Imágenes -->
+                <div class="lg:w-1/2 w-full">
+                    <div class="relative h-[500px] w-full mt-8 lg:mt-0">
+                        <!-- Imagen Principal Grande -->
+                        <div class="absolute top-0 right-0 w-4/5 h-4/5 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-10">
+                            <img src="nosotros-1.webp" alt="FAMA Ingeniería" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x600/0d474d/ffffff?text=FAMA+Ingenieria';">
+                        </div>
+                        <!-- Imagen Secundaria Pequeña Superpuesta -->
+                        <div class="absolute bottom-0 left-0 w-3/5 h-3/5 rounded-2xl overflow-hidden shadow-2xl border-8 border-white z-20 transform -translate-y-4 translate-x-4">
+                            <img src="nosotros-2.webp" alt="FAMA Construcción" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x400/9bb4b8/ffffff?text=FAMA+Construccion';">
+                        </div>
+                        <!-- Elemento decorativo de puntos (Dot Pattern) -->
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 z-0 opacity-20" style="background-image: radial-gradient(#0d474d 2px, transparent 2px); background-size: 16px 16px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-20 bg-fama-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-fama-mid font-bold tracking-wider uppercase text-sm mb-2">Nuestras Especialidades</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900">Servicios Destacados</h3>
+                <div class="w-24 h-1 bg-fama-light mx-auto mt-4 rounded"></div>
+            </div>
+
+            <!-- Grid de 6 Tarjetas de Servicios con Imágenes -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                
+                <!-- Servicio 1: Preparación -->
+                <div onclick="openModal('modal-preparacion')" class="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 border-b-4 border-fama-dark group cursor-pointer hover:-translate-y-2 relative flex flex-col h-full overflow-hidden">
+                    <div class="relative h-48 overflow-hidden bg-gray-200">
+                        <img src="servicios/Preparacion_de_Pisos.webp" alt="Preparación de Pisos" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0d474d/ffffff?text=Preparacion+de+Pisos';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+                        <div class="absolute bottom-4 left-4 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30">
+                            <i class="fas fa-tools text-xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Preparación de Pisos</h4>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Realizamos la evaluación y acondicionamiento del soporte para asegurar una correcta adherencia del revestimiento. Eliminamos lechadas, contaminantes y defectos...</p>
+                        <div class="text-fama-mid font-bold text-sm flex items-center gap-2 group-hover:text-fama-dark transition-colors mt-auto">
+                            Ver detalles <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 2: Revestimiento -->
+                <div onclick="openModal('modal-revestimiento')" class="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 border-b-4 border-fama-mid group cursor-pointer hover:-translate-y-2 relative flex flex-col h-full overflow-hidden">
+                    <div class="relative h-48 overflow-hidden bg-gray-200">
+                        <!-- Imagen actualizada a Revestimiento.webp -->
+                        <img src="servicios/Revestimiento.webp" alt="Revestimiento de Pisos" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=600&auto=format&fit=crop';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+                        <div class="absolute bottom-4 left-4 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30">
+                            <i class="fas fa-layer-group text-xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Revestimiento de Pisos</h4>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Instalamos pisos industriales de alto rendimiento, resistentes a químicos, abrasión, humedad y tráfico pesado. Nuestros sistemas epóxicos y de poliuretano...</p>
+                        <div class="text-fama-mid font-bold text-sm flex items-center gap-2 group-hover:text-fama-dark transition-colors mt-auto">
+                            Ver detalles <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 3: Zócalos -->
+                <div onclick="openModal('modal-zocalos')" class="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 border-b-4 border-fama-light group cursor-pointer hover:-translate-y-2 relative flex flex-col h-full overflow-hidden">
+                    <div class="relative h-48 overflow-hidden bg-gray-200">
+                        <img src="servicios/Zocalos.webp" alt="Zócalos Sanitarios" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600&auto=format&fit=crop';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+                        <div class="absolute bottom-4 left-4 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30">
+                            <i class="fas fa-border-all text-xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Zócalos Sanitarios</h4>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Fabricamos e instalamos zócalos sanitarios de mortero epóxico que garantizan una transición curva entre piso y pared, evitando acumulación de suciedad...</p>
+                        <div class="text-fama-mid font-bold text-sm flex items-center gap-2 group-hover:text-fama-dark transition-colors mt-auto">
+                            Ver detalles <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 4: Mantenimiento -->
+                <div onclick="openModal('modal-mantenimiento')" class="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 border-b-4 border-fama-dark group cursor-pointer hover:-translate-y-2 relative flex flex-col h-full overflow-hidden">
+                    <div class="relative h-48 overflow-hidden bg-gray-200">
+                        <img src="servicios/Mantenimiento.webp" alt="Mantenimiento de Pisos" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=600&auto=format&fit=crop';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+                        <div class="absolute bottom-4 left-4 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30">
+                            <i class="fas fa-wrench text-xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Mantenimiento de Pisos</h4>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Reparamos grietas, desprendimientos y desgaste en pisos epóxicos y de poliuretano. Recuperamos la resistencia, apariencia y seguridad del pavimento mediante...</p>
+                        <div class="text-fama-mid font-bold text-sm flex items-center gap-2 group-hover:text-fama-dark transition-colors mt-auto">
+                            Ver detalles <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 5: Impermeabilización -->
+                <div onclick="openModal('modal-impermeabilizacion')" class="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 border-b-4 border-fama-mid group cursor-pointer hover:-translate-y-2 relative flex flex-col h-full overflow-hidden">
+                    <div class="relative h-48 overflow-hidden bg-gray-200">
+                        <img src="servicios/Impermeabilizacion.webp" alt="Impermeabilización" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?q=80&w=600&auto=format&fit=crop';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+                        <div class="absolute bottom-4 left-4 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30">
+                            <i class="fas fa-tint text-xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Impermeabilización</h4>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Protegemos losas, techos, estacionamientos, cisternas y estructuras de concreto contra humedad y filtraciones. Aplicamos membranas elastoméricas de poliuretano y...</p>
+                        <div class="text-fama-mid font-bold text-sm flex items-center gap-2 group-hover:text-fama-dark transition-colors mt-auto">
+                            Ver detalles <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 6: Proyectos y Desarrollo -->
+                <div onclick="openModal('modal-proyectos')" class="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 border-b-4 border-fama-light group cursor-pointer hover:-translate-y-2 relative flex flex-col h-full overflow-hidden">
+                    <div class="relative h-48 overflow-hidden bg-gray-200">
+                        <img src="servicios/ingenieria.webp" alt="Proyectos y Desarrollo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=600&auto=format&fit=crop';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+                        <div class="absolute bottom-4 left-4 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30">
+                            <i class="fas fa-hard-hat text-xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Proyectos y Desarrollo</h4>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Ejecución de proyectos de ingeniería, supervisión técnica y gestión integral de obras para diversos sectores industriales, comerciales y de infraestructura en todo el Perú.</p>
+                        <div class="text-fama-mid font-bold text-sm flex items-center gap-2 group-hover:text-fama-dark transition-colors mt-auto">
+                            Ver detalles <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROYECTOS (Hero Section con Canvas 2) -->
+    <section id="proyectos" class="relative py-20 bg-fama-dark overflow-hidden canvas-container">
+        <!-- Canvas Background 2 -->
+        <canvas class="fama-canvas"></canvas>
+        
+        <!-- Overlay Oscuro -->
+        <div class="absolute inset-0 bg-gradient-to-r from-fama-dark/95 to-fama-mid/80 z-0 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pointer-events-auto">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white">Proyectos Recientes</h3>
+                <p class="mt-4 text-gray-200">Galería de nuestras últimas obras ejecutadas con éxito.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Proyecto Item -->
+                <div class="group relative overflow-hidden rounded-lg aspect-square bg-gray-200 shadow-xl border border-white/10">
+                    <div class="absolute inset-0 bg-fama-dark/40 group-hover:bg-fama-dark/80 transition-all duration-300 z-10 backdrop-blur-[2px] pointer-events-none"></div>
+                    <div class="w-full h-full flex justify-center items-center">
+                        <i class="fas fa-warehouse text-5xl text-white group-hover:opacity-0 transition-opacity z-20"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20 pointer-events-none">
+                        <h5 class="font-bold text-xl">Planta Industrial Sur</h5>
+                        <p class="text-sm text-fama-light">Piso Epóxico Autonivelante</p>
+                    </div>
+                </div>
+                <!-- Proyecto Item -->
+                <div class="group relative overflow-hidden rounded-lg aspect-square bg-gray-200 shadow-xl border border-white/10">
+                    <div class="absolute inset-0 bg-fama-mid/40 group-hover:bg-fama-mid/80 transition-all duration-300 z-10 backdrop-blur-[2px] pointer-events-none"></div>
+                    <div class="w-full h-full flex justify-center items-center">
+                        <i class="fas fa-volleyball-ball text-5xl text-white group-hover:opacity-0 transition-opacity z-20"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20 pointer-events-none">
+                        <h5 class="font-bold text-xl">Complejo Deportivo</h5>
+                        <p class="text-sm text-fama-light">Pintura Acrílica Deportiva</p>
+                    </div>
+                </div>
+                <!-- Proyecto Item -->
+                <div class="group relative overflow-hidden rounded-lg aspect-square bg-gray-200 shadow-xl border border-white/10">
+                    <div class="absolute inset-0 bg-fama-dark/40 group-hover:bg-fama-dark/80 transition-all duration-300 z-10 backdrop-blur-[2px] pointer-events-none"></div>
+                    <div class="w-full h-full flex justify-center items-center">
+                        <i class="fas fa-car text-5xl text-white group-hover:opacity-0 transition-opacity z-20"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20 pointer-events-none">
+                        <h5 class="font-bold text-xl">Estacionamiento</h5>
+                        <p class="text-sm text-fama-light">Demarcación y Poliuretano</p>
+                    </div>
+                </div>
+                <!-- Proyecto Item -->
+                <div class="group relative overflow-hidden rounded-lg aspect-square bg-gray-200 shadow-xl border border-white/10">
+                    <div class="absolute inset-0 bg-fama-mid/40 group-hover:bg-fama-mid/80 transition-all duration-300 z-10 backdrop-blur-[2px] pointer-events-none"></div>
+                    <div class="w-full h-full flex justify-center items-center">
+                        <i class="fas fa-flask text-5xl text-white group-hover:opacity-0 transition-opacity z-20"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20 pointer-events-none">
+                        <h5 class="font-bold text-xl">Laboratorios Médicos</h5>
+                        <p class="text-sm text-fama-light">Curva Sanitaria y Epóxico</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENTES Y CERTIFICADOS -->
+    <section id="clientes" class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-2xl font-bold mb-10 text-gray-800">Empresas que confían en nosotros</h3>
+            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-60">
+                <div class="font-bold text-2xl text-gray-400">CLIENTE 1</div>
+                <div class="font-bold text-2xl text-gray-400">CLIENTE 2</div>
+                <div class="font-bold text-2xl text-gray-400">CLIENTE 3</div>
+                <div class="font-bold text-2xl text-gray-400">CLIENTE 4</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificados" class="py-16 bg-fama-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-2xl font-bold mb-10">Respaldados por la calidad</h3>
+            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-80">
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-certificate text-5xl mb-2 text-fama-light"></i>
+                    <span class="font-semibold">ISO 9001</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-shield-alt text-5xl mb-2 text-fama-light"></i>
+                    <span class="font-semibold">Garantía Total</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-leaf text-5xl mb-2 text-fama-light"></i>
+                    <span class="font-semibold">Eco-Amigable</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG (Próximamente) -->
+    <section id="blog" class="py-20 bg-fama-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 max-w-3xl mx-auto">
+                <div class="w-16 h-16 bg-fama-light/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-newspaper text-2xl text-fama-mid"></i>
+                </div>
+                <h3 class="text-3xl font-extrabold text-gray-900 mb-2">Nuestro Blog</h3>
+                <p class="text-gray-500">Próximamente estaremos compartiendo artículos técnicos, consejos de mantenimiento y noticias de la industria de protección de superficies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row">
+                <!-- Info de Contacto -->
+                <div class="md:w-2/5 w-full bg-fama-dark text-white p-8 md:p-10 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-2">Hablemos de tu proyecto</h3>
+                        <p class="text-fama-light mb-8">Contáctanos para una asesoría técnica y cotización sin compromiso.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-fama-mid rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Ubicación</h4>
+                                    <p class="text-gray-300 text-sm">Lima, Perú (Atención a nivel nacional)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-fama-mid rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Email</h4>
+                                    <p class="text-gray-300 text-sm">info@fama.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-fama-mid rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fab fa-whatsapp text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">WhatsApp / Teléfono</h4>
+                                    <p class="text-gray-300 text-sm">+51 951 765 830</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <a href="https://wa.me/51951765830" target="_blank" class="block w-full text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-lg">
+                            <i class="fab fa-whatsapp mr-2"></i> Escríbenos al WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="md:w-3/5 w-full p-8 md:p-10">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Envíanos un mensaje</h3>
+                    
+                    <!-- El formulario muestra un mensaje de éxito en lugar de un alert -->
+                    <form onsubmit="event.preventDefault(); document.getElementById('form-success-msg').classList.remove('hidden'); this.reset();">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Nombre completo</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-fama-mid focus:border-fama-mid outline-none transition-colors" placeholder="Ej. Juan Pérez" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Teléfono</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-fama-mid focus:border-fama-mid outline-none transition-colors" placeholder="Tu número de contacto" required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Correo electrónico</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-fama-mid focus:border-fama-mid outline-none transition-colors" placeholder="tucorreo@ejemplo.com" required>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Tipo de Servicio</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-fama-mid focus:border-fama-mid outline-none transition-colors" required>
+                                <option value="">Seleccione una opción</option>
+                                <option>Preparación de Pisos</option>
+                                <option>Revestimiento Epóxico / Poliuretano</option>
+                                <option>Zócalos Sanitarios</option>
+                                <option>Mantenimiento de Pisos</option>
+                                <option>Impermeabilización</option>
+                                <option>Proyectos y Desarrollo</option>
+                                <option>Otro</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Mensaje o detalles del proyecto</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-fama-mid focus:border-fama-mid outline-none transition-colors resize-y" placeholder="Cuéntanos sobre los m2, ubicación, etc." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-fama-dark hover:bg-fama-mid text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-md">
+                            Enviar Solicitud
+                        </button>
+                        
+                        <!-- Mensaje de éxito oculto -->
+                        <div id="form-success-msg" class="hidden p-4 mt-6 text-sm text-green-800 rounded-lg bg-green-50 border border-green-200 flex items-center gap-3">
+                            <i class="fas fa-check-circle text-xl text-green-600"></i>
+                            <div>
+                                <span class="font-bold">¡Mensaje enviado!</span> Nos pondremos en contacto contigo a la brevedad.
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 py-10 border-t-4 border-fama-mid">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center">
+                    <a href="#inicio" class="bg-white/95 p-2 rounded-lg transition-transform hover:scale-105 inline-block">
+                        <img src="logo.webp" alt="FAMA Logo" class="h-10 w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/150x60/0d474d/ffffff?text=FAMA';">
+                    </a>
+                </div>
+                
+                <div class="text-sm text-center md:text-left">
+                    &copy; 2024 FAMA Protección Industrial. Todos los derechos reservados.
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-xl"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container" class="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-auto">
+        
+        <!-- Ventana del Chat -->
+        <div id="chat-window" class="bg-white w-[90vw] sm:w-96 rounded-2xl shadow-2xl border border-gray-200 mb-4 flex flex-col hidden transform transition-transform origin-bottom-right scale-0 opacity-0 duration-300 max-h-[75vh]">
+            <!-- Header Chat -->
+            <div class="bg-fama-dark text-white p-4 rounded-t-2xl flex justify-between items-center shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-inner">
+                        <i class="fas fa-robot text-fama-dark text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Asistente FAMA</h4>
+                        <p class="text-xs text-fama-light">En línea</p>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="text-gray-300 hover:text-white p-2">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mensajes -->
+            <div id="chat-messages" class="p-4 h-64 overflow-y-auto bg-fama-bg flex flex-col gap-3">
+                <div class="flex flex-col gap-1 items-start">
+                    <div class="bg-white border border-gray-200 text-gray-800 text-sm p-3 rounded-2xl rounded-tl-none shadow-sm inline-block max-w-[85%]">
+                        ¡Hola! 👋 Soy el asistente virtual de FAMA, experto en pisos industriales. ¿Tienes dudas sobre nuestros sistemas o deseas una cotización?
+                    </div>
+                </div>
+                
+                <div class="flex flex-col gap-2 mt-2" id="faq-options">
+                    <button onclick="handleFAQ('¿Qué tipos de pisos industriales aplican?')" class="text-left text-xs bg-fama-light/20 hover:bg-fama-light/40 text-fama-dark font-medium p-2 rounded-lg border border-fama-light/30 transition-colors">
+                        ¿Qué tipos de pisos industriales aplican?
+                    </button>
+                    <button onclick="handleFAQ('¿Cómo se calcula una cotización?')" class="text-left text-xs bg-fama-light/20 hover:bg-fama-light/40 text-fama-dark font-medium p-2 rounded-lg border border-fama-light/30 transition-colors">
+                        ¿Cómo se calcula una cotización?
+                    </button>
+                    <button onclick="handleFAQ('Necesito hablar con un asesor')" class="text-left text-xs bg-fama-light/20 hover:bg-fama-light/40 text-fama-dark font-medium p-2 rounded-lg border border-fama-light/30 transition-colors">
+                        Necesito hablar con un asesor
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="p-3 bg-white border-t border-gray-100 flex gap-2 shrink-0">
+                <input type="text" id="chat-input" class="w-full text-sm p-2.5 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-fama-mid focus:border-fama-mid transition-colors" placeholder="Escribe tu pregunta..." onkeypress="handleKeyPress(event)">
+                <button onclick="handleUserInput()" class="bg-fama-dark hover:bg-fama-mid text-white px-4 py-2 rounded-lg transition-colors shadow-sm focus:outline-none">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+
+            <!-- Footer Chat -->
+            <div class="p-4 bg-white rounded-b-2xl border-t border-gray-100 shrink-0">
+                <p class="text-[11px] text-gray-500 text-center mb-2 leading-tight">Las cotizaciones precisas requieren evaluación técnica.</p>
+                <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20me%20gustar%C3%ADa%20hacer%20una%20consulta%20para%20cotizar%20pisos." target="_blank" class="w-full bg-green-500 hover:bg-green-600 text-white flex justify-center items-center gap-2 py-2 rounded-lg text-sm font-bold transition-colors shadow-md">
+                    <i class="fab fa-whatsapp text-lg"></i> Asesoría por WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Botón flotante -->
+        <button id="chat-button" onclick="toggleChat()" class="bg-fama-dark hover:bg-fama-mid text-white w-14 h-14 md:w-16 md:h-16 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 focus:outline-none ring-4 ring-fama-light/30 z-50">
+            <i id="chat-icon" class="fas fa-comment-dots text-2xl md:text-3xl"></i>
+        </button>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODALES DE SERVICIOS (LOS 6 DETALLADOS) -->
+    <!-- ========================================== -->
+    
+    <!-- Modal Preparación -->
+    <div id="modal-preparacion" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-preparacion')"></div>
+        <div id="modal-preparacion-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
+            <div class="relative h-48 md:h-64 w-full flex-shrink-0 bg-gray-200">
+                <img src="servicios/Preparacion_de_Pisos.webp" alt="Preparación de Pisos" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/0d474d/ffffff?text=Preparacion+de+Pisos';">
+                <button onclick="closeModal('modal-preparacion')" class="absolute top-4 right-4 text-white bg-black/40 hover:bg-red-500 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm transition-colors z-20 focus:outline-none">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 flex items-end gap-4">
+                    <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center flex-shrink-0 border border-white/30">
+                        <i class="fas fa-tools text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-extrabold text-white leading-tight">Preparación de Pisos Industriales</h3>
+                        <p class="text-fama-light mt-1 font-medium hidden sm:block">Base sólida para resultados duraderos</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-6 md:p-8 overflow-y-auto relative bg-white">
+                <p class="text-gray-600 leading-relaxed text-base mb-8">
+                    La preparación del soporte es la etapa más importante para garantizar un piso industrial resistente, seguro y de alto desempeño. Un suelo correctamente evaluado y tratado asegura una adherencia óptima del revestimiento y evita fallas futuras.
+                </p>
+
+                <h4 class="text-xl font-bold text-fama-dark mb-4 border-b pb-2">Evaluación Técnica del Suelo</h4>
+                <p class="text-gray-600 mb-4 text-sm leading-relaxed">Antes de intervenir, realizamos un diagnóstico completo del estado del soporte. Esta evaluación permite definir el método adecuado de preparación y asegurar la máxima calidad del pavimento final. Incluye:</p>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                    <li class="flex items-start bg-fama-bg p-4 rounded-lg border border-gray-100">
+                        <i class="fas fa-search text-fama-mid text-lg mt-1 mr-3"></i>
+                        <div><strong class="text-gray-900 block">Inspección visual:</strong> <span class="text-sm text-gray-600">Detección de fisuras, desprendimientos y contaminantes.</span></div>
+                    </li>
+                    <li class="flex items-start bg-fama-bg p-4 rounded-lg border border-gray-100">
+                        <i class="fas fa-compress-arrows-alt text-fama-mid text-lg mt-1 mr-3"></i>
+                        <div><strong class="text-gray-900 block">Resistencia a compresión:</strong> <span class="text-sm text-gray-600">Capacidad del soporte para soportar cargas.</span></div>
+                    </li>
+                    <li class="flex items-start bg-fama-bg p-4 rounded-lg border border-gray-100">
+                        <i class="fas fa-expand-arrows-alt text-fama-mid text-lg mt-1 mr-3"></i>
+                        <div><strong class="text-gray-900 block">Resistencia a tracción:</strong> <span class="text-sm text-gray-600">Cohesión interna del hormigón para garantizar adherencia.</span></div>
+                    </li>
+                    <li class="flex items-start bg-fama-bg p-4 rounded-lg border border-gray-100">
+                        <i class="fas fa-tint text-fama-mid text-lg mt-1 mr-3"></i>
+                        <div><strong class="text-gray-900 block">Medición de humedad:</strong> <span class="text-sm text-gray-600">Clave para evitar desprendimientos y burbujeos.</span></div>
+                    </li>
+                </ul>
+
+                <h4 class="text-xl font-bold text-fama-dark mb-4 border-b pb-2">Preparación Profesional de la Superficie</h4>
+                <p class="text-gray-600 mb-4 text-sm leading-relaxed">Una preparación deficiente es la causa principal de fallas en pavimentos industriales. Por eso, tratamos cada superficie con técnicas especializadas que aseguran limpieza, nivelación y apertura de poro.</p>
+                
+                <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+                    <strong class="text-red-700 block mb-2 text-sm"><i class="fas fa-exclamation-triangle"></i> Problemas comunes del soporte:</strong>
+                    <ul class="list-disc ml-5 text-sm text-red-600 space-y-1">
+                        <li>Hormigón nuevo con lechada o membranas de curado.</li>
+                        <li>Hormigón antiguo contaminado con aceites, químicos o residuos penetrados.</li>
+                    </ul>
+                </div>
+
+                <strong class="text-gray-900 block mb-3 text-sm">Técnicas utilizadas:</strong>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+                    <div class="bg-gray-100 p-3 rounded-lg text-center shadow-sm">
+                        <i class="fas fa-wind text-gray-500 text-xl mb-2"></i>
+                        <span class="block font-bold text-gray-800 text-sm">Granallado</span>
+                        <span class="text-xs text-gray-500 leading-tight">Limpieza y apertura de poro.</span>
+                    </div>
+                    <div class="bg-gray-100 p-3 rounded-lg text-center shadow-sm">
+                        <i class="fas fa-fire text-gray-500 text-xl mb-2"></i>
+                        <span class="block font-bold text-gray-800 text-sm">Térmica</span>
+                        <span class="text-xs text-gray-500 leading-tight">Eliminación por calor.</span>
+                    </div>
+                    <div class="bg-gray-100 p-3 rounded-lg text-center shadow-sm">
+                        <i class="fas fa-cogs text-gray-500 text-xl mb-2"></i>
+                        <span class="block font-bold text-gray-800 text-sm">Fresado</span>
+                        <span class="text-xs text-gray-500 leading-tight">Corrección de niveles.</span>
+                    </div>
+                    <div class="bg-gray-100 p-3 rounded-lg text-center shadow-sm">
+                        <i class="fas fa-band-aid text-gray-500 text-xl mb-2"></i>
+                        <span class="block font-bold text-gray-800 text-sm">Lijado</span>
+                        <span class="text-xs text-gray-500 leading-tight">Acabado fino.</span>
+                    </div>
+                </div>
+
+                <div class="bg-fama-dark text-white p-6 rounded-xl text-center shadow-lg mb-4">
+                    <h5 class="text-lg font-bold mb-2">Garantía de Calidad y Experiencia</h5>
+                    <p class="text-sm text-gray-300 leading-relaxed mb-0">
+                        Mantener un piso industrial en óptimas condiciones requiere equipos especializados y personal capacitado. Contamos con años de experiencia en preparación, mantenimiento y rehabilitación de superficies industriales, asegurando resultados duraderos y de alto rendimiento.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-end items-center border-t border-gray-100 pt-6 mt-6">
+                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20cotizar%20Preparación%20de%20Pisos." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md flex items-center justify-center">
+                        <i class="fab fa-whatsapp mr-2 text-lg"></i> Cotizar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Revestimiento -->
+    <div id="modal-revestimiento" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm" onclick="closeModal('modal-revestimiento')"></div>
+        <div id="modal-revestimiento-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh]">
+            <div class="relative h-48 md:h-64 w-full flex-shrink-0 bg-gray-200">
+                <!-- Imagen apuntando a la ruta local servicios/Revestimiento.webp -->
+                <img src="servicios/Revestimiento.webp" alt="Revestimiento de Pisos" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1000&auto=format&fit=crop';">
+                <button onclick="closeModal('modal-revestimiento')" class="absolute top-4 right-4 text-white bg-black/40 hover:bg-red-500 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm transition-colors z-20 focus:outline-none">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 flex items-end gap-4">
+                    <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center flex-shrink-0 border border-white/30">
+                        <i class="fas fa-layer-group text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-extrabold text-white leading-tight">Revestimiento Epóxico y Poliuretano</h3>
+                        <p class="text-fama-light mt-1 font-medium hidden sm:block">Protección avanzada para ambientes de alta exigencia</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-6 md:p-8 overflow-y-auto relative bg-white">
+                <p class="text-gray-600 leading-relaxed text-base mb-8">
+                    Nuestros sistemas de revestimiento epóxico y poliuretano están diseñados para brindar máxima resistencia, durabilidad y protección en ambientes severos, incluso bajo exposición constante a químicos agresivos, humedad, tráfico pesado y variaciones extremas de temperatura. Son la solución ideal para plantas procesadoras de alimentos, industria hidrobiológica, cárnica, cámaras frigoríficas, agroexportadoras, almacenes de alto tráfico y sectores industriales de alto riesgo operativo.
+                </p>
+
+                <h4 class="text-xl font-bold text-fama-dark mb-4 border-b pb-2">Revestimientos Poliméricos de Alto Desempeño</h4>
+                <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                    Ofrecen una combinación superior de resistencia química, mecánica y térmica. Diseñados para soportar las condiciones más exigentes en industrias como:
+                </p>
+                
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="px-3 py-1 bg-fama-light/20 text-fama-dark rounded-full text-xs font-bold border border-fama-light/30">Alimentaria</span>
+                    <span class="px-3 py-1 bg-fama-light/20 text-fama-dark rounded-full text-xs font-bold border border-fama-light/30">Química</span>
+                    <span class="px-3 py-1 bg-fama-light/20 text-fama-dark rounded-full text-xs font-bold border border-fama-light/30">Manufacturera</span>
+                    <span class="px-3 py-1 bg-fama-light/20 text-fama-dark rounded-full text-xs font-bold border border-fama-light/30">Minera</span>
+                    <span class="px-3 py-1 bg-fama-light/20 text-fama-dark rounded-full text-xs font-bold border border-fama-light/30">Automotriz</span>
+                    <span class="px-3 py-1 bg-fama-light/20 text-fama-dark rounded-full text-xs font-bold border border-fama-light/30">Textil</span>
+                    <span class="px-3 py-1 bg-fama-light/20 text-fama-dark rounded-full text-xs font-bold border border-fama-light/30">Hidrobiológica</span>
+                    <span class="px-3 py-1 bg-fama-light/20 text-fama-dark rounded-full text-xs font-bold border border-fama-light/30">Agroindustrial</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <!-- Epoxicos -->
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                        <h5 class="font-bold text-gray-900 text-lg mb-3 flex items-center gap-2">
+                            <i class="fas fa-shield-alt text-fama-mid"></i> Revestimientos Epóxicos
+                        </h5>
+                        <p class="text-sm text-gray-600 mb-3">Destacan por su excelente resistencia a químicos agresivos, ácidos, solventes, aceites y combustibles.</p>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Brillo permanente</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Impermeabilidad total a líquidos y gases</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Alta resistencia mecánica</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Excelente adherencia en superficies semi porosas</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Durabilidad superior</li>
+                        </ul>
+                    </div>
+
+                    <!-- Poliuretano -->
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                        <h5 class="font-bold text-gray-900 text-lg mb-3 flex items-center gap-2">
+                            <i class="fas fa-temperature-low text-fama-mid"></i> Revestimientos de Poliuretano
+                        </h5>
+                        <p class="text-sm text-gray-600 mb-3">Sistemas de dos o tres componentes, generan un polímero de alto rendimiento que combina:</p>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Brillo intenso, dureza y flexibilidad</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Comportamiento óptimo en ambientes húmedos</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Capacidad antideslizante en estado húmedo</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Ideal para cámaras frigoríficas y lácteas</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Resistencia al exterior (UV) e intemperie</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-8">
+                    <p class="text-sm text-yellow-800 font-medium">
+                        <i class="fas fa-info-circle mr-1"></i> <strong>Espesores a medida:</strong> Estos sistemas pueden instalarse en 1 mm, 4 mm, 6 mm, 9 mm o más, dependiendo del nivel de tránsito y exposición de tu industria. Nuestros procedimientos garantizan un acabado uniforme y altamente durable.
+                    </p>
+                </div>
+
+                <h4 class="text-xl font-bold text-fama-dark mb-4 border-b pb-2">Ventajas de Nuestros Sistemas</h4>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                    <li class="flex items-center text-sm text-gray-700 bg-white shadow-sm p-3 rounded-lg border border-gray-100"><i class="fas fa-bolt text-yellow-500 mr-3 text-lg"></i>Descarga estática del personal, evitando daños</li>
+                    <li class="flex items-center text-sm text-gray-700 bg-white shadow-sm p-3 rounded-lg border border-gray-100"><i class="fas fa-plug text-red-500 mr-3 text-lg"></i>Pisos aislantes para altos voltajes</li>
+                    <li class="flex items-center text-sm text-gray-700 bg-white shadow-sm p-3 rounded-lg border border-gray-100"><i class="fas fa-truck-loading text-fama-mid mr-3 text-lg"></i>Alta resistencia al tráfico pesado</li>
+                    <li class="flex items-center text-sm text-gray-700 bg-white shadow-sm p-3 rounded-lg border border-gray-100"><i class="fas fa-water text-blue-500 mr-3 text-lg"></i>Superficies antideslizantes</li>
+                    <li class="flex items-center text-sm text-gray-700 bg-white shadow-sm p-3 rounded-lg border border-gray-100"><i class="fas fa-chart-line text-green-500 mr-3 text-lg"></i>Mayor vida útil y menor mantenimiento</li>
+                    <li class="flex items-center text-sm text-gray-700 bg-white shadow-sm p-3 rounded-lg border border-gray-100"><i class="fas fa-microchip text-fama-dark mr-3 text-lg"></i>Ideales para industrias electrónicas</li>
+                </ul>
+
+                <div class="flex flex-col sm:flex-row justify-between items-center border-t border-gray-100 pt-6 mt-auto gap-4">
+                    <p class="text-sm text-gray-500 font-medium text-center sm:text-left">Nuestros revestimientos garantizan protección, rendimiento y rentabilidad.</p>
+                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20una%20evaluación%20técnica%20para%20Revestimiento%20de%20Pisos." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md flex items-center justify-center whitespace-nowrap">
+                        <i class="fab fa-whatsapp mr-2 text-lg"></i> Cotizar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Zócalos -->
+    <div id="modal-zocalos" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-zocalos')"></div>
+        <div id="modal-zocalos-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
+            
+            <div class="relative h-48 md:h-64 w-full flex-shrink-0 bg-gray-200">
+                <img src="servicios/Zocalos.webp" alt="Zócalos Sanitarios" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop';">
+                <button onclick="closeModal('modal-zocalos')" class="absolute top-4 right-4 text-white bg-black/40 hover:bg-red-500 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm transition-colors z-20 focus:outline-none">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 flex items-end gap-4">
+                    <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center flex-shrink-0 border border-white/30">
+                        <i class="fas fa-border-all text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-extrabold text-white leading-tight">Zócalos Sanitarios de Mortero Epóxico</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-6 md:p-8 overflow-y-auto relative bg-white">
+                <h4 class="text-xl font-bold text-fama-dark mb-4 border-b pb-2">Fabricación, venta e instalación profesional — FAMA HUB E.I.R.L</h4>
+                
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    En <strong>FAMA HUB E.I.R.L</strong> somos especialistas en la fabricación de zócalos sanitarios de mortero epóxico, diseñados para cumplir con los más altos estándares de higiene, durabilidad y resistencia en ambientes industriales. Nuestros productos son utilizados en fábricas, plantas de procesamiento, almacenes, laboratorios farmacéuticos, industrias alimentarias y otros sectores donde la sanidad y la protección del entorno son esenciales.
+                </p>
+
+                <h4 class="text-lg font-bold text-gray-900 mb-3">Fabricación de Alta Precisión</h4>
+                <p class="text-gray-600 mb-8 leading-relaxed text-sm">
+                    Cada zócalo sanitario producido por FAMA HUB E.I.R.L pasa por un proceso riguroso que inicia con la selección de materiales de alta calidad, formulados para ofrecer resistencia química, estabilidad estructural y acabado uniforme. Posteriormente, los zócalos son moldeados y dimensionados con precisión para adaptarse perfectamente al área donde serán instalados, garantizando continuidad, estética y funcionalidad.
+                </p>
+
+                <h4 class="text-lg font-bold text-gray-900 mb-4">Instalación Técnica y Especializada</h4>
+                <p class="text-gray-600 mb-6 text-sm">
+                    La instalación de zócalos sanitarios requiere un procedimiento profesional para asegurar su adherencia y desempeño. En FAMA HUB E.I.R.L seguimos un proceso técnico que incluye:
+                </p>
+                
+                <ul class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <li class="bg-fama-bg p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm border border-gray-100">
+                            <i class="fas fa-broom text-fama-mid text-lg"></i>
+                        </div>
+                        <strong class="block text-sm text-gray-900 mb-2">1. Preparación de superficies</strong>
+                        <span class="text-sm text-gray-600">Eliminación de polvo, grasas, residuos y cualquier contaminante.</span>
+                    </li>
+                    <li class="bg-fama-bg p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm border border-gray-100">
+                            <i class="fas fa-trowel text-fama-mid text-lg"></i>
+                        </div>
+                        <strong class="block text-sm text-gray-900 mb-2">2. Aplicación del mortero epóxico</strong>
+                        <span class="text-sm text-gray-600">Utilizando herramientas especializadas para dar la forma de rondón sanitaria.</span>
+                    </li>
+                    <li class="bg-fama-bg p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm border border-gray-100">
+                            <i class="fas fa-shield-alt text-fama-mid text-lg"></i>
+                        </div>
+                        <strong class="block text-sm text-gray-900 mb-2">3. Sellado final</strong>
+                        <span class="text-sm text-gray-600">Aplicación del recubrimiento protector para asegurar impermeabilidad y durabilidad.</span>
+                    </li>
+                </ul>
+
+                <div class="bg-blue-50 border-l-4 border-fama-mid p-4 mb-10 rounded-r-lg">
+                    <p class="text-sm text-gray-700 font-medium flex items-center gap-2">
+                        <i class="fas fa-clock text-fama-mid text-lg"></i> Nuestros morteros son de secado rápido, permitiendo revestir los zócalos con poliuretanos o epóxicos de grado sanitario en tan solo 24 horas.
+                    </p>
+                </div>
+
+                <h4 class="text-lg font-bold text-gray-900 mb-5 border-b pb-2">Por qué elegir FAMA HUB E.I.R.L</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                        <span class="text-sm text-gray-700 font-medium">Fabricación propia con estándares industriales</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                        <span class="text-sm text-gray-700 font-medium">Materiales de alta resistencia y calidad certificada</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                        <span class="text-sm text-gray-700 font-medium">Instalación profesional con personal especializado</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                        <span class="text-sm text-gray-700 font-medium">Aptos para ambientes de alto riesgo sanitario</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                        <span class="text-sm text-gray-700 font-medium">Acabados durables, higiénicos y de fácil mantenimiento</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                        <span class="text-sm text-gray-700 font-medium">Soluciones adaptadas a cada proyecto y sector</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-8 text-center shadow-inner">
+                    <h5 class="text-lg font-bold text-fama-dark mb-2">Soluciones Sanitarias para la Industria Moderna</h5>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-0">
+                        Si buscas una empresa confiable y especializada en fabricación, venta e instalación de zócalos sanitarios, FAMA HUB E.I.R.L es tu aliado estratégico. Nuestro compromiso es ofrecer productos que cumplan con las exigencias de tu industria y garanticen seguridad, higiene y durabilidad.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-between items-center border-t border-gray-100 pt-6 mt-auto gap-4">
+                    <p class="text-sm text-gray-500 font-medium text-center sm:text-left">Contáctanos hoy mismo. Escríbenos o llámanos y nuestro equipo se comunicará contigo a la brevedad.</p>
+                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20cotizar%20Zócalos%20Sanitarios." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md flex items-center justify-center whitespace-nowrap">
+                        <i class="fab fa-whatsapp mr-2 text-lg"></i> Cotizar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Mantenimiento -->
+    <div id="modal-mantenimiento" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-mantenimiento')"></div>
+        <div id="modal-mantenimiento-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
+            <div class="relative h-48 md:h-64 w-full flex-shrink-0 bg-gray-200">
+                <img src="servicios/Mantenimiento.webp" alt="Mantenimiento de Pisos Industriales" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1000&auto=format&fit=crop';">
+                <button onclick="closeModal('modal-mantenimiento')" class="absolute top-4 right-4 text-white bg-black/40 hover:bg-red-500 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm transition-colors z-20 focus:outline-none">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 flex items-end gap-4">
+                    <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center flex-shrink-0 border border-white/30">
+                        <i class="fas fa-wrench text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-white leading-tight">Mantenimiento de Pisos Industriales</h3>
+                </div>
+            </div>
+            
+            <div class="p-6 md:p-8 overflow-y-auto relative bg-white">
+                <h4 class="text-xl font-bold text-fama-dark mb-4 border-b pb-2">Mantenimiento Correctivo y Preventivo – FAMA HUB E.I.R.L.</h4>
+                
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    El uso constante de los pisos industriales —por tránsito de personal, maquinaria, montacargas o procesos productivos— genera desgaste progresivo. Con el tiempo aparecen desprendimientos, fisuras y grietas que no solo afectan la estética del área, sino que también comprometen la seguridad operativa y la continuidad de las actividades.
+                </p>
+                <p class="text-gray-600 mb-8 leading-relaxed font-medium">
+                    En <strong>FAMA HUB E.I.R.L.</strong> realizamos mantenimiento correctivo y preventivo de pisos industriales epóxicos y de poliuretano, garantizando la recuperación de sus propiedades originales de resistencia, adherencia, rugosidad y durabilidad.
+                </p>
+
+                <h4 class="text-lg font-bold text-gray-900 mb-4">¿Qué incluye nuestro servicio?</h4>
+                <ul class="space-y-4 mb-8">
+                    <li class="bg-fama-bg p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start gap-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-gray-200">
+                            <i class="fas fa-search text-fama-mid"></i>
+                        </div>
+                        <div>
+                            <strong class="block text-sm text-gray-900 mb-1">Evaluación técnica del área afectada</strong>
+                            <span class="text-sm text-gray-600">Identificación del tipo de daño, profundidad de las grietas y nivel de desgaste.</span>
+                        </div>
+                    </li>
+                    <li class="bg-fama-bg p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start gap-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-gray-200">
+                            <i class="fas fa-fill-drip text-fama-mid"></i>
+                        </div>
+                        <div>
+                            <strong class="block text-sm text-gray-900 mb-1">Reparación y relleno de fisuras</strong>
+                            <span class="text-sm text-gray-600">Utilizamos resinas especializadas para restituir la integridad estructural del piso.</span>
+                        </div>
+                    </li>
+                    <li class="bg-fama-bg p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start gap-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-gray-200">
+                            <i class="fas fa-ruler-combined text-fama-mid"></i>
+                        </div>
+                        <div>
+                            <strong class="block text-sm text-gray-900 mb-1">Corrección de desprendimientos y nivelación</strong>
+                            <span class="text-sm text-gray-600">Recuperamos la uniformidad del suelo para evitar vibraciones, tropiezos y daños en maquinaria.</span>
+                        </div>
+                    </li>
+                    <li class="bg-fama-bg p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start gap-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-gray-200">
+                            <i class="fas fa-layer-group text-fama-mid"></i>
+                        </div>
+                        <div>
+                            <strong class="block text-sm text-gray-900 mb-1">Aplicación de recubrimiento epóxico o poliuretano</strong>
+                            <span class="text-sm text-gray-600">Restablecemos la capa protectora con materiales de alta resistencia química y mecánica.</span>
+                        </div>
+                    </li>
+                    <li class="bg-fama-bg p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start gap-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-gray-200">
+                            <i class="fas fa-check-double text-fama-mid"></i>
+                        </div>
+                        <div>
+                            <strong class="block text-sm text-gray-900 mb-1">Acabado final y verificación de rugosidad</strong>
+                            <span class="text-sm text-gray-600">Garantizamos un acabado seguro, antideslizante y acorde a los estándares industriales.</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <p class="text-gray-700 text-sm font-medium mb-8 bg-blue-50 p-4 border-l-4 border-blue-500 rounded-r-lg">
+                    <i class="fas fa-cogs mr-2 text-blue-600"></i> Contamos con equipos de última generación que permiten realizar una intervención rápida y eficiente, minimizando la interrupción de las operaciones de su empresa.
+                </p>
+
+                <div class="bg-red-50 border border-red-100 p-6 rounded-xl mb-8">
+                    <h4 class="text-lg font-bold text-red-800 mb-3"><i class="fas fa-exclamation-triangle mr-2"></i> Importancia del mantenimiento preventivo</h4>
+                    <p class="text-sm text-gray-700 mb-4">La frecuencia del mantenimiento dependerá del nivel de tránsito, tipo de actividad y carga operativa. Un programa preventivo evita:</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-red-700">
+                        <li class="flex items-center gap-2"><i class="fas fa-times-circle"></i> Expansión de grietas</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-times-circle"></i> Desprendimiento de capas epóxicas</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-times-circle"></i> Riesgos de accidentes laborales</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-times-circle"></i> Paradas no programadas</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-times-circle"></i> Costos elevados por reparaciones mayores</li>
+                    </ul>
+                </div>
+
+                <h4 class="text-lg font-bold text-gray-900 mb-4 border-b pb-2">Experiencia y cobertura</h4>
+                <p class="text-sm text-gray-600 mb-5">FAMA HUB E.I.R.L. posee amplia experiencia en la reparación y mantenimiento de pisos industriales en:</p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> <span class="text-sm text-gray-700">Fábricas</span></div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> <span class="text-sm text-gray-700">Plantas de producción</span></div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> <span class="text-sm text-gray-700">Almacenes</span></div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> <span class="text-sm text-gray-700">Centros logísticos</span></div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> <span class="text-sm text-gray-700">Farmacéuticas</span></div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> <span class="text-sm text-gray-700">Laboratorios</span></div>
+                    <div class="col-span-2 sm:col-span-3 mt-2 bg-gray-50 p-2 rounded border border-gray-200 flex items-center justify-center gap-2">
+                        <i class="fas fa-map-marker-alt text-fama-mid"></i> <span class="text-sm font-bold text-gray-700">Empresas de diversos rubros en Lima y todo el Perú</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-8 text-center shadow-inner">
+                    <h5 class="text-lg font-bold text-fama-dark mb-2">Solicita información o una evaluación técnica</h5>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-0">
+                        Si deseas más información sobre nuestro servicio de mantenimiento preventivo y correctivo de pisos epóxicos y de poliuretano, puedes contactarnos mediante nuestro formulario de atención o comunicarte directamente con nuestro equipo especializado.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-end items-center border-t border-gray-100 pt-6 mt-auto gap-4">
+                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20cotizar%20Mantenimiento%20de%20Pisos." target="_blank" onclick="closeModal('modal-mantenimiento')" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-lg hover:shadow-xl flex items-center justify-center whitespace-nowrap">
+                        <i class="fab fa-whatsapp mr-2 text-lg"></i> Cotizar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Impermeabilización -->
+    <div id="modal-impermeabilizacion" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-impermeabilizacion')"></div>
+        <div id="modal-impermeabilizacion-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
+            
+            <div class="relative h-48 md:h-64 w-full flex-shrink-0 bg-gray-200">
+                <img src="servicios/Impermeabilizacion.webp" alt="Impermeabilización de Pisos y Superficies" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?q=80&w=1000&auto=format&fit=crop';">
+                <button onclick="closeModal('modal-impermeabilizacion')" class="absolute top-4 right-4 text-white bg-black/40 hover:bg-red-500 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm transition-colors z-20 focus:outline-none">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 flex items-end gap-4">
+                    <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center flex-shrink-0 border border-white/30">
+                        <i class="fas fa-tint text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-extrabold text-white leading-tight">Impermeabilización de Pisos y Superficies</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-6 md:p-8 overflow-y-auto relative bg-white">
+                <h4 class="text-xl font-bold text-fama-dark mb-4 border-b pb-2">Impermeabilización Profesional de Superficies – FAMA HUB E.I.R.L.</h4>
+                
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    En FAMA HUB E.I.R.L., empresa especializada en soluciones de impermeabilización en Lima y todo el Perú, comprendemos la importancia crítica de proteger las superficies de concreto contra la humedad, filtraciones y agentes corrosivos. Con el paso del tiempo, el concreto tiende a fisurarse y agrietarse debido a movimientos estructurales, vibraciones, cargas operativas y cambios térmicos.
+                </p>
+                
+                <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-8 rounded-r-lg">
+                    <h5 class="text-sm font-bold text-red-800 mb-3"><i class="fas fa-exclamation-triangle mr-2"></i> Riesgos de la filtración de oxígeno y humedad:</h5>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-red-700">
+                        <li class="flex items-center gap-2"><i class="fas fa-times-circle"></i> Corrosión del acero de refuerzo</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-times-circle"></i> Deterioro progresivo del concreto</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-times-circle"></i> Aparición de eflorescencias</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-times-circle"></i> Filtraciones hacia áreas contiguas</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-times-circle"></i> Reducción de la vida útil de la estructura</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-times-circle"></i> Riesgos operativos y daños en infraestructura</li>
+                    </ul>
+                </div>
+
+                <p class="text-gray-600 mb-8 font-medium">
+                    Para evitar estos problemas, FAMA HUB E.I.R.L. ofrece un servicio integral de impermeabilización industrial y comercial, empleando revestimientos de última generación.
+                </p>
+
+                <h4 class="text-lg font-bold text-gray-900 mb-4">Tecnologías de Impermeabilización que Aplicamos</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                    <div class="bg-fama-bg p-5 rounded-xl border border-gray-100 shadow-sm flex flex-col gap-3">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-200">
+                            <i class="fas fa-layer-group text-fama-mid"></i>
+                        </div>
+                        <strong class="text-sm text-gray-900 block">Membranas elastoméricas de poliuretano</strong>
+                        <p class="text-xs text-gray-600 leading-relaxed m-0">Alta elasticidad, resistencia química y durabilidad para zonas de alto tránsito y exposición.</p>
+                    </div>
+                    <div class="bg-fama-bg p-5 rounded-xl border border-gray-100 shadow-sm flex flex-col gap-3">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-200">
+                            <i class="fas fa-fill-drip text-fama-mid"></i>
+                        </div>
+                        <strong class="text-sm text-gray-900 block">Revestimientos acrílico-cementosos</strong>
+                        <p class="text-xs text-gray-600 leading-relaxed m-0">Ideales para superficies que requieren transpirabilidad, adherencia y protección contra humedad constante.</p>
+                    </div>
+                </div>
+
+                <h4 class="text-lg font-bold text-gray-900 mb-4 border-b pb-2">Aplicaciones de Nuestros Sistemas</h4>
+                <p class="text-sm text-gray-600 mb-4">Realizamos impermeabilización profesional en:</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                    <div class="flex items-center gap-3 bg-white border border-gray-100 p-3 rounded-lg shadow-sm">
+                        <i class="fas fa-car text-fama-mid text-lg"></i>
+                        <span class="text-sm text-gray-700">Losas de estacionamientos (edificaciones, CC, complejos)</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white border border-gray-100 p-3 rounded-lg shadow-sm">
+                        <i class="fas fa-industry text-fama-mid text-lg"></i>
+                        <span class="text-sm text-gray-700">Techos y cubiertas (plantas industriales, almacenes)</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white border border-gray-100 p-3 rounded-lg shadow-sm">
+                        <i class="fas fa-water text-fama-mid text-lg"></i>
+                        <span class="text-sm text-gray-700">Tanques, cisternas y reservorios de agua</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white border border-gray-100 p-3 rounded-lg shadow-sm">
+                        <i class="fas fa-cubes text-fama-mid text-lg"></i>
+                        <span class="text-sm text-gray-700">Muros de contención para obras de infraestructura</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white border border-gray-100 p-3 rounded-lg shadow-sm">
+                        <i class="fas fa-building text-fama-mid text-lg"></i>
+                        <span class="text-sm text-gray-700">Terrazas y azoteas</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white border border-gray-100 p-3 rounded-lg shadow-sm">
+                        <i class="fas fa-swimming-pool text-fama-mid text-lg"></i>
+                        <span class="text-sm text-gray-700">Piscinas, jardineras y espejos de agua</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-8 shadow-inner">
+                    <h5 class="text-lg font-bold text-fama-dark mb-4 text-center">Por qué elegir FAMA HUB E.I.R.L.</h5>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> <span class="text-sm text-gray-700">Experiencia comprobada</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> <span class="text-sm text-gray-700">Materiales certificados</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> <span class="text-sm text-gray-700">Equipos especializados</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> <span class="text-sm text-gray-700">Intervención rápida</span></div>
+                        <div class="col-span-1 sm:col-span-2 mt-2 bg-white p-2 rounded border border-gray-100 flex items-center justify-center gap-2">
+                            <i class="fas fa-map-marker-alt text-fama-mid"></i> <span class="text-sm font-bold text-gray-700">Cobertura en Lima y todo el Perú</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-between items-center border-t border-gray-100 pt-6 mt-auto gap-4">
+                    <p class="text-sm text-gray-500 font-medium text-center sm:text-left">¡Contamos con los mejores precios y soluciones adaptadas a cada tipo de proyecto!</p>
+                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20cotizar%20Impermeabilización%20de%20Superficies." target="_blank" onclick="closeModal('modal-impermeabilizacion')" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-lg hover:shadow-xl flex items-center justify-center whitespace-nowrap">
+                        <i class="fab fa-whatsapp mr-2 text-lg"></i> Cotizar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Proyectos y Desarrollo -->
+    <div id="modal-proyectos" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-proyectos')"></div>
+        <div id="modal-proyectos-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
+            
+            <div class="relative h-48 md:h-64 w-full flex-shrink-0 bg-gray-200">
+                <img src="servicios/ingenieria.webp" alt="Proyectos y Desarrollo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=1000&auto=format&fit=crop';">
+                <button onclick="closeModal('modal-proyectos')" class="absolute top-4 right-4 text-white bg-black/40 hover:bg-red-500 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm transition-colors z-20 focus:outline-none">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 flex items-end gap-4">
+                    <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center flex-shrink-0 border border-white/30">
+                        <i class="fas fa-hard-hat text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-extrabold text-white leading-tight">Proyectos y Desarrollo</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-6 md:p-8 overflow-y-auto relative bg-white">
+                <h4 class="text-xl font-bold text-fama-dark mb-4 border-b pb-2">Gestión y Ejecución de Proyectos – FAMA HUB E.I.R.L.</h4>
+                
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    En <strong>FAMA HUB E.I.R.L.</strong> somos una empresa especializada en la ejecución de proyectos, supervisión técnica, asesoría profesional y gestión integral de obras, brindando soluciones confiables y eficientes para diversos sectores industriales, comerciales y de infraestructura en Lima y todo el Perú. Nuestro enfoque se basa en una dirección de proyectos sólida, respaldada por metodologías modernas, control de calidad riguroso y un equipo multidisciplinario altamente capacitado.
+                </p>
+
+                <h4 class="text-lg font-bold text-gray-900 mb-4">Servicios Profesionales en Proyectos</h4>
+                <p class="text-gray-600 mb-6 text-sm">Ofrecemos un portafolio completo de servicios orientados al desarrollo y ejecución de proyectos:</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                    <div class="bg-fama-bg p-4 rounded-xl border border-gray-100 shadow-sm flex items-start gap-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0 border border-gray-200">
+                            <i class="fas fa-building text-fama-mid text-lg"></i>
+                        </div>
+                        <div>
+                            <strong class="block text-sm text-gray-900 mb-1">Ejecución de proyectos</strong>
+                            <p class="text-xs text-gray-600 leading-relaxed m-0">Implementación de obras civiles, eléctricas, mecánicas y de infraestructura con estándares técnicos y normativos.</p>
+                        </div>
+                    </div>
+                    <div class="bg-fama-bg p-4 rounded-xl border border-gray-100 shadow-sm flex items-start gap-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0 border border-gray-200">
+                            <i class="fas fa-clipboard-check text-fama-mid text-lg"></i>
+                        </div>
+                        <div>
+                            <strong class="block text-sm text-gray-900 mb-1">Supervisión y control de obra</strong>
+                            <p class="text-xs text-gray-600 leading-relaxed m-0">Aseguramos el cumplimiento de especificaciones, cronogramas, seguridad y calidad en cada etapa del proyecto.</p>
+                        </div>
+                    </div>
+                    <div class="bg-fama-bg p-4 rounded-xl border border-gray-100 shadow-sm flex items-start gap-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0 border border-gray-200">
+                            <i class="fas fa-user-tie text-fama-mid text-lg"></i>
+                        </div>
+                        <div>
+                            <strong class="block text-sm text-gray-900 mb-1">Asesoría técnica especializada</strong>
+                            <p class="text-xs text-gray-600 leading-relaxed m-0">Consultoría profesional para optimizar procesos, costos, recursos y desempeño operativo.</p>
+                        </div>
+                    </div>
+                    <div class="bg-fama-bg p-4 rounded-xl border border-gray-100 shadow-sm flex items-start gap-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0 border border-gray-200">
+                            <i class="fas fa-truck-moving text-fama-mid text-lg"></i>
+                        </div>
+                        <div>
+                            <strong class="block text-sm text-gray-900 mb-1">Alquiler de maquinaria y equipos</strong>
+                            <p class="text-xs text-gray-600 leading-relaxed m-0">Equipos confiables y operativos para trabajos de construcción, movimiento de tierras, nivelación y más.</p>
+                        </div>
+                    </div>
+                    <div class="bg-fama-bg p-4 rounded-xl border border-gray-100 shadow-sm flex items-start gap-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0 border border-gray-200">
+                            <i class="fas fa-map-marked-alt text-fama-mid text-lg"></i>
+                        </div>
+                        <div>
+                            <strong class="block text-sm text-gray-900 mb-1">Servicios de topografía</strong>
+                            <p class="text-xs text-gray-600 leading-relaxed m-0">Levantamientos topográficos, replanteos, metrados y control geométrico para proyectos de ingeniería.</p>
+                        </div>
+                    </div>
+                    <div class="bg-fama-bg p-4 rounded-xl border border-gray-100 shadow-sm flex items-start gap-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0 border border-gray-200">
+                            <i class="fas fa-chalkboard-teacher text-fama-mid text-lg"></i>
+                        </div>
+                        <div>
+                            <strong class="block text-sm text-gray-900 mb-1">Capacitación en dirección</strong>
+                            <p class="text-xs text-gray-600 leading-relaxed m-0">Formación técnica para equipos y empresas que buscan mejorar su gestión, planificación y ejecución.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-8 mb-8">
+                    <!-- Experiencia -->
+                    <div class="md:w-1/2">
+                        <h4 class="text-lg font-bold text-gray-900 mb-4 border-b pb-2">Experiencia Comprobada</h4>
+                        <p class="text-sm text-gray-600 mb-4">Hemos participado exitosamente en proyectos de:</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-3"></i> Construcción y obras civiles</li>
+                            <li class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-3"></i> Instalaciones eléctricas y electromecánicas</li>
+                            <li class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-3"></i> Consultoría técnica y operativa</li>
+                            <li class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-3"></i> Infraestructura industrial y comercial</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Equipo -->
+                    <div class="md:w-1/2">
+                        <h4 class="text-lg font-bold text-gray-900 mb-4 border-b pb-2">Equipo Multidisciplinario</h4>
+                        <p class="text-sm text-gray-600 mb-4">Respaldados por especialistas en:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-xs font-bold border border-gray-200">Ingeniería Civil</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-xs font-bold border border-gray-200">Mecánica-Eléctrica</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-xs font-bold border border-gray-200">Ingeniería Industrial</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-xs font-bold border border-gray-200">Arquitectura</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-xs font-bold border border-gray-200">Ingeniería Sanitaria</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-xs font-bold border border-gray-200">Consultores externos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-8 text-center shadow-inner">
+                    <h5 class="text-lg font-bold text-fama-dark mb-2">Impulsa tu proyecto con FAMA HUB E.I.R.L.</h5>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-0">
+                        Cada proyecto es ejecutado cumpliendo los objetivos establecidos, garantizando la satisfacción de nuestros clientes. Somos una empresa comprometida con el éxito, la eficiencia y la calidad en cada intervención.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-between items-center border-t border-gray-100 pt-6 mt-auto gap-4">
+                    <p class="text-sm text-gray-500 font-medium text-center sm:text-left">Si buscas un aliado estratégico para la ejecución o supervisión de proyectos.</p>
+                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20solicitar%20una%20evaluación%20técnica%20para%20un%20Proyecto." target="_blank" onclick="closeModal('modal-proyectos')" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-lg hover:shadow-xl flex items-center justify-center whitespace-nowrap">
+                        <i class="fab fa-whatsapp mr-2 text-lg"></i> Solicitar Evaluación
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // --- NAVEGACIÓN MÓVIL ---
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // --- ANIMACIÓN MULTI-CANVAS (Red Tecnológica / Industrial interactiva) ---
+        // Buscamos TODOS los canvas que tengan la clase .fama-canvas
+        const canvases = document.querySelectorAll('.fama-canvas');
+        const canvasContexts = [];
+        
+        let particlesArray = [];
+        let mouse = { x: null, y: null, radius: 150 };
+
+        // Eventos del mouse (globales para que funcione en cualquier sección)
+        window.addEventListener('mousemove', function(event) {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+        window.addEventListener('mouseout', function() {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        // Preparar todos los canvas encontrados
+        function initCanvases() {
+            canvasContexts.length = 0; // Limpiar array
+            canvases.forEach(canvas => {
+                // Obtener el contenedor padre para saber qué tamaño debe tener
+                const container = canvas.closest('.canvas-container'); 
+                if (container) {
+                    canvas.width = container.offsetWidth;
+                    canvas.height = container.offsetHeight;
+                    canvasContexts.push({
+                        element: canvas,
+                        ctx: canvas.getContext('2d'),
+                        width: canvas.width,
+                        height: canvas.height,
+                        containerTop: container.offsetTop // Para ajustar la posición del mouse
+                    });
+                }
+            });
+        }
+
+        // Clase Partícula
+        class Particle {
+            constructor(canvasWidth, canvasHeight) {
+                this.x = Math.random() * canvasWidth;
+                this.y = Math.random() * canvasHeight;
+                this.size = Math.random() * 2 + 1; 
+                this.speedX = Math.random() * 1 - 0.5; 
+                this.speedY = Math.random() * 1 - 0.5; 
+                this.color = Math.random() > 0.5 ? 'rgba(155, 180, 184, 0.4)' : 'rgba(29, 94, 102, 0.6)';
+            }
+            update(canvasWidth, canvasHeight) {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvasWidth || this.x < 0) this.speedX = -this.speedX;
+                if (this.y > canvasHeight || this.y < 0) this.speedY = -this.speedY;
+            }
+            draw(ctx) {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        // Crear sistema de partículas independiente para cada Canvas
+        function initParticles() {
+            canvasContexts.forEach(c => {
+                c.particles = [];
+                let numberOfParticles = (c.width * c.height) / 15000; 
+                for (let i = 0; i < numberOfParticles; i++) {
+                    c.particles.push(new Particle(c.width, c.height));
+                }
+            });
+        }
+
+        // Animación principal
+        function animateParticles() {
+            // Recorrer y animar cada canvas por separado
+            canvasContexts.forEach(c => {
+                c.ctx.clearRect(0, 0, c.width, c.height);
+                
+                // Ajustar la posición Y del mouse relativa a ESTE canvas en particular
+                // tomando en cuenta el scroll actual de la página.
+                let relativeMouseY = null;
+                if(mouse.y !== null) {
+                    relativeMouseY = mouse.y - c.containerTop + window.scrollY;
+                }
+
+                for (let i = 0; i < c.particles.length; i++) {
+                    let p = c.particles[i];
+                    p.update(c.width, c.height);
+                    p.draw(c.ctx);
+
+                    // Conectar con otras partículas
+                    for (let j = i; j < c.particles.length; j++) {
+                        const dx = p.x - c.particles[j].x;
+                        const dy = p.y - c.particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < 120) {
+                            c.ctx.beginPath();
+                            c.ctx.strokeStyle = `rgba(155, 180, 184, ${1 - distance/120})`; 
+                            c.ctx.lineWidth = 0.5;
+                            c.ctx.moveTo(p.x, p.y);
+                            c.ctx.lineTo(c.particles[j].x, c.particles[j].y);
+                            c.ctx.stroke();
+                        }
+                    }
+
+                    // Conectar con el ratón
+                    if (mouse.x != null && relativeMouseY != null) {
+                        // Solo procesar si el mouse está dentro del área de ESTE canvas
+                        if(relativeMouseY >= 0 && relativeMouseY <= c.height) {
+                            const dxMouse = p.x - mouse.x;
+                            const dyMouse = p.y - relativeMouseY;
+                            const distanceMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+                            
+                            if (distanceMouse < mouse.radius) {
+                                c.ctx.beginPath();
+                                c.ctx.strokeStyle = `rgba(29, 94, 102, ${1 - distanceMouse/mouse.radius})`; 
+                                c.ctx.lineWidth = 1;
+                                c.ctx.moveTo(p.x, p.y);
+                                c.ctx.lineTo(mouse.x, relativeMouseY);
+                                c.ctx.stroke();
+                            }
+                        }
+                    }
+                }
+            });
+            requestAnimationFrame(animateParticles);
+        }
+
+        window.onload = function () {
+            initCanvases();
+            initParticles();
+            animateParticles();
+        };
+        
+        window.addEventListener('resize', () => {
+            initCanvases();
+            initParticles();
+        });
+
+        // --- LÓGICA DEL CHATBOT ---
+        const chatWindow = document.getElementById('chat-window');
+        const chatIcon = document.getElementById('chat-icon');
+        const chatMessages = document.getElementById('chat-messages');
+        let chatOpen = false;
+
+        function toggleChat() {
+            chatOpen = !chatOpen;
+            if (chatOpen) {
+                chatWindow.classList.remove('hidden');
+                setTimeout(() => {
+                    chatWindow.classList.remove('scale-0', 'opacity-0');
+                    chatWindow.classList.add('scale-100', 'opacity-100');
+                    document.getElementById('chat-input').focus();
+                }, 10);
+                chatIcon.classList.remove('fa-comment-dots');
+                chatIcon.classList.add('fa-times');
+            } else {
+                chatWindow.classList.remove('scale-100', 'opacity-100');
+                chatWindow.classList.add('scale-0', 'opacity-0');
+                setTimeout(() => {
+                    chatWindow.classList.add('hidden');
+                }, 300);
+                chatIcon.classList.remove('fa-times');
+                chatIcon.classList.add('fa-comment-dots');
+            }
+        }
+
+        function appendMessage(sender, text) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `flex flex-col gap-1 ${sender === 'user' ? 'items-end' : 'items-start'} animate-fade-in mb-2`;
+            
+            const bubble = document.createElement('div');
+            if (sender === 'user') {
+                bubble.className = "bg-fama-dark text-white text-sm p-3 rounded-2xl rounded-tr-none shadow-sm inline-block max-w-[85%]";
+                bubble.textContent = text; 
+            } else {
+                bubble.className = "bg-white border border-gray-200 text-gray-800 text-sm p-3 rounded-2xl rounded-tl-none shadow-sm inline-block max-w-[85%]";
+                bubble.innerHTML = text; 
+            }
+            
+            msgDiv.appendChild(bubble);
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                handleUserInput();
+            }
+        }
+
+        function handleUserInput() {
+            const inputField = document.getElementById('chat-input');
+            const question = inputField.value.trim();
+            
+            if (question === '') return;
+            
+            const faqOptions = document.getElementById('faq-options');
+            if (faqOptions) faqOptions.style.display = 'none';
+
+            appendMessage('user', question);
+            inputField.value = '';
+            
+            processBotResponse(question);
+        }
+
+        function processBotResponse(question) {
+            const q = question.toLowerCase();
+            let answer = "";
+            let requiresAdvisor = false;
+
+            setTimeout(() => {
+                if (q.includes('cotiz') || q.includes('precio') || q.includes('costo') || q.includes('cuanto') || q.includes('valor')) {
+                    answer = "Para brindarte una <strong>cotización exacta</strong>, necesitamos evaluar detalles como los metros cuadrados (m2), el estado actual de tu losa y el tipo de tránsito al que estará sometido el piso.";
+                    requiresAdvisor = true;
+                } else if (q.includes('epoxi') || q.includes('poliuretano') || q.includes('tipo') || q.includes('material') || q.includes('industria')) {
+                    answer = "Trabajamos con sistemas de alta resistencia térmica y mecánica: autonivelantes epóxicos, morteros y poliuretanos ideales para zonas industriales de alto tráfico.";
+                    requiresAdvisor = true;
+                } else if (q.includes('hola') || q.includes('buenos') || q.includes('tardes') || q.includes('dias')) {
+                    answer = "¡Hola! ¿Deseas información sobre el tipo de piso ideal para tu industria o quieres solicitar una cotización detallada?";
+                } else {
+                    answer = "Entiendo. Para poder orientarte con la mejor solución en pisos industriales y darte detalles precisos sobre tu proyecto, lo ideal es conversar con nuestros especialistas.";
+                    requiresAdvisor = true;
+                }
+
+                appendMessage('bot', answer);
+
+                if (requiresAdvisor) {
+                    setTimeout(() => {
+                        appendMessage('bot', `Por normativa de nuestra empresa, <strong>todo detalle de precios y proyectos se maneja directamente con un asesor técnico</strong>.<br><br><a href="https://wa.me/51951765830?text=Hola%20FAMA,%20vengo%20del%20chat%20y%20deseo%20hablar%20con%20un%20asesor%20para%20cotizar." target="_blank" class="inline-block bg-green-500 text-white px-3 py-2 rounded-lg text-xs font-bold mt-1 shadow"><i class="fab fa-whatsapp"></i> Hablar con un Asesor Ahora</a>`);
+                    }, 1000);
+                }
+            }, 600);
+        }
+
+        function handleFAQ(question) {
+            const faqOptions = document.getElementById('faq-options');
+            if (faqOptions) faqOptions.style.display = 'none';
+
+            appendMessage('user', question);
+            
+            setTimeout(() => {
+                if (question === '¿Qué tipos de pisos industriales aplican?') {
+                    appendMessage('bot', "Aplicamos recubrimientos epóxicos, sistemas de poliuretano y autonivelantes, ideales para resistir alto tráfico en almacenes, fábricas y laboratorios.");
+                    setTimeout(() => {
+                        appendMessage('bot', "Para definir el material exacto que necesitas y darte una <strong>cotización</strong>, es necesario evaluarlo con un asesor. 👇");
+                    }, 1000);
+                } else if (question === '¿Cómo se calcula una cotización?') {
+                    appendMessage('bot', "Toda cotización se detalla evaluando 3 factores clave:<br>1. Metraje total (m2)<br>2. Estado actual de la superficie<br>3. Nivel de exigencia (químicos, maquinaria pesada).");
+                    setTimeout(() => {
+                        appendMessage('bot', "Es por esto que <strong>siempre derivamos las cotizaciones a nuestros asesores técnicos</strong>. Escríbenos al WhatsApp para ayudarte.");
+                    }, 1000);
+                } else if (question === 'Necesito hablar con un asesor') {
+                    appendMessage('bot', "¡Excelente decisión! Te derivaré de inmediato con nuestro asesor técnico especializado en pisos industriales.");
+                    setTimeout(() => {
+                        appendMessage('bot', `<a href="https://wa.me/51951765830?text=Hola%20FAMA,%20necesito%20hablar%20con%20un%20asesor%20para%20una%20evaluaci%C3%B3n%20t%C3%A9cnica." target="_blank" class="inline-block mt-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow"><i class="fab fa-whatsapp"></i> Click aquí para ir a WhatsApp</a>`);
+                    }, 800);
+                }
+            }, 600);
+        }
+
+        // --- LÓGICA DE VENTANAS MODALES (POP-UPS) ---
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            const content = document.getElementById(id + '-content');
+            
+            modal.classList.remove('hidden');
+            
+            setTimeout(() => {
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.classList.add('opacity-100', 'pointer-events-auto');
+                
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            const content = document.getElementById(id + '-content');
+            
+            modal.classList.remove('opacity-100', 'pointer-events-auto');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+            
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
