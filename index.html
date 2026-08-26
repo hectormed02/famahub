@@ -9,20 +9,19 @@
     <meta name="keywords" content="pisos industriales, pavimentos epoxicos, poliuretano, zocalos sanitarios, impermeabilizacion, lima peru, fama hub">
     <meta name="description" content="FAMA HUB EIRL: Especialistas en ejecucion, reparacion y mantenimiento de Pisos Industriales, Zocalos Sanitarios e Impermeabilizacion en Peru.">
     
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Configuración de colores basados en el logo de FAMA -->
+    <!-- Configuración de colores corporativos FAMA -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'fama-dark': '#0d474d',   /* Verde azulado muy oscuro */
+                        'fama-dark': '#0d474d',   /* Verde azulado oscuro */
                         'fama-mid': '#1d5e66',    /* Verde azulado medio */
                         'fama-light': '#9bb4b8',  /* Gris azulado claro */
-                        'fama-bg': '#f4f7f8',     /* Fondo muy claro para secciones */
-                        'fama-accent': '#20a39e', /* Verde menta vibrante */
+                        'fama-bg': '#f4f7f8',     /* Fondo suave para secciones */
                     },
                     fontFamily: {
                         sans: ['Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
@@ -32,7 +31,7 @@
         }
     </script>
 
-    <!-- FontAwesome para Íconos -->
+    <!-- FontAwesome Íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -71,11 +70,6 @@
             background: #1d5e66; 
         }
 
-        .logo-text {
-            font-family: 'Arial Black', Impact, sans-serif;
-            letter-spacing: -1px;
-        }
-
         /* Before After Slider Styling */
         .before-after-container {
             position: relative;
@@ -102,19 +96,11 @@
             z-index: 20;
             transform: translateX(-50%);
         }
-
-        @keyframes pulse-subtle {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.85; transform: scale(1.03); }
-        }
-        .famito-btn-pulse {
-            animation: pulse-subtle 3s infinite ease-in-out;
-        }
     </style>
 </head>
 <body class="bg-white text-gray-800 font-sans antialiased relative">
 
-    <!-- Navegación -->
+    <!-- NAVEGACIÓN -->
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -203,23 +189,20 @@
         </div>
     </nav>
 
-    <!-- INICIO (Hero Section con Canvas 1) -->
+    <!-- INICIO (Hero Section) -->
     <section id="inicio" class="relative min-h-screen flex items-center justify-center bg-fama-dark overflow-hidden canvas-container pt-20">
-        <!-- Canvas Background 1 -->
         <canvas class="fama-canvas"></canvas>
-        
-        <!-- Overlay Oscuro -->
         <div class="absolute inset-0 bg-gradient-to-r from-fama-dark/95 via-fama-dark/85 to-fama-mid/80 z-0 pointer-events-none"></div>
 
         <div class="relative z-10 text-center px-4 max-w-5xl mx-auto hero-content my-12 w-full pointer-events-auto">
             <span class="inline-block px-4 py-1.5 rounded-full bg-fama-light/20 text-fama-light text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6 border border-fama-light/30 backdrop-blur-md">
-                <i class="fas fa-shield-alt mr-2 text-fama-accent"></i> Soluciones de Alto Desempeño Técnico en todo el Perú
+                <i class="fas fa-shield-alt mr-2 text-green-400"></i> Soluciones Especializadas para la Industria Peruana
             </span>
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
-                Especialistas en <span class="text-fama-light">Revestimientos Epóxicos</span>, Zócalos &amp; Campos Deportivos
+                Especialistas en <span class="text-fama-light">Pisos Industriales</span>, Zócalos Sanitarios &amp; Impermeabilización
             </h1>
             <p class="text-base sm:text-lg md:text-xl text-gray-200 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
-                Protección industrial de pisos, impermeabilización y obras civiles bajo estándares de calidad BPM, HACCP e ISO en todo el Perú.
+                Ejecución, reparación y mantenimiento de revestimientos de alto desempeño bajo estándares de calidad BPM, HACCP e ISO en todo el Perú.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#servicios" class="px-8 py-4 bg-fama-mid hover:bg-fama-light text-white hover:text-fama-dark rounded-full font-bold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center flex items-center justify-center gap-2">
@@ -254,14 +237,14 @@
     <section id="nosotros" class="py-12 md:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row gap-16">
-                <!-- Columna Izquierda: Texto Principal -->
+                <!-- Columna Izquierda -->
                 <div class="lg:w-1/2 w-full flex flex-col justify-center">
                     <h2 class="text-4xl md:text-5xl font-extrabold text-fama-dark mb-6 leading-tight">
                         FAMA HUB E.I.R.L.
                     </h2>
                     
                     <p class="text-gray-600 mb-6 text-lg leading-relaxed">
-                        FAMA HUB E.I.R.L. es una empresa peruana especializada en ingeniería y construcción. Participamos en proyectos de alta exigencia operacional gracias a nuestro equipo multidisciplinario de ingenieros, arquitectos y técnicos certificados.
+                        FAMA HUB E.I.R.L. es una empresa peruana especializada en ingeniería, construcción y protección industrial de superficies. Participamos en proyectos de alta exigencia operacional gracias a nuestro equipo multidisciplinario de ingenieros, arquitectos y técnicos certificados.
                     </p>
                     <p class="text-gray-600 mb-8 text-lg leading-relaxed">
                         Ofrecemos servicios de diseño, planificación, ejecución y supervisión de obras como pavimentación de concreto, mantenimiento, impermeabilización, zócalos sanitarios y pisos industriales epóxicos y de poliuretano.
@@ -273,23 +256,20 @@
                             <i class="fas fa-handshake text-fama-mid text-2xl"></i> Compromiso y Seguridad Normativa
                         </h4>
                         <p class="text-gray-600 text-sm leading-relaxed mb-0">
-                            Garantizamos tratamientos de superficie bajo especificaciones técnicas exigidas por DIGESA, SENASA y certificaciones internacionales BPM/HACCP para la industria alimentaria, farmacéutica y pesquera.
+                            Garantizamos tratamientos de superficie bajo especificaciones técnicas exigidas por DIGESA, SENASA y certificaciones internacionales BPM/HACCP para la industria alimentaria, farmacéutica y pesquera en todo el territorio peruano.
                         </p>
                     </div>
                 </div>
 
-                <!-- Columna Derecha: Collage de Imágenes -->
+                <!-- Columna Derecha: Collage -->
                 <div class="lg:w-1/2 w-full">
                     <div class="relative h-[500px] w-full mt-8 lg:mt-0">
-                        <!-- Imagen Principal Grande -->
                         <div class="absolute top-0 right-0 w-4/5 h-4/5 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-10 bg-gray-200">
                             <img src="nosotros-1.webp" alt="FAMA Ingeniería" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x600/0d474d/ffffff?text=FAMA+Ingenieria';">
                         </div>
-                        <!-- Imagen Secundaria Pequeña Superpuesta -->
                         <div class="absolute bottom-0 left-0 w-3/5 h-3/5 rounded-2xl overflow-hidden shadow-2xl border-8 border-white z-20 transform -translate-y-4 translate-x-4 bg-gray-200">
                             <img src="nosotros-2.webp" alt="FAMA Construcción" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x400/9bb4b8/ffffff?text=FAMA+Construccion';">
                         </div>
-                        <!-- Elemento decorativo de puntos -->
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 z-0 opacity-20" style="background-image: radial-gradient(#0d474d 2px, transparent 2px); background-size: 16px 16px;"></div>
                     </div>
                 </div>
@@ -308,13 +288,11 @@
 
             <div class="max-w-4xl mx-auto bg-white rounded-2xl p-4 shadow-2xl border border-gray-200">
                 <div class="before-after-container h-80 sm:h-[420px] rounded-xl relative overflow-hidden cursor-ew-resize" id="slider-container">
-                    <!-- Imagen "Después" (Fondo Completo) -->
                     <img src="servicios/Revestimiento.webp" alt="Piso Epóxico FAMA Restaurado" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/0d474d/ffffff?text=Piso+Epoxico+Restaurado';">
                     <span class="absolute bottom-4 right-4 bg-green-600/90 text-white font-bold text-xs sm:text-sm px-4 py-1.5 rounded-full shadow backdrop-blur-sm z-10">
                         <i class="fas fa-check-circle mr-1"></i> DESPUÉS: Piso Epóxico Autonivelante
                     </span>
 
-                    <!-- Imagen "Antes" (Superpuesta Recortada) -->
                     <div class="before-after-overlay" id="slider-overlay" style="width: 50%;">
                         <img src="servicios/Preparacion_de_Pisos.webp" alt="Piso de Concreto Dañado" class="absolute top-0 left-0 max-w-none h-full object-cover" id="before-img" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/9bb4b8/ffffff?text=Concreto+Agrietado';">
                         <span class="absolute bottom-4 left-4 bg-gray-900/90 text-white font-bold text-xs sm:text-sm px-4 py-1.5 rounded-full shadow backdrop-blur-sm">
@@ -322,7 +300,6 @@
                         </span>
                     </div>
 
-                    <!-- Barra Deslizadora -->
                     <div class="before-after-handle" id="slider-handle" style="left: 50%;">
                         <div class="w-10 h-10 bg-white rounded-full shadow-2xl border-2 border-fama-dark flex items-center justify-center text-fama-dark absolute top-1/2 -translate-y-1/2 -left-5 text-sm font-bold">
                             <i class="fas fa-arrows-alt-h"></i>
@@ -337,12 +314,12 @@
     <section id="servicios" class="py-20 bg-fama-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-fama-mid font-bold tracking-wider uppercase text-sm mb-2">Nuestras Especialidades</h2>
-                <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900">Servicios Destacados</h3>
+                <h2 class="text-fama-mid font-bold tracking-wider uppercase text-sm mb-2">Servicios de Pisos Industriales</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900">Soluciones Especializadas para la Industria Peruana</h3>
                 <div class="w-24 h-1 bg-fama-light mx-auto mt-4 rounded"></div>
             </div>
 
-            <!-- Grid de 6 Tarjetas de Servicios con Imágenes -->
+            <!-- Grid de 6 Tarjetas de Servicios -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
                 
                 <!-- Servicio 1: Preparación -->
@@ -355,10 +332,11 @@
                         </div>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="text-xl font-bold text-gray-900 mb-3">Preparación de Pisos</h4>
-                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Realizamos la evaluación y acondicionamiento del soporte para asegurar una correcta adherencia del revestimiento. Eliminamos lechadas, contaminantes y defectos...</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">1. Preparación de Pisos</h4>
+                        <p class="text-xs text-fama-mid font-bold uppercase tracking-wider mb-3">Base sólida para resultados duraderos</p>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Evaluación técnica del suelo (compresión, tracción y humedad) y tratamiento especializado con granallado, preparación térmica, fresado y lijado industrial...</p>
                         <div class="text-fama-mid font-bold text-sm flex items-center gap-2 group-hover:text-fama-dark transition-colors mt-auto">
-                            Ver detalles <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                            Ver detalles técnicos <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                         </div>
                     </div>
                 </div>
@@ -373,10 +351,11 @@
                         </div>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="text-xl font-bold text-gray-900 mb-3">Revestimiento de Pisos</h4>
-                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Instalamos pisos industriales de alto rendimiento, resistentes a químicos, abrasión, humedad y tráfico pesado. Nuestros sistemas epóxicos y de poliuretano...</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">2. Revestimiento de Pisos</h4>
+                        <p class="text-xs text-fama-mid font-bold uppercase tracking-wider mb-3">Protección avanzada de alta exigencia</p>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Sistemas epóxicos y de poliuretano en espesores variables (1mm a 9mm) resistentes a químicos agresivos, choques térmicos, humedad y tráfico pesado...</p>
                         <div class="text-fama-mid font-bold text-sm flex items-center gap-2 group-hover:text-fama-dark transition-colors mt-auto">
-                            Ver detalles <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                            Ver detalles técnicos <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                         </div>
                     </div>
                 </div>
@@ -391,10 +370,11 @@
                         </div>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="text-xl font-bold text-gray-900 mb-3">Zócalos Sanitarios</h4>
-                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Fabricamos e instalamos zócalos sanitarios de mortero epóxico que garantizan una transición curva entre piso y pared, evitando acumulación de suciedad...</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">3. Zócalos Sanitarios</h4>
+                        <p class="text-xs text-fama-mid font-bold uppercase tracking-wider mb-3">Fabricación, Venta e Instalación</p>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Zócalos sanitarios de mortero epóxico con media caña (rondón) de secado rápido (24 horas) para cumplimiento de normas sanitarias BPM y HACCP...</p>
                         <div class="text-fama-mid font-bold text-sm flex items-center gap-2 group-hover:text-fama-dark transition-colors mt-auto">
-                            Ver detalles <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                            Ver detalles técnicos <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                         </div>
                     </div>
                 </div>
@@ -409,10 +389,11 @@
                         </div>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="text-xl font-bold text-gray-900 mb-3">Mantenimiento de Pisos</h4>
-                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Reparamos grietas, desprendimientos y desgaste en pisos epóxicos y de poliuretano. Recuperamos la resistencia, apariencia y seguridad del pavimento mediante...</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">4. Mantenimiento de Pisos</h4>
+                        <p class="text-xs text-fama-mid font-bold uppercase tracking-wider mb-3">Correctivo y Preventivo</p>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Reparación técnica y rellenado de fisuras, corrección de desprendimientos y restauración de capas de desgaste con control de rugosidad antideslizante...</p>
                         <div class="text-fama-mid font-bold text-sm flex items-center gap-2 group-hover:text-fama-dark transition-colors mt-auto">
-                            Ver detalles <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                            Ver detalles técnicos <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                         </div>
                     </div>
                 </div>
@@ -427,10 +408,11 @@
                         </div>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="text-xl font-bold text-gray-900 mb-3">Impermeabilización</h4>
-                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Protegemos losas, techos, estacionamientos, cisternas y estructuras de concreto contra humedad y filtraciones. Aplicamos membranas elastoméricas de poliuretano y...</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">5. Impermeabilización</h4>
+                        <p class="text-xs text-fama-mid font-bold uppercase tracking-wider mb-3">Protección Integral Contra Humedad</p>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Aplicación de membranas elastoméricas de poliuretano y recubrimientos acrílico-cementosos para estacionamientos, cisternas, reservorios y techos...</p>
                         <div class="text-fama-mid font-bold text-sm flex items-center gap-2 group-hover:text-fama-dark transition-colors mt-auto">
-                            Ver detalles <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                            Ver detalles técnicos <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                         </div>
                     </div>
                 </div>
@@ -445,10 +427,11 @@
                         </div>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="text-xl font-bold text-gray-900 mb-3">Proyectos y Desarrollo</h4>
-                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Ejecución de proyectos de ingeniería, supervisión técnica y gestión integral de obras para diversos sectores industriales, comerciales y de infraestructura en todo el Perú.</p>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">6. Proyectos y Desarrollo</h4>
+                        <p class="text-xs text-fama-mid font-bold uppercase tracking-wider mb-3">Ejecución, Supervisión y Consultoría</p>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-3">Gestión integral de obras civiles, instalaciones electromecánicas, servicios de topografía y alquiler de maquinaria con equipo profesional multidisciplinario...</p>
                         <div class="text-fama-mid font-bold text-sm flex items-center gap-2 group-hover:text-fama-dark transition-colors mt-auto">
-                            Ver detalles <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                            Ver detalles técnicos <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                         </div>
                     </div>
                 </div>
@@ -506,19 +489,15 @@
 
     <!-- PROYECTOS -->
     <section id="proyectos" class="relative py-20 bg-fama-dark overflow-hidden canvas-container">
-        <!-- Canvas Background 2 -->
         <canvas class="fama-canvas"></canvas>
-        
-        <!-- Overlay Oscuro -->
         <div class="absolute inset-0 bg-gradient-to-r from-fama-dark/95 to-fama-mid/80 z-0 pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pointer-events-auto">
             <div class="text-center mb-12">
-                <h3 class="text-3xl md:text-4xl font-extrabold text-white">Proyectos Recientes</h3>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white">Proyectos Recientes en el Perú</h3>
                 <p class="mt-4 text-gray-200">Galería de nuestras últimas obras ejecutadas a nivel nacional.</p>
             </div>
 
-            <!-- Filtros de Galería -->
             <div class="flex flex-wrap justify-center gap-2 mb-10">
                 <button onclick="filterProjects('all')" class="proj-filter-btn active bg-fama-light text-fama-dark font-bold text-xs sm:text-sm px-4 py-2 rounded-full border border-fama-light">Todos</button>
                 <button onclick="filterProjects('industrial')" class="proj-filter-btn bg-fama-dark/60 text-white hover:bg-fama-mid font-bold text-xs sm:text-sm px-4 py-2 rounded-full border border-white/20">Industrial &amp; Alimentos</button>
@@ -629,16 +608,14 @@
                 </div>
 
                 <div class="flex gap-2">
-                    <!-- Botón para administrar / conectar hoja de calculo -->
                     <button onclick="openModal('modal-sheet-config')" class="bg-white hover:bg-gray-100 text-fama-dark text-xs font-bold px-4 py-2.5 rounded-xl border border-gray-300 shadow-sm transition-colors flex items-center gap-2">
                         <i class="fas fa-file-excel text-green-600"></i> Administrar con Google Sheets
                     </button>
                 </div>
             </div>
 
-            <!-- Contenedor del Blog -->
             <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Se puebla dinámicamente mediante JS -->
+                <!-- Se puebla dinámicamente -->
             </div>
         </div>
     </section>
@@ -761,7 +738,6 @@
 
     <!-- CHATBOT WIDGET FAMITO -->
     <div id="chatbot-container" class="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-auto">
-        
         <!-- Ventana del Chat -->
         <div id="chat-window" class="bg-white w-[90vw] sm:w-96 rounded-2xl shadow-2xl border border-gray-200 mb-4 flex flex-col hidden transform transition-transform origin-bottom-right scale-0 opacity-0 duration-300 max-h-[75vh]">
             <!-- Header Chat -->
@@ -792,11 +768,11 @@
                     <button onclick="handleFAQ('¿Qué tipos de pisos industriales aplican?')" class="text-left text-xs bg-fama-light/20 hover:bg-fama-light/40 text-fama-dark font-medium p-2 rounded-lg border border-fama-light/30 transition-colors">
                         ¿Qué tipos de pisos industriales aplican?
                     </button>
+                    <button onclick="handleFAQ('Zócalos Sanitarios BPM')" class="text-left text-xs bg-fama-light/20 hover:bg-fama-light/40 text-fama-dark font-medium p-2 rounded-lg border border-fama-light/30 transition-colors">
+                        Zócalos Sanitarios BPM
+                    </button>
                     <button onclick="handleFAQ('¿Cómo se calcula una cotización?')" class="text-left text-xs bg-fama-light/20 hover:bg-fama-light/40 text-fama-dark font-medium p-2 rounded-lg border border-fama-light/30 transition-colors">
                         ¿Cómo se calcula una cotización?
-                    </button>
-                    <button onclick="handleFAQ('Necesito hablar con un asesor')" class="text-left text-xs bg-fama-light/20 hover:bg-fama-light/40 text-fama-dark font-medium p-2 rounded-lg border border-fama-light/30 transition-colors">
-                        Necesito hablar con un asesor
                     </button>
                 </div>
             </div>
@@ -818,7 +794,7 @@
         </div>
 
         <!-- Botón flotante -->
-        <button id="chat-button" onclick="toggleChat()" class="bg-fama-dark hover:bg-fama-mid text-white w-14 h-14 md:w-16 md:h-16 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 focus:outline-none ring-4 ring-fama-light/30 z-50 famito-btn-pulse">
+        <button id="chat-button" onclick="toggleChat()" class="bg-fama-dark hover:bg-fama-mid text-white w-14 h-14 md:w-16 md:h-16 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 focus:outline-none ring-4 ring-fama-light/30 z-50">
             <i id="chat-icon" class="fas fa-comment-dots text-2xl md:text-3xl"></i>
         </button>
     </div>
@@ -890,8 +866,11 @@
         </div>
     </div>
 
-    <!-- Modales de Servicios (6 Modales Existentes) -->
-    <!-- Modal Preparación -->
+    <!-- ========================================== -->
+    <!-- MODALES DE SERVICIOS (DETALLADOS 1 AL 6) -->
+    <!-- ========================================== -->
+
+    <!-- Modal 1: Preparación de Pisos -->
     <div id="modal-preparacion" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-preparacion')"></div>
         <div id="modal-preparacion-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
@@ -906,37 +885,82 @@
                         <i class="fas fa-tools text-2xl text-white"></i>
                     </div>
                     <div>
-                        <h3 class="text-2xl md:text-3xl font-extrabold text-white leading-tight">Preparación de Pisos Industriales</h3>
+                        <h3 class="text-2xl md:text-3xl font-extrabold text-white leading-tight">1. PREPARACIÓN DE PISOS INDUSTRIALES</h3>
                         <p class="text-fama-light mt-1 font-medium hidden sm:block">Base sólida para resultados duraderos</p>
                     </div>
                 </div>
             </div>
             
-            <div class="p-6 md:p-8 overflow-y-auto relative bg-white custom-scroll">
-                <p class="text-gray-600 leading-relaxed text-base mb-8">
-                    La preparación del soporte es la etapa más importante para garantizar un piso industrial resistente, seguro y de alto desempeño. Un suelo correctamente evaluado y tratado asegura una adherencia óptima del revestimiento y evita fallas futuras.
+            <div class="p-6 md:p-8 overflow-y-auto relative bg-white custom-scroll space-y-6">
+                <p class="text-gray-600 leading-relaxed text-base">
+                    La preparación correcta del soporte es el factor más importante para garantizar un piso industrial resistente, seguro y de largo desempeño. Una evaluación y tratamiento adecuado aseguran adherencia óptima del revestimiento y evitan fallas futuras.
                 </p>
 
-                <h4 class="text-xl font-bold text-fama-dark mb-4 border-b pb-2">Evaluación Técnica del Suelo</h4>
-                <p class="text-gray-600 mb-4 text-sm leading-relaxed">Antes de intervenir, realizamos un diagnóstico completo del estado del soporte. Esta evaluación permite definir el método adecuado de preparación y asegurar la máxima calidad del pavimento final. Incluye:</p>
-                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                    <li class="flex items-start bg-fama-bg p-4 rounded-lg border border-gray-100">
-                        <i class="fas fa-search text-fama-mid text-lg mt-1 mr-3"></i>
-                        <div><strong class="text-gray-900 block">Inspección visual:</strong> <span class="text-sm text-gray-600">Detección de fisuras, desprendimientos y contaminantes.</span></div>
-                    </li>
-                    <li class="flex items-start bg-fama-bg p-4 rounded-lg border border-gray-100">
-                        <i class="fas fa-compress-arrows-alt text-fama-mid text-lg mt-1 mr-3"></i>
-                        <div><strong class="text-gray-900 block">Resistencia a compresión:</strong> <span class="text-sm text-gray-600">Capacidad del soporte para soportar cargas.</span></div>
-                    </li>
-                    <li class="flex items-start bg-fama-bg p-4 rounded-lg border border-gray-100">
-                        <i class="fas fa-expand-arrows-alt text-fama-mid text-lg mt-1 mr-3"></i>
-                        <div><strong class="text-gray-900 block">Resistencia a tracción:</strong> <span class="text-sm text-gray-600">Consistencia interna del concreto para garantizar adherencia.</span></div>
-                    </li>
-                    <li class="flex items-start bg-fama-bg p-4 rounded-lg border border-gray-100">
-                        <i class="fas fa-tint text-fama-mid text-lg mt-1 mr-3"></i>
-                        <div><strong class="text-gray-900 block">Medición de humedad:</strong> <span class="text-sm text-gray-600">Clave para evitar desprendimientos y burbujeos.</span></div>
-                    </li>
-                </ul>
+                <div class="border-t border-gray-200 pt-4">
+                    <h4 class="text-xl font-bold text-fama-dark mb-3 flex items-center gap-2">
+                        <i class="fas fa-clipboard-check text-fama-mid"></i> Evaluación Técnica del Suelo
+                    </h4>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Antes de cualquier intervención, realizamos un diagnóstico completo que nos permite elegir el método de preparación más apropiado para asegurar máxima calidad:
+                    </p>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <li class="flex items-start bg-fama-bg p-4 rounded-lg border border-gray-100 shadow-sm">
+                            <i class="fas fa-eye text-fama-mid text-lg mt-1 mr-3"></i>
+                            <div><strong class="text-gray-900 block">Inspección visual:</strong> <span class="text-sm text-gray-600">Detección de fisuras, desprendimientos y contaminantes.</span></div>
+                        </li>
+                        <li class="flex items-start bg-fama-bg p-4 rounded-lg border border-gray-100 shadow-sm">
+                            <i class="fas fa-compress-arrows-alt text-fama-mid text-lg mt-1 mr-3"></i>
+                            <div><strong class="text-gray-900 block">Resistencia a compresión:</strong> <span class="text-sm text-gray-600">Capacidad del soporte para soportar cargas operativas.</span></div>
+                        </li>
+                        <li class="flex items-start bg-fama-bg p-4 rounded-lg border border-gray-100 shadow-sm">
+                            <i class="fas fa-expand-arrows-alt text-fama-mid text-lg mt-1 mr-3"></i>
+                            <div><strong class="text-gray-900 block">Resistencia a tracción:</strong> <span class="text-sm text-gray-600">Cohesión interna para garantizar adherencia óptima.</span></div>
+                        </li>
+                        <li class="flex items-start bg-fama-bg p-4 rounded-lg border border-gray-100 shadow-sm">
+                            <i class="fas fa-tint text-fama-mid text-lg mt-1 mr-3"></i>
+                            <div><strong class="text-gray-900 block">Medición de humedad:</strong> <span class="text-sm text-gray-600">Clave para evitar desprendimientos, burbujeos y fallas prematuras.</span></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="border-t border-gray-200 pt-4">
+                    <h4 class="text-xl font-bold text-fama-dark mb-3 flex items-center gap-2">
+                        <i class="fas fa-cogs text-fama-mid"></i> Preparación Profesional de la Superficie
+                    </h4>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Una preparación deficiente es la causa principal de fallas en pavimentos industriales. Aplicamos técnicas especializadas que aseguran limpieza profunda, nivelación y apertura de poro:
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex gap-3 items-start">
+                            <i class="fas fa-wind text-fama-mid text-2xl mt-1"></i>
+                            <div>
+                                <strong class="text-gray-900 block font-bold text-sm">Granallado</strong>
+                                <p class="text-xs text-gray-600 leading-relaxed">Limpieza profunda y apertura de poro para máxima adherencia.</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex gap-3 items-start">
+                            <i class="fas fa-fire text-fama-mid text-2xl mt-1"></i>
+                            <div>
+                                <strong class="text-gray-900 block font-bold text-sm">Preparación térmica</strong>
+                                <p class="text-xs text-gray-600 leading-relaxed">Eliminación de contaminantes grasos y aceites por calor controlado.</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex gap-3 items-start">
+                            <i class="fas fa-circle-notch text-fama-mid text-2xl mt-1"></i>
+                            <div>
+                                <strong class="text-gray-900 block font-bold text-sm">Fresado</strong>
+                                <p class="text-xs text-gray-600 leading-relaxed">Corrección de irregularidades y retiro de capas dañadas.</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex gap-3 items-start">
+                            <i class="fas fa-gem text-fama-mid text-2xl mt-1"></i>
+                            <div>
+                                <strong class="text-gray-900 block font-bold text-sm">Lijado industrial</strong>
+                                <p class="text-xs text-gray-600 leading-relaxed">Acabado fino con diamantes para uniformidad perfecta.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="flex flex-col sm:flex-row justify-end items-center border-t border-gray-100 pt-6 mt-6">
                     <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20cotizar%20Preparaci%C3%B3n%20de%20Pisos." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md flex items-center justify-center">
@@ -947,10 +971,10 @@
         </div>
     </div>
 
-    <!-- Modal Revestimiento -->
+    <!-- Modal 2: Revestimiento -->
     <div id="modal-revestimiento" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm" onclick="closeModal('modal-revestimiento')"></div>
-        <div id="modal-revestimiento-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh]">
+        <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-revestimiento')"></div>
+        <div id="modal-revestimiento-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
             <div class="relative h-48 md:h-64 w-full flex-shrink-0 bg-gray-200">
                 <img src="servicios/Revestimiento.webp" alt="Revestimiento de Pisos" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/1d5e66/ffffff?text=Revestimiento+Epoxico';">
                 <button onclick="closeModal('modal-revestimiento')" class="absolute top-4 right-4 text-white bg-black/40 hover:bg-red-500 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm transition-colors z-20 focus:outline-none">
@@ -962,20 +986,60 @@
                         <i class="fas fa-layer-group text-2xl text-white"></i>
                     </div>
                     <div>
-                        <h3 class="text-2xl md:text-3xl font-extrabold text-white leading-tight">Revestimiento Epóxico y Poliuretano</h3>
+                        <h3 class="text-2xl md:text-3xl font-extrabold text-white leading-tight">2. REVESTIMIENTO DE PISOS INDUSTRIALES</h3>
                         <p class="text-fama-light mt-1 font-medium hidden sm:block">Protección avanzada para ambientes de alta exigencia</p>
                     </div>
                 </div>
             </div>
             
-            <div class="p-6 md:p-8 overflow-y-auto relative bg-white custom-scroll">
-                <p class="text-gray-600 leading-relaxed text-base mb-8">
-                    Nuestros sistemas de revestimiento epóxico y poliuretano están diseñados para brindar máxima resistencia, durabilidad y protección en ambientes severos, incluso bajo exposición constante a químicos agresivos, humedad, tráfico pesado y variaciones extremas de temperatura.
+            <div class="p-6 md:p-8 overflow-y-auto relative bg-white custom-scroll space-y-6">
+                <p class="text-gray-600 leading-relaxed text-base">
+                    Nuestros sistemas de revestimiento epóxico y poliuretano están diseñados para brindar máxima resistencia y durabilidad en ambientes severos, incluso bajo exposición constante a químicos agresivos, humedad, tráfico pesado y variaciones extremas de temperatura.
                 </p>
 
-                <div class="flex flex-col sm:flex-row justify-between items-center border-t border-gray-100 pt-6 mt-auto gap-4">
-                    <p class="text-sm text-gray-500 font-medium text-center sm:text-left">Nuestros revestimientos garantizan protección, rendimiento y rentabilidad.</p>
-                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20una%20evaluaci%C3%B3n%20t%C3%A9cnica%20para%20Revestimiento%20de%20Pisos." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md flex items-center justify-center whitespace-nowrap">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-gray-200 pt-4">
+                    <!-- Epoxicos -->
+                    <div class="bg-fama-bg p-6 rounded-2xl border border-gray-200">
+                        <h4 class="text-lg font-bold text-fama-dark mb-3 flex items-center gap-2">
+                            <i class="fas fa-shield-alt text-fama-mid"></i> Revestimientos Epóxicos
+                        </h4>
+                        <p class="text-sm text-gray-600 mb-3">Los pisos epóxicos destacan por resistencia superior a:</p>
+                        <ul class="text-xs text-gray-700 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Químicos agresivos, ácidos diluidos y soluciones salinas</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Alcoholes, solventes, aceites minerales y combustibles</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Brillo permanente e impermeabilidad total a líquidos y gases</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Alta resistencia mecánica y durabilidad en ambientes industriales</li>
+                        </ul>
+                    </div>
+
+                    <!-- Poliuretano -->
+                    <div class="bg-fama-bg p-6 rounded-2xl border border-gray-200">
+                        <h4 class="text-lg font-bold text-fama-dark mb-3 flex items-center gap-2">
+                            <i class="fas fa-temperature-low text-fama-mid"></i> Revestimientos de Poliuretano
+                        </h4>
+                        <p class="text-sm text-gray-600 mb-3">Formulados en sistemas de dos o tres componentes, generan un polímero ideal para:</p>
+                        <ul class="text-xs text-gray-700 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Plantas procesadoras de alimentos, lácteas, cárnicas y bebidas</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Sector químico, farmacéutico y petroquímico</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Minería, automotriz y depósitos de alto tránsito</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Ambientes húmedos con requisitos antideslizantes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-200 pt-4">
+                    <h4 class="text-xl font-bold text-fama-dark mb-3">Ventajas de Nuestros Sistemas</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-700">
+                        <li class="flex items-center p-3 bg-white border border-gray-200 rounded-lg shadow-sm"><i class="fas fa-bolt text-yellow-500 mr-3 text-lg"></i> Descarga de electricidad estática (pisos seguros para electrónica)</li>
+                        <li class="flex items-center p-3 bg-white border border-gray-200 rounded-lg shadow-sm"><i class="fas fa-water text-blue-500 mr-3 text-lg"></i> Superficies antideslizantes incluso en estado húmedo</li>
+                        <li class="flex items-center p-3 bg-white border border-gray-200 rounded-lg shadow-sm"><i class="fas fa-chart-line text-green-500 mr-3 text-lg"></i> Mayor vida útil y menor costo de mantenimiento</li>
+                        <li class="flex items-center p-3 bg-white border border-gray-200 rounded-lg shadow-sm"><i class="fas fa-truck-loading text-fama-mid mr-3 text-lg"></i> Resistencia comprobada al tráfico pesado y cargas operativas</li>
+                        <li class="col-span-1 sm:col-span-2 flex items-center p-3 bg-fama-dark text-white rounded-lg shadow-sm"><i class="fas fa-ruler-vertical text-fama-light mr-3 text-lg"></i> Espesores variables (1 mm, 4 mm, 6 mm, 9 mm) según la necesidad operativa de tu industria</li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-end items-center border-t border-gray-100 pt-6 mt-6">
+                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20cotizar%20Revestimientos%20de%20Pisos." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md flex items-center justify-center">
                         <i class="fab fa-whatsapp mr-2 text-lg"></i> Cotizar por WhatsApp
                     </a>
                 </div>
@@ -983,7 +1047,7 @@
         </div>
     </div>
 
-    <!-- Modal Zócalos -->
+    <!-- Modal 3: Zócalos Sanitarios -->
     <div id="modal-zocalos" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-zocalos')"></div>
         <div id="modal-zocalos-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
@@ -998,18 +1062,67 @@
                         <i class="fas fa-border-all text-2xl text-white"></i>
                     </div>
                     <div>
-                        <h3 class="text-2xl md:text-3xl font-extrabold text-white leading-tight">Zócalos Sanitarios de Mortero Epóxico</h3>
+                        <h3 class="text-2xl md:text-3xl font-extrabold text-white leading-tight">3. ZÓCALOS SANITARIOS DE MORTERO EPÓXICO</h3>
+                        <p class="text-fama-light mt-1 font-medium hidden sm:block">Fabricación, Venta e Instalación Profesional</p>
                     </div>
                 </div>
             </div>
             
-            <div class="p-6 md:p-8 overflow-y-auto relative bg-white custom-scroll">
-                <p class="text-gray-600 mb-6 leading-relaxed">
-                    En <strong>FAMA HUB E.I.R.L</strong> somos especialistas en la fabricación de zócalos sanitarios de mortero epóxico, diseñados para cumplir con los más altos estándares de higiene, durabilidad y resistencia en ambientes industriales.
+            <div class="p-6 md:p-8 overflow-y-auto relative bg-white custom-scroll space-y-6">
+                <p class="text-gray-600 leading-relaxed text-base">
+                    Los zócalos sanitarios son elementos críticos en ambientes que requieren máxima higiene y resistencia. Fabricamos e instalamos productos de mortero epóxico de alta precisión, especializados para fábricas, plantas de procesamiento, laboratorios farmacéuticos e industrias alimentarias en el Perú.
                 </p>
 
-                <div class="flex flex-col sm:flex-row justify-between items-center border-t border-gray-100 pt-6 mt-auto gap-4">
-                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20cotizar%20Z%C3%B3calos%20Sanitarios." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md flex items-center justify-center whitespace-nowrap">
+                <div class="border-t border-gray-200 pt-4">
+                    <h4 class="text-xl font-bold text-fama-dark mb-3 flex items-center gap-2">
+                        <i class="fas fa-shapes text-fama-mid"></i> Fabricación de Alta Precisión
+                    </h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Cada zócalo es moldeado con precisión y dimensionado para adaptarse perfectamente a cada área, garantizando continuidad estética, hermeticidad y funcionalidad operativa. Nuestros materiales se formulan para ofrecer resistencia química, estabilidad estructural y acabado uniforme.
+                    </p>
+                </div>
+
+                <div class="border-t border-gray-200 pt-4">
+                    <h4 class="text-xl font-bold text-fama-dark mb-4 flex items-center gap-2">
+                        <i class="fas fa-hammer text-fama-mid"></i> Instalación Técnica y Especializada
+                    </h4>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        La instalación requiere un procedimiento profesional para asegurar adherencia y desempeño prolongado:
+                    </p>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <li class="bg-fama-bg p-4 rounded-xl border border-gray-100 shadow-sm flex items-start gap-3">
+                            <i class="fas fa-broom text-fama-mid text-lg mt-1"></i>
+                            <div>
+                                <strong class="text-gray-900 block text-sm">Preparación de superficies:</strong>
+                                <span class="text-xs text-gray-600">Eliminación de polvo, grasas y contaminantes.</span>
+                            </div>
+                        </li>
+                        <li class="bg-fama-bg p-4 rounded-xl border border-gray-100 shadow-sm flex items-start gap-3">
+                            <i class="fas fa-trowel text-fama-mid text-lg mt-1"></i>
+                            <div>
+                                <strong class="text-gray-900 block text-sm">Aplicación del mortero epóxico:</strong>
+                                <span class="text-xs text-gray-600">Con herramientas especializadas y técnica profesional para formar la curva sanitaria.</span>
+                            </div>
+                        </li>
+                        <li class="bg-fama-bg p-4 rounded-xl border border-gray-100 shadow-sm flex items-start gap-3">
+                            <i class="fas fa-shield-alt text-fama-mid text-lg mt-1"></i>
+                            <div>
+                                <strong class="text-gray-900 block text-sm">Sellado final:</strong>
+                                <span class="text-xs text-gray-600">Aplicación de recubrimiento protector para lograr máxima impermeabilidad.</span>
+                            </div>
+                        </li>
+                        <li class="bg-fama-bg p-4 rounded-xl border border-gray-100 shadow-sm flex items-start gap-3">
+                            <i class="fas fa-bolt text-fama-mid text-lg mt-1"></i>
+                            <div>
+                                <strong class="text-gray-900 block text-sm">Morteros de secado rápido:</strong>
+                                <span class="text-xs text-gray-600">Revestimiento superior habilitado en solo 24 horas.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-end items-center border-t border-gray-100 pt-6 mt-6">
+                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20cotizar%20Z%C3%B3calos%20Sanitarios." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md flex items-center justify-center">
                         <i class="fab fa-whatsapp mr-2 text-lg"></i> Cotizar por WhatsApp
                     </a>
                 </div>
@@ -1017,29 +1130,98 @@
         </div>
     </div>
 
-    <!-- Modal Mantenimiento -->
+    <!-- Modal 4: Mantenimiento -->
     <div id="modal-mantenimiento" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-mantenimiento')"></div>
         <div id="modal-mantenimiento-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
             <div class="relative h-48 md:h-64 w-full flex-shrink-0 bg-gray-200">
-                <img src="servicios/Mantenimiento.webp" alt="Mantenimiento de Pisos Industriales" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/0d474d/ffffff?text=Mantenimiento+Pisos';">
+                <img src="servicios/Mantenimiento.webp" alt="Mantenimiento de Pisos" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/0d474d/ffffff?text=Mantenimiento+Pisos';">
                 <button onclick="closeModal('modal-mantenimiento')" class="absolute top-4 right-4 text-white bg-black/40 hover:bg-red-500 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm transition-colors z-20 focus:outline-none">
                     <i class="fas fa-times text-xl"></i>
                 </button>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 flex items-end gap-4">
+                    <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center flex-shrink-0 border border-white/30">
+                        <i class="fas fa-wrench text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-extrabold text-white leading-tight">4. MANTENIMIENTO DE PISOS INDUSTRIALES</h3>
+                        <p class="text-fama-light mt-1 font-medium hidden sm:block">Correctivo y Preventivo para Máxima Operatividad</p>
+                    </div>
+                </div>
             </div>
-            <div class="p-6 md:p-8 overflow-y-auto relative bg-white custom-scroll">
-                <h4 class="text-xl font-bold text-fama-dark mb-4 border-b pb-2">Mantenimiento Correctivo y Preventivo</h4>
-                <p class="text-gray-600 mb-4">Mantenimiento de pisos epóxicos y poliuretano para prolongar su vida útil.</p>
-                <div class="flex justify-end pt-4">
-                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20cotizar%20Mantenimiento." target="_blank" class="bg-green-500 text-white px-6 py-2.5 rounded-xl font-bold">
-                        <i class="fab fa-whatsapp mr-1"></i> Cotizar
+            
+            <div class="p-6 md:p-8 overflow-y-auto relative bg-white custom-scroll space-y-6">
+                <p class="text-gray-600 leading-relaxed text-base">
+                    El uso constante de pisos industriales por tráfico de personal, maquinaria y montacargas genera desgaste progresivo. Con el tiempo aparecen grietas y desprendimientos que comprometen la seguridad y la continuidad operativa. Ofrecemos mantenimiento correctivo y preventivo para recuperar las propiedades originales de resistencia, adherencia y durabilidad.
+                </p>
+
+                <div class="border-t border-gray-200 pt-4">
+                    <h4 class="text-xl font-bold text-fama-dark mb-4 flex items-center gap-2">
+                        <i class="fas fa-tasks text-fama-mid"></i> ¿Qué Incluye Nuestro Servicio?
+                    </h4>
+                    <ul class="space-y-3">
+                        <li class="bg-fama-bg p-4 rounded-xl border border-gray-100 flex items-start gap-3 shadow-sm">
+                            <i class="fas fa-search text-fama-mid text-lg mt-1"></i>
+                            <div>
+                                <strong class="text-gray-900 block text-sm">Evaluación técnica del área afectada:</strong>
+                                <span class="text-xs text-gray-600">Identificación detallada de daños y nivel de desgaste.</span>
+                            </div>
+                        </li>
+                        <li class="bg-fama-bg p-4 rounded-xl border border-gray-100 flex items-start gap-3 shadow-sm">
+                            <i class="fas fa-fill-drip text-fama-mid text-lg mt-1"></i>
+                            <div>
+                                <strong class="text-gray-900 block text-sm">Reparación y relleno de fisuras:</strong>
+                                <span class="text-xs text-gray-600">Inyección de resinas especializadas para restituir la integridad estructural.</span>
+                            </div>
+                        </li>
+                        <li class="bg-fama-bg p-4 rounded-xl border border-gray-100 flex items-start gap-3 shadow-sm">
+                            <i class="fas fa-ruler-combined text-fama-mid text-lg mt-1"></i>
+                            <div>
+                                <strong class="text-gray-900 block text-sm">Corrección de desprendimientos:</strong>
+                                <span class="text-xs text-gray-600">Recuperación de la uniformidad y seguridad del plano de tránsito.</span>
+                            </div>
+                        </li>
+                        <li class="bg-fama-bg p-4 rounded-xl border border-gray-100 flex items-start gap-3 shadow-sm">
+                            <i class="fas fa-layer-group text-fama-mid text-lg mt-1"></i>
+                            <div>
+                                <strong class="text-gray-900 block text-sm">Aplicación de recubrimiento epóxico o poliuretano:</strong>
+                                <span class="text-xs text-gray-600">Restauración total de la capa de desgaste protectora.</span>
+                            </div>
+                        </li>
+                        <li class="bg-fama-bg p-4 rounded-xl border border-gray-100 flex items-start gap-3 shadow-sm">
+                            <i class="fas fa-grip-lines text-fama-mid text-lg mt-1"></i>
+                            <div>
+                                <strong class="text-gray-900 block text-sm">Acabado final con control de rugosidad:</strong>
+                                <span class="text-xs text-gray-600">Garantía de superficie antideslizante y segura.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="border-t border-gray-200 pt-4 bg-red-50 p-6 rounded-2xl border border-red-100">
+                    <h4 class="text-lg font-bold text-red-800 mb-3 flex items-center gap-2">
+                        <i class="fas fa-shield-virus"></i> Importancia del Mantenimiento Preventivo
+                    </h4>
+                    <p class="text-xs text-red-700 leading-relaxed mb-3">Un programa preventivo regular evita problemas mayores y reduce costos operativos:</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-red-800">
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle"></i> Evita expansión de grietas y desprendimiento de capas</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle"></i> Reduce riesgos de accidentes laborales</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle"></i> Previene paradas no programadas en operaciones</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle"></i> Prolonga significativamente la vida útil del piso</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-end items-center border-t border-gray-100 pt-6 mt-6">
+                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20cotizar%20Mantenimiento%20de%20Pisos." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md flex items-center justify-center">
+                        <i class="fab fa-whatsapp mr-2 text-lg"></i> Cotizar por WhatsApp
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal Impermeabilización -->
+    <!-- Modal 5: Impermeabilización -->
     <div id="modal-impermeabilizacion" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-impermeabilizacion')"></div>
         <div id="modal-impermeabilizacion-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
@@ -1048,20 +1230,71 @@
                 <button onclick="closeModal('modal-impermeabilizacion')" class="absolute top-4 right-4 text-white bg-black/40 hover:bg-red-500 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm transition-colors z-20 focus:outline-none">
                     <i class="fas fa-times text-xl"></i>
                 </button>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 flex items-end gap-4">
+                    <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center flex-shrink-0 border border-white/30">
+                        <i class="fas fa-tint text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-extrabold text-white leading-tight">5. IMPERMEABILIZACIÓN DE PISOS Y SUPERFICIES</h3>
+                        <p class="text-fama-light mt-1 font-medium hidden sm:block">Protección Integral Contra Humedad y Agentes Corrosivos</p>
+                    </div>
+                </div>
             </div>
-            <div class="p-6 md:p-8 overflow-y-auto relative bg-white custom-scroll">
-                <h4 class="text-xl font-bold text-fama-dark mb-4 border-b pb-2">Impermeabilización de Superficies</h4>
-                <p class="text-gray-600 mb-4">Soluciones de membranas elastoméricas y sistemas acrílicos para losas y estructuras.</p>
-                <div class="flex justify-end pt-4">
-                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20cotizar%20Impermeabilizacion." target="_blank" class="bg-green-500 text-white px-6 py-2.5 rounded-xl font-bold">
-                        <i class="fab fa-whatsapp mr-1"></i> Cotizar
+            
+            <div class="p-6 md:p-8 overflow-y-auto relative bg-white custom-scroll space-y-6">
+                <p class="text-gray-600 leading-relaxed text-base">
+                    Con el paso del tiempo, el concreto se fisura debido a movimientos estructurales, vibraciones y cargas operativas. Estas fisuras permiten el ingreso de humedad y oxígeno, generando corrosión del acero de refuerzo y deterioro progresivo. Ofrecemos impermeabilización profesional con revestimientos de última generación.
+                </p>
+
+                <div class="border-t border-gray-200 pt-4">
+                    <h4 class="text-xl font-bold text-fama-dark mb-3 flex items-center gap-2">
+                        <i class="fas fa-exclamation-triangle text-red-500"></i> Problemas que Evitamos
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-700">
+                        <div class="p-3 bg-red-50 rounded-lg border border-red-100 flex items-center gap-2"><i class="fas fa-times text-red-500"></i> Corrosión del acero de refuerzo en estructuras</div>
+                        <div class="p-3 bg-red-50 rounded-lg border border-red-100 flex items-center gap-2"><i class="fas fa-times text-red-500"></i> Deterioro progresivo del concreto por humedad</div>
+                        <div class="p-3 bg-red-50 rounded-lg border border-red-100 flex items-center gap-2"><i class="fas fa-times text-red-500"></i> Aparición de eflorescencias y manchas</div>
+                        <div class="p-3 bg-red-50 rounded-lg border border-red-100 flex items-center gap-2"><i class="fas fa-times text-red-500"></i> Filtraciones hacia áreas contiguas</div>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-200 pt-4">
+                    <h4 class="text-xl font-bold text-fama-dark mb-3 flex items-center gap-2">
+                        <i class="fas fa-microchip text-fama-mid"></i> Tecnologías de Impermeabilización
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-fama-bg p-5 rounded-xl border border-gray-200">
+                            <strong class="text-gray-900 block font-bold text-sm mb-1">Membranas elastoméricas de poliuretano</strong>
+                            <p class="text-xs text-gray-600 leading-relaxed">Alta elasticidad y resistencia química ideal para zonas expuestas a alto tránsito y cambios térmicos.</p>
+                        </div>
+                        <div class="bg-fama-bg p-5 rounded-xl border border-gray-200">
+                            <strong class="text-gray-900 block font-bold text-sm mb-1">Revestimientos acrílico-cementosos</strong>
+                            <p class="text-xs text-gray-600 leading-relaxed">Sistemas transpirables ideales para contención de humedad constante y la freática.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-200 pt-4">
+                    <h4 class="text-xl font-bold text-fama-dark mb-3">Aplicaciones en el Perú</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-700">
+                        <li class="p-2.5 bg-gray-50 rounded border"><i class="fas fa-car text-fama-mid mr-2"></i> Losas de estacionamientos en edificios y centros comerciales</li>
+                        <li class="p-2.5 bg-gray-50 rounded border"><i class="fas fa-industry text-fama-mid mr-2"></i> Techos y cubiertas de plantas industriales y almacenes</li>
+                        <li class="p-2.5 bg-gray-50 rounded border"><i class="fas fa-water text-fama-mid mr-2"></i> Tanques, cisternas y reservorios de agua potables</li>
+                        <li class="p-2.5 bg-gray-50 rounded border"><i class="fas fa-building text-fama-mid mr-2"></i> Muros de contención, terrazas, azoteas, piscinas y jardineras</li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-end items-center border-t border-gray-100 pt-6 mt-6">
+                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20cotizar%20Impermeabilizaci%C3%B3n." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md flex items-center justify-center">
+                        <i class="fab fa-whatsapp mr-2 text-lg"></i> Cotizar por WhatsApp
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal Proyectos y Desarrollo -->
+    <!-- Modal 6: Proyectos y Desarrollo -->
     <div id="modal-proyectos" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-proyectos')"></div>
         <div id="modal-proyectos-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
@@ -1070,13 +1303,51 @@
                 <button onclick="closeModal('modal-proyectos')" class="absolute top-4 right-4 text-white bg-black/40 hover:bg-red-500 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm transition-colors z-20 focus:outline-none">
                     <i class="fas fa-times text-xl"></i>
                 </button>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 flex items-end gap-4">
+                    <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center flex-shrink-0 border border-white/30">
+                        <i class="fas fa-hard-hat text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-extrabold text-white leading-tight">6. PROYECTOS Y DESARROLLO</h3>
+                        <p class="text-fama-light mt-1 font-medium hidden sm:block">Ejecución Integral, Supervisión Técnica y Consultoría</p>
+                    </div>
+                </div>
             </div>
-            <div class="p-6 md:p-8 overflow-y-auto relative bg-white custom-scroll">
-                <h4 class="text-xl font-bold text-fama-dark mb-4 border-b pb-2">Proyectos e Ingeniería</h4>
-                <p class="text-gray-600 mb-4">Ejecución y supervisión integral de obras de construcción e infraestructura.</p>
-                <div class="flex justify-end pt-4">
-                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20consultar%20sobre%20Proyectos." target="_blank" class="bg-green-500 text-white px-6 py-2.5 rounded-xl font-bold">
-                        <i class="fab fa-whatsapp mr-1"></i> Consultar
+            
+            <div class="p-6 md:p-8 overflow-y-auto relative bg-white custom-scroll space-y-6">
+                <p class="text-gray-600 leading-relaxed text-base">
+                    Somos especialistas en la ejecución y supervisión de proyectos industriales, comerciales y de infraestructura. Ofrecemos dirección de proyectos sólida, respaldada por metodologías modernas, control de calidad riguroso y un equipo multidisciplinario altamente capacitado en toda la región peruana.
+                </p>
+
+                <div class="border-t border-gray-200 pt-4">
+                    <h4 class="text-xl font-bold text-fama-dark mb-3 flex items-center gap-2">
+                        <i class="fas fa-briefcase text-fama-mid"></i> Servicios Profesionales en Proyectos
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-700">
+                        <div class="p-3 bg-fama-bg rounded-lg border border-gray-200"><strong>Ejecución de obras:</strong> Ingeniería civil, eléctrica e infraestructura.</div>
+                        <div class="p-3 bg-fama-bg rounded-lg border border-gray-200"><strong>Supervisión de obra:</strong> Control de cronograma, especificaciones y calidad.</div>
+                        <div class="p-3 bg-fama-bg rounded-lg border border-gray-200"><strong>Asesoría técnica:</strong> Optimización de costos y rendimiento operativo.</div>
+                        <div class="p-3 bg-fama-bg rounded-lg border border-gray-200"><strong>Topografía:</strong> Levantamientos, replanteos y control geométrico.</div>
+                        <div class="p-3 bg-fama-bg rounded-lg border border-gray-200"><strong>Alquiler de maquinaria:</strong> Equipos modernos para construcción.</div>
+                        <div class="p-3 bg-fama-bg rounded-lg border border-gray-200"><strong>Capacitación:</strong> Dirección y gestión técnica de obras.</div>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-200 pt-4">
+                    <h4 class="text-xl font-bold text-fama-dark mb-3">Equipo Profesional Multidisciplinario</h4>
+                    <p class="text-xs text-gray-600 mb-3">Contamos con profesionales especializados de amplia trayectoria en:</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-fama-dark text-white rounded-full text-xs font-bold">Ingeniería Civil</span>
+                        <span class="px-3 py-1 bg-fama-dark text-white rounded-full text-xs font-bold">Ingeniería Mecánica-Eléctrica</span>
+                        <span class="px-3 py-1 bg-fama-dark text-white rounded-full text-xs font-bold">Ingeniería Industrial</span>
+                        <span class="px-3 py-1 bg-fama-dark text-white rounded-full text-xs font-bold">Arquitectura e Ingeniería Sanitaria</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-end items-center border-t border-gray-100 pt-6 mt-6">
+                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20consultar%20sobre%20Proyectos." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md flex items-center justify-center">
+                        <i class="fab fa-whatsapp mr-2 text-lg"></i> Consultar Proyecto por WhatsApp
                     </a>
                 </div>
             </div>
@@ -1490,28 +1761,27 @@
         const apiKey = "AQ.Ab8RN6KK_ewZb37C4ghh3D3ZVPw9q0mV9lUN4rw_Q5x5NVXD3g";
 
         const FAMA_SYSTEM_INSTRUCTION = `
-Eres Famito, el Asistente Virtual Inteligente oficial de FAMA HUB E.I.R.L. (FAMA Protección Industrial), empresa líder en el Perú en revestimientos de pisos industriales, zócalos sanitarios, mantenimiento e impermeabilización.
+Eres Famito, el Asistente Virtual Oficial de FAMA HUB E.I.R.L. (FAMA Protección Industrial), empresa peruana especializada en la ejecución, reparación y mantenimiento de pisos industriales, zócalos sanitarios, impermeabilización y obras civiles en todo el Perú.
 
-DATOS OFICIALES DE FAMA:
-- Empresa: FAMA HUB E.I.R.L.
-- WhatsApp / Teléfono: +51 951 765 830 (Enlace directo: https://wa.me/51951765830).
+DATOS DE FAMA HUB E.I.R.L.:
+- Teléfono/WhatsApp: +51 951 765 830 (Enlace directo: https://wa.me/51951765830)
 - Email: info@fama.com
-- Ubicación: Lima, Perú (Movilizados a nivel nacional para obras).
-- Trayectoria: Más de 10 años de experiencia, +500 proyectos entregados, +50,000 m² de revestimientos poliméricos ejecutados.
+- Ubicación: Lima, Perú (Atención y operaciones en todo el territorio nacional)
+- Trayectoria: +10 años de experiencia, +500 proyectos entregados, +50,000 m² revestidos en Perú.
 
-SERVICIOS DE FAMA:
-1. Preparación de Pisos Industriales: Evaluación técnica, granallado (blast cleaning), desbastado con diamantes, fresado, corrección de niveles y medición de humedad del concreto.
-2. Revestimiento de Pisos (Epóxico y Poliuretano): Sistemas autonivelantes epóxicos (1.5mm - 4mm) y Poliuretano Cementicio / Uretano (3mm - 9mm) resistentes a choques térmicos (-40°C a +120°C), ácidos cítricos, grasas animales y tránsito pesado.
-3. Zócalos Sanitarios Epóxicos: Curva sanitaria (media caña o rondón) sin juntas, indispensables para normativas DIGESA, BPM, HACCP y SENASA en plantas de alimentos, cárnicas, lácteos y farmacéuticas. Secado e instalación rápida (24h).
-4. Mantenimiento y Reparación de Pisos: Sellado de grietas, relleno de fisuras, bacheo especializado y renovación de capas de desgaste.
-5. Impermeabilización: Membranas elastoméricas de poliuretano e impermeabilizantes cementosos para losas, cisternas, techos, estacionamientos y reservorios.
-6. Proyectos y Desarrollo: Supervisión de obras civiles, levantamientos topográficos, metrados y dirección técnica.
+NUESTROS 6 SERVICIOS PRINCIPALES:
+1. Preparación de Pisos Industriales: Base sólida para resultados duraderos. Diagnóstico completo (compresión, tracción y humedad). Métodos: Granallado (apertura de poro), preparación térmica (grasas), fresado y lijado industrial con diamante.
+2. Revestimiento de Pisos Industriales: Revestimientos Epóxicos (alta resistencia a químicos, ácidos diluidos, solventes y aceites, brillo e impermeabilidad) y Revestimientos de Poliuretano (resistencia térmica -40°C a +120°C, ideales para lácteos, cárnicos, frigoríficos, minería y automotriz, antideslizantes). Espesores de 1 mm a 9 mm.
+3. Zócalos Sanitarios de Mortero Epóxico: Fabricación, venta e instalación con curvatura media caña (rondón) de alta precisión. Cumplimiento con normas DIGESA, SENASA, BPM y HACCP. Secado e instalación rápida (24h).
+4. Mantenimiento de Pisos Industriales: Correctivo y preventivo. Evaluación técnica, rellenado de fisuras, reparación de desprendimientos y reacondicionamiento con capa de desgaste antideslizante.
+5. Impermeabilización de Pisos y Superficies: Protección contra corrosión del acero y humedad. Membranas elastoméricas de poliuretano y acrílico-cementosas para losas de estacionamiento, tanques, cisternas, techos y reservorios.
+6. Proyectos y Desarrollo: Ejecución integral de ingeniería y construcción, supervisión de obra, topografía, alquiler de maquinaria y capacitación técnica.
 
 INSTRUCCIONES DE ATENCIÓN:
-- Saluda amablemente presentándote como Famito.
-- Sé cordial, técnico y enfocado en resolver dudas.
-- Mantén tus respuestas claras y breves (1 a 3 párrafos).
-- Cuando pregunten sobre cotizaciones o costos por m², indica que dependen del área total, el estado de la losa y el tipo de tráfico, e invita amablemente a consultar por WhatsApp al +51 951 765 830.
+- Saluda siempre amablemente presentándote como Famito.
+- Responde con un tono técnico, cortés, profesional y conciso (1 a 3 párrafos brevemente estructurados).
+- Utiliza etiquetas HTML sencillas como <strong>negrita</strong> para resaltar puntos clave o enlaces de WhatsApp.
+- Cuando pregunten por cotizaciones o precios por m², aclara amablemente que la cotización precisa depende de evaluar el metraje ($m^2$), la preparación de superficie y el tipo de uso, e invita a hacer clic en el enlace de WhatsApp (+51 951 765 830) para cotizar directamente con un asesor técnico.
         `.trim();
 
         function toggleChat() {
@@ -1580,21 +1850,21 @@ INSTRUCCIONES DE ATENCIÓN:
             processBotResponse(question);
         }
 
-        // MOTOR LOCAL DE RESPALDO (En caso la API no esté disponible o alcance límite de cuota)
+        // MOTOR LOCAL DE RESPALDO
         function useLocalEngineFallback(question) {
             const q = question.toLowerCase();
             let ans = "";
 
             if (q.includes('cotiz') || q.includes('precio') || q.includes('costo') || q.includes('cuanto') || q.includes('m2') || q.includes('valor')) {
-                ans = "Para brindarte una **cotización exacta**, evaluamos el metraje total ($m^2$), el estado de tu losa y el tipo de tráfico.<br><br>👉 [Cotizar directamente por WhatsApp al +51 951 765 830](https://wa.me/51951765830?text=Hola%20Famito,%20deseo%20una%20cotizaci%C3%B3n.)";
+                ans = "Para brindarte una **cotización exacta**, evaluamos el metraje total ($m^2$), el diagnóstico del suelo y el tipo de tránsito.<br><br>👉 [Cotizar directamente por WhatsApp al +51 951 765 830](https://wa.me/51951765830?text=Hola%20Famito,%20deseo%20una%20cotizaci%C3%B3n.)";
             } else if (q.includes('zocalo') || q.includes('curva') || q.includes('bpm') || q.includes('haccp') || q.includes('sanitario')) {
-                ans = "Fabricamos e instalamos **zócalos sanitarios de mortero epóxico** con curvatura sin uniones, esenciales para normativas sanitarias BPM y HACCP en la industria alimentaria y farmacéutica.";
+                ans = "Fabricamos e instalamos **zócalos sanitarios de mortero epóxico** con curva de media caña sin uniones, esenciales para normativas sanitarias BPM y HACCP.";
             } else if (q.includes('mantenimiento') || q.includes('grieta') || q.includes('reparaci') || q.includes('junta')) {
-                ans = "Realizamos mantenimiento preventivo y correctivo, sellado de fisuras, bacheo y rehabilitación de capas de desgaste en pisos de concreto e industriales.";
+                ans = "Ofrecemos mantenimiento preventivo y correctivo, rellenado de fisuras, reparación de desprendimientos y restauración de rugosidad en pisos industriales.";
             } else if (q.includes('impermeabiliz') || q.includes('techo') || q.includes('cisterna') || q.includes('humedad')) {
-                ans = "Aplicamos membranas elastoméricas de poliuretano y revestimientos acrílico-cementosos en losas, cisternas, techos y estacionamientos para prevenir filtraciones.";
+                ans = "Aplicamos membranas elastoméricas de poliuretano y revestimientos acrílico-cementosos en losas, cisternas, techos y reservorios contra filtraciones.";
             } else {
-                ans = "En **FAMA HUB E.I.R.L.** somos líderes en revestimientos epóxicos, poliuretano, zócalos sanitarios e impermeabilización a nivel nacional en Perú.<br><br>👉 [Hablar con un Asesor Técnico](https://wa.me/51951765830)";
+                ans = "En **FAMA HUB E.I.R.L.** somos especialistas en revestimientos epóxicos, poliuretano, zócalos sanitarios e impermeabilización a nivel nacional en Perú.<br><br>👉 [Hablar con un Asesor Técnico en WhatsApp](https://wa.me/51951765830)";
             }
 
             appendMessage('bot', ans);
@@ -1617,7 +1887,7 @@ INSTRUCCIONES DE ATENCIÓN:
                 parts: [{ text: question }]
             });
 
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
             const payload = {
                 contents: geminiChatHistory,
