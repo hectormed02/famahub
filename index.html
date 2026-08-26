@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAMA | Protección Industrial & Pisos Epóxicos</title>
+    <title>FAMA | Protección Industrial &amp; Pisos Epóxicos</title>
     
     <!-- SEO y Meta Etiquetas -->
-    <meta name="keywords" content="pisos industriales, pavimentos epoxicos, poliuretano, zocalos sanitarios, impermeabilizacion, lima peru, fama hub" />
-    <meta name="description" content="FAMA HUB EIRL: Especialistas en ejecucion, reparacion y mantenimiento de Pisos Industriales, Zocalos Sanitarios e Impermeabilizacion en Peru." />
+    <meta name="keywords" content="pisos industriales, pavimentos epoxicos, poliuretano, zocalos sanitarios, impermeabilizacion, lima peru, fama hub">
+    <meta name="description" content="FAMA HUB EIRL: Especialistas en ejecucion, reparacion y mantenimiento de Pisos Industriales, Zocalos Sanitarios e Impermeabilizacion en Peru.">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,6 +22,7 @@
                         'fama-mid': '#1d5e66',    /* Verde azulado medio */
                         'fama-light': '#9bb4b8',  /* Gris azulado claro */
                         'fama-bg': '#f4f7f8',     /* Fondo muy claro para secciones */
+                        'fama-accent': '#20a39e', /* Verde menta vibrante */
                     },
                     fontFamily: {
                         sans: ['Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
@@ -101,6 +102,14 @@
             z-index: 20;
             transform: translateX(-50%);
         }
+
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.03); }
+        }
+        .famito-btn-pulse {
+            animation: pulse-subtle 3s infinite ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800 font-sans antialiased relative">
@@ -112,7 +121,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#inicio" class="block transition-transform hover:scale-105">
-                        <img src="logo.webp" alt="FAMA Protección Industrial" class="h-12 w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/200x80/0d474d/ffffff?text=FAMA+LOGO';">
+                        <img src="logo.webp" alt="FAMA Protección Industrial" class="h-12 w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/200x80/0d474d/ffffff?text=FAMA+HUB';">
                     </a>
                 </div>
 
@@ -127,14 +136,14 @@
                             Servicios <i class="fas fa-chevron-down ml-1 text-xs"></i>
                         </button>
                         <!-- Dropdown Menu -->
-                        <div class="absolute left-0 mt-0 w-64 bg-[#0d474d] rounded-sm shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left -translate-y-2 group-hover:translate-y-0 z-50 border-t-4 border-fama-mid">
+                        <div class="absolute left-0 mt-0 w-64 bg-[#0d474d] rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left -translate-y-2 group-hover:translate-y-0 z-50 border-t-4 border-fama-mid overflow-hidden">
                             <ul class="py-2">
-                                <li><button onclick="openModal('modal-preparacion')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors border-b border-fama-mid/30">Preparación De Pisos</button></li>
-                                <li><button onclick="openModal('modal-revestimiento')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors border-b border-fama-mid/30">Revestimiento De Pisos</button></li>
-                                <li><button onclick="openModal('modal-zocalos')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors border-b border-fama-mid/30">Zócalos Sanitarios</button></li>
-                                <li><button onclick="openModal('modal-mantenimiento')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors border-b border-fama-mid/30">Mantenimiento De Pisos</button></li>
-                                <li><button onclick="openModal('modal-impermeabilizacion')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors border-b border-fama-mid/30">Impermeabilización</button></li>
-                                <li><button onclick="openModal('modal-proyectos')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors">Proyectos Y Desarrollo</button></li>
+                                <li><button onclick="openModal('modal-preparacion')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors border-b border-fama-mid/30"><i class="fas fa-tools mr-2 text-fama-light"></i> Preparación De Pisos</button></li>
+                                <li><button onclick="openModal('modal-revestimiento')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors border-b border-fama-mid/30"><i class="fas fa-layer-group mr-2 text-fama-light"></i> Revestimiento De Pisos</button></li>
+                                <li><button onclick="openModal('modal-zocalos')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors border-b border-fama-mid/30"><i class="fas fa-border-all mr-2 text-fama-light"></i> Zócalos Sanitarios</button></li>
+                                <li><button onclick="openModal('modal-mantenimiento')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors border-b border-fama-mid/30"><i class="fas fa-wrench mr-2 text-fama-light"></i> Mantenimiento De Pisos</button></li>
+                                <li><button onclick="openModal('modal-impermeabilizacion')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors border-b border-fama-mid/30"><i class="fas fa-tint mr-2 text-fama-light"></i> Impermeabilización</button></li>
+                                <li><button onclick="openModal('modal-proyectos')" class="w-full text-left block px-6 py-3 text-sm text-white hover:bg-fama-mid transition-colors"><i class="fas fa-hard-hat mr-2 text-fama-light"></i> Proyectos Y Desarrollo</button></li>
                             </ul>
                         </div>
                     </div>
@@ -144,10 +153,17 @@
                     <a href="#clientes" class="text-gray-600 hover:text-fama-mid font-medium transition-colors">Clientes</a>
                     <a href="#blog" class="text-gray-600 hover:text-fama-mid font-medium transition-colors">Blog</a>
                     <a href="#contacto" class="text-gray-600 hover:text-fama-mid font-medium transition-colors">Contacto</a>
+                    
+                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20solicitar%20una%20cotizaci%C3%B3n." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all shadow-md flex items-center gap-2 transform hover:scale-105">
+                        <i class="fab fa-whatsapp text-lg"></i> Cotizar
+                    </a>
                 </div>
 
                 <!-- Botón Menú Móvil -->
-                <div class="lg:hidden flex items-center">
+                <div class="lg:hidden flex items-center gap-2">
+                    <a href="https://wa.me/51951765830" target="_blank" class="bg-green-500 text-white p-2 rounded-full text-sm">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                    </a>
                     <button id="mobile-menu-btn" class="text-fama-dark hover:text-fama-mid focus:outline-none p-2">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
@@ -196,11 +212,11 @@
         <div class="absolute inset-0 bg-gradient-to-r from-fama-dark/95 via-fama-dark/85 to-fama-mid/80 z-0 pointer-events-none"></div>
 
         <div class="relative z-10 text-center px-4 max-w-5xl mx-auto hero-content my-12 w-full pointer-events-auto">
-            <span class="inline-block px-4 py-1.5 rounded-full bg-fama-light/20 text-fama-light text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6 border border-fama-light/30">
-                <i class="fas fa-shield-alt mr-2"></i> Soluciones de Alto Desempeño Técnico
+            <span class="inline-block px-4 py-1.5 rounded-full bg-fama-light/20 text-fama-light text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6 border border-fama-light/30 backdrop-blur-md">
+                <i class="fas fa-shield-alt mr-2 text-fama-accent"></i> Soluciones de Alto Desempeño Técnico en todo el Perú
             </span>
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
-                Especialistas en <span class="text-fama-light">Revestimientos Epóxicos</span>, Zócalos & Campos Deportivos
+                Especialistas en <span class="text-fama-light">Revestimientos Epóxicos</span>, Zócalos &amp; Campos Deportivos
             </h1>
             <p class="text-base sm:text-lg md:text-xl text-gray-200 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
                 Protección industrial de pisos, impermeabilización y obras civiles bajo estándares de calidad BPM, HACCP e ISO en todo el Perú.
@@ -209,7 +225,7 @@
                 <a href="#servicios" class="px-8 py-4 bg-fama-mid hover:bg-fama-light text-white hover:text-fama-dark rounded-full font-bold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center flex items-center justify-center gap-2">
                     <i class="fas fa-th-list"></i> Nuestros Servicios
                 </a>
-                <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20quisiera%20solicitar%20una%20evaluaci%C3%B3n%20técnica%20y%20cotizaci%C3%B3n." target="_blank" class="px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-full font-bold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center flex items-center justify-center gap-2">
+                <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20quisiera%20solicitar%20una%20evaluaci%C3%B3n%20t%C3%A9cnica%20y%20cotizaci%C3%B3n." target="_blank" class="px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-full font-bold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center flex items-center justify-center gap-2">
                     <i class="fab fa-whatsapp text-xl"></i> Cotizar por WhatsApp
                 </a>
             </div>
@@ -266,12 +282,12 @@
                 <div class="lg:w-1/2 w-full">
                     <div class="relative h-[500px] w-full mt-8 lg:mt-0">
                         <!-- Imagen Principal Grande -->
-                        <div class="absolute top-0 right-0 w-4/5 h-4/5 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-10">
-                            <img src="nosotros-1.webp" alt="FAMA Ingeniería" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=800&auto=format&fit=crop';">
+                        <div class="absolute top-0 right-0 w-4/5 h-4/5 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-10 bg-gray-200">
+                            <img src="nosotros-1.webp" alt="FAMA Ingeniería" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x600/0d474d/ffffff?text=FAMA+Ingenieria';">
                         </div>
                         <!-- Imagen Secundaria Pequeña Superpuesta -->
-                        <div class="absolute bottom-0 left-0 w-3/5 h-3/5 rounded-2xl overflow-hidden shadow-2xl border-8 border-white z-20 transform -translate-y-4 translate-x-4">
-                            <img src="nosotros-2.webp" alt="FAMA Construcción" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600&auto=format&fit=crop';">
+                        <div class="absolute bottom-0 left-0 w-3/5 h-3/5 rounded-2xl overflow-hidden shadow-2xl border-8 border-white z-20 transform -translate-y-4 translate-x-4 bg-gray-200">
+                            <img src="nosotros-2.webp" alt="FAMA Construcción" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x400/9bb4b8/ffffff?text=FAMA+Construccion';">
                         </div>
                         <!-- Elemento decorativo de puntos -->
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 z-0 opacity-20" style="background-image: radial-gradient(#0d474d 2px, transparent 2px); background-size: 16px 16px;"></div>
@@ -293,21 +309,21 @@
             <div class="max-w-4xl mx-auto bg-white rounded-2xl p-4 shadow-2xl border border-gray-200">
                 <div class="before-after-container h-80 sm:h-[420px] rounded-xl relative overflow-hidden cursor-ew-resize" id="slider-container">
                     <!-- Imagen "Después" (Fondo Completo) -->
-                    <img src="servicios/Revestimiento.webp" alt="Piso Epóxico FAMA Restaurado" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1200&auto=format&fit=crop';">
+                    <img src="servicios/Revestimiento.webp" alt="Piso Epóxico FAMA Restaurado" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/0d474d/ffffff?text=Piso+Epoxico+Restaurado';">
                     <span class="absolute bottom-4 right-4 bg-green-600/90 text-white font-bold text-xs sm:text-sm px-4 py-1.5 rounded-full shadow backdrop-blur-sm z-10">
                         <i class="fas fa-check-circle mr-1"></i> DESPUÉS: Piso Epóxico Autonivelante
                     </span>
 
                     <!-- Imagen "Antes" (Superpuesta Recortada) -->
-                    <div class="before-after-overlay" id="slider-overlay">
-                        <img src="servicios/Preparacion_de_Pisos.webp" alt="Piso de Concreto Dañado" class="absolute top-0 left-0 max-w-none h-full object-cover" id="before-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop';">
+                    <div class="before-after-overlay" id="slider-overlay" style="width: 50%;">
+                        <img src="servicios/Preparacion_de_Pisos.webp" alt="Piso de Concreto Dañado" class="absolute top-0 left-0 max-w-none h-full object-cover" id="before-img" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/9bb4b8/ffffff?text=Concreto+Agrietado';">
                         <span class="absolute bottom-4 left-4 bg-gray-900/90 text-white font-bold text-xs sm:text-sm px-4 py-1.5 rounded-full shadow backdrop-blur-sm">
                             <i class="fas fa-exclamation-triangle text-yellow-400 mr-1"></i> ANTES: Concreto Agrietado
                         </span>
                     </div>
 
                     <!-- Barra Deslizadora -->
-                    <div class="before-after-handle" id="slider-handle">
+                    <div class="before-after-handle" id="slider-handle" style="left: 50%;">
                         <div class="w-10 h-10 bg-white rounded-full shadow-2xl border-2 border-fama-dark flex items-center justify-center text-fama-dark absolute top-1/2 -translate-y-1/2 -left-5 text-sm font-bold">
                             <i class="fas fa-arrows-alt-h"></i>
                         </div>
@@ -350,7 +366,7 @@
                 <!-- Servicio 2: Revestimiento -->
                 <div onclick="openModal('modal-revestimiento')" class="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 border-b-4 border-fama-mid group cursor-pointer hover:-translate-y-2 relative flex flex-col h-full overflow-hidden">
                     <div class="relative h-48 overflow-hidden bg-gray-200">
-                        <img src="servicios/Revestimiento.webp" alt="Revestimiento de Pisos" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=600&auto=format&fit=crop';">
+                        <img src="servicios/Revestimiento.webp" alt="Revestimiento de Pisos" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1d5e66/ffffff?text=Revestimiento+Epoxico';">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
                         <div class="absolute bottom-4 left-4 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30">
                             <i class="fas fa-layer-group text-xl text-white"></i>
@@ -368,7 +384,7 @@
                 <!-- Servicio 3: Zócalos -->
                 <div onclick="openModal('modal-zocalos')" class="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 border-b-4 border-fama-light group cursor-pointer hover:-translate-y-2 relative flex flex-col h-full overflow-hidden">
                     <div class="relative h-48 overflow-hidden bg-gray-200">
-                        <img src="servicios/Zocalos.webp" alt="Zócalos Sanitarios" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600&auto=format&fit=crop';">
+                        <img src="servicios/Zocalos.webp" alt="Zócalos Sanitarios" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://placehold.co/600x400/9bb4b8/ffffff?text=Zocalos+Sanitarios';">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
                         <div class="absolute bottom-4 left-4 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30">
                             <i class="fas fa-border-all text-xl text-white"></i>
@@ -386,7 +402,7 @@
                 <!-- Servicio 4: Mantenimiento -->
                 <div onclick="openModal('modal-mantenimiento')" class="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 border-b-4 border-fama-dark group cursor-pointer hover:-translate-y-2 relative flex flex-col h-full overflow-hidden">
                     <div class="relative h-48 overflow-hidden bg-gray-200">
-                        <img src="servicios/Mantenimiento.webp" alt="Mantenimiento de Pisos" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=600&auto=format&fit=crop';">
+                        <img src="servicios/Mantenimiento.webp" alt="Mantenimiento de Pisos" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0d474d/ffffff?text=Mantenimiento+Pisos';">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
                         <div class="absolute bottom-4 left-4 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30">
                             <i class="fas fa-wrench text-xl text-white"></i>
@@ -404,7 +420,7 @@
                 <!-- Servicio 5: Impermeabilización -->
                 <div onclick="openModal('modal-impermeabilizacion')" class="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 border-b-4 border-fama-mid group cursor-pointer hover:-translate-y-2 relative flex flex-col h-full overflow-hidden">
                     <div class="relative h-48 overflow-hidden bg-gray-200">
-                        <img src="servicios/Impermeabilizacion.webp" alt="Impermeabilización" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?q=80&w=600&auto=format&fit=crop';">
+                        <img src="servicios/Impermeabilizacion.webp" alt="Impermeabilización" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1d5e66/ffffff?text=Impermeabilizacion';">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
                         <div class="absolute bottom-4 left-4 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30">
                             <i class="fas fa-tint text-xl text-white"></i>
@@ -422,7 +438,7 @@
                 <!-- Servicio 6: Proyectos y Desarrollo -->
                 <div onclick="openModal('modal-proyectos')" class="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 border-b-4 border-fama-light group cursor-pointer hover:-translate-y-2 relative flex flex-col h-full overflow-hidden">
                     <div class="relative h-48 overflow-hidden bg-gray-200">
-                        <img src="servicios/ingenieria.webp" alt="Proyectos y Desarrollo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=600&auto=format&fit=crop';">
+                        <img src="servicios/ingenieria.webp" alt="Proyectos y Desarrollo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://placehold.co/600x400/9bb4b8/ffffff?text=Proyectos+Ingenieria';">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
                         <div class="absolute bottom-4 left-4 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30">
                             <i class="fas fa-hard-hat text-xl text-white"></i>
@@ -455,7 +471,7 @@
                     <p class="text-gray-200 text-sm md:text-base mb-8">Selecciona tu rubro operativo y te indicamos el sistema normativo, espesor y tecnología recomendada para tu espacio:</p>
 
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8" id="industry-selector">
-                        <button onclick="selectIndustry('alimentos')" id="btn-ind-alimentos" class="ind-btn bg-white/10 hover:bg-white/20 p-4 rounded-xl border border-white/20 text-left transition-all font-medium text-xs sm:text-sm flex flex-col gap-2">
+                        <button onclick="selectIndustry('alimentos')" id="btn-ind-alimentos" class="ind-btn hover:bg-white/20 p-4 rounded-xl border text-left transition-all font-medium text-xs sm:text-sm flex flex-col gap-2 bg-white/30 border-white shadow-lg">
                             <i class="fas fa-utensils text-2xl text-fama-light"></i> Alimentos / BPM
                         </button>
                         <button onclick="selectIndustry('frigorifico')" id="btn-ind-frigorifico" class="ind-btn bg-white/10 hover:bg-white/20 p-4 rounded-xl border border-white/20 text-left transition-all font-medium text-xs sm:text-sm flex flex-col gap-2">
@@ -470,18 +486,16 @@
                     </div>
 
                     <!-- Caja de Resultado -->
-                    <div id="industry-result" class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hidden">
+                    <div id="industry-result" class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4 border-b border-white/20 pb-4">
                             <div>
-                                <h4 id="res-title" class="text-xl font-bold text-white">Sistema Epóxico Autonivelante</h4>
-                                <p id="res-subtitle" class="text-fama-light text-xs font-medium">Recomendación Oficial FAMA</p>
+                                <h4 id="res-title" class="text-xl font-bold text-white">Sistema Epóxico Autonivelante / Poliuretano Sanitarios</h4>
+                                <p id="res-subtitle" class="text-fama-light text-xs font-medium">Apto para Plantas de Procesamiento, Lácteos, Cárnicos</p>
                             </div>
-                            <span id="res-badge" class="bg-green-500 text-white font-bold text-xs px-3 py-1 rounded-full">Cumple BPM / HACCP</span>
+                            <span id="res-badge" class="bg-green-500 text-white font-bold text-xs px-3 py-1 rounded-full">Norma BPM / HACCP / SENASA</span>
                         </div>
-                        <p id="res-desc" class="text-sm text-gray-200 mb-6 leading-relaxed">
-                            Resistencia química a grasas y desinfectantes. Curva sanitaria antiderrapante y fácil desinfección.
-                        </p>
-                        <a id="res-whatsapp-link" href="#" target="_blank" class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold text-sm px-6 py-3 rounded-xl transition-colors shadow-lg">
+                        <p id="res-desc" class="text-sm text-gray-200 mb-6 leading-relaxed">Revestimiento impermeable sin juntas de dilatación abiertas. Resistente a grasas animales, ácidos cítricos y lavado continuo a alta presión. Incorpora curva sanitaria.</p>
+                        <a id="res-whatsapp-link" href="https://wa.me/51951765830?text=Hola%20FAMA,%20quisiera%20cotizar%20un%20sistema%20para%20Industria%20de%20Alimentos%20(BPM)." target="_blank" class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold text-sm px-6 py-3 rounded-xl transition-colors shadow-lg">
                             <i class="fab fa-whatsapp text-lg"></i> Consultar este sistema para mi área
                         </a>
                     </div>
@@ -507,15 +521,15 @@
             <!-- Filtros de Galería -->
             <div class="flex flex-wrap justify-center gap-2 mb-10">
                 <button onclick="filterProjects('all')" class="proj-filter-btn active bg-fama-light text-fama-dark font-bold text-xs sm:text-sm px-4 py-2 rounded-full border border-fama-light">Todos</button>
-                <button onclick="filterProjects('industrial')" class="proj-filter-btn bg-fama-dark/60 text-white hover:bg-fama-mid font-bold text-xs sm:text-sm px-4 py-2 rounded-full border border-white/20">Industrial & Alimentos</button>
-                <button onclick="filterProjects('comercial')" class="proj-filter-btn bg-fama-dark/60 text-white hover:bg-fama-mid font-bold text-xs sm:text-sm px-4 py-2 rounded-full border border-white/20">Estacionamientos & Mantenimiento</button>
+                <button onclick="filterProjects('industrial')" class="proj-filter-btn bg-fama-dark/60 text-white hover:bg-fama-mid font-bold text-xs sm:text-sm px-4 py-2 rounded-full border border-white/20">Industrial &amp; Alimentos</button>
+                <button onclick="filterProjects('comercial')" class="proj-filter-btn bg-fama-dark/60 text-white hover:bg-fama-mid font-bold text-xs sm:text-sm px-4 py-2 rounded-full border border-white/20">Estacionamientos &amp; Mantenimiento</button>
                 <button onclick="filterProjects('deportivo')" class="proj-filter-btn bg-fama-dark/60 text-white hover:bg-fama-mid font-bold text-xs sm:text-sm px-4 py-2 rounded-full border border-white/20">Campos Deportivos</button>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Proyecto 1 -->
                 <div class="proj-item industrial group relative overflow-hidden rounded-2xl aspect-square bg-gray-800 shadow-xl border border-white/10">
-                    <img src="servicios/Revestimiento.webp" alt="Planta Industrial Sur" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=600&auto=format&fit=crop';">
+                    <img src="servicios/Revestimiento.webp" alt="Planta Industrial Sur" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x600/0d474d/ffffff?text=Planta+Industrial';">
                     <div class="absolute inset-0 bg-gradient-to-t from-fama-dark/90 via-fama-dark/40 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
                     <div class="absolute bottom-0 left-0 w-full p-6 text-white pointer-events-none">
                         <span class="text-xs text-fama-light font-bold uppercase tracking-wider block mb-1">Sector Alimentos</span>
@@ -525,27 +539,27 @@
                 </div>
                 <!-- Proyecto 2 -->
                 <div class="proj-item deportivo group relative overflow-hidden rounded-2xl aspect-square bg-gray-800 shadow-xl border border-white/10">
-                    <img src="servicios/ingenieria.webp" alt="Complejo Deportivo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=600&auto=format&fit=crop';">
+                    <img src="servicios/ingenieria.webp" alt="Complejo Deportivo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x600/1d5e66/ffffff?text=Complejo+Deportivo';">
                     <div class="absolute inset-0 bg-gradient-to-t from-fama-dark/90 via-fama-dark/40 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
                     <div class="absolute bottom-0 left-0 w-full p-6 text-white pointer-events-none">
-                        <span class="text-xs text-fama-light font-bold uppercase tracking-wider block mb-1">Deportes & Recreación</span>
+                        <span class="text-xs text-fama-light font-bold uppercase tracking-wider block mb-1">Deportes &amp; Recreación</span>
                         <h5 class="font-bold text-xl">Complejo Deportivo Municipal</h5>
                         <p class="text-xs text-gray-300 mt-1">Pintura Acrílica Multicancha</p>
                     </div>
                 </div>
                 <!-- Proyecto 3 -->
                 <div class="proj-item comercial group relative overflow-hidden rounded-2xl aspect-square bg-gray-800 shadow-xl border border-white/10">
-                    <img src="servicios/Impermeabilizacion.webp" alt="Estacionamiento" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=600&auto=format&fit=crop';">
+                    <img src="servicios/Impermeabilizacion.webp" alt="Estacionamiento" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x600/9bb4b8/ffffff?text=Estacionamiento';">
                     <div class="absolute inset-0 bg-gradient-to-t from-fama-dark/90 via-fama-dark/40 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
                     <div class="absolute bottom-0 left-0 w-full p-6 text-white pointer-events-none">
-                        <span class="text-xs text-fama-light font-bold uppercase tracking-wider block mb-1">Comercial & Vías</span>
+                        <span class="text-xs text-fama-light font-bold uppercase tracking-wider block mb-1">Comercial &amp; Vías</span>
                         <h5 class="font-bold text-xl">Estacionamiento Comercial</h5>
-                        <p class="text-xs text-gray-300 mt-1">Demarcación & Poliuretano Elastomérico</p>
+                        <p class="text-xs text-gray-300 mt-1">Demarcación &amp; Poliuretano Elastomérico</p>
                     </div>
                 </div>
                 <!-- Proyecto 4 -->
                 <div class="proj-item industrial group relative overflow-hidden rounded-2xl aspect-square bg-gray-800 shadow-xl border border-white/10">
-                    <img src="servicios/Zocalos.webp" alt="Laboratorios Médicos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600&auto=format&fit=crop';">
+                    <img src="servicios/Zocalos.webp" alt="Laboratorios Médicos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x600/0d474d/ffffff?text=Laboratorios';">
                     <div class="absolute inset-0 bg-gradient-to-t from-fama-dark/90 via-fama-dark/40 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
                     <div class="absolute bottom-0 left-0 w-full p-6 text-white pointer-events-none">
                         <span class="text-xs text-fama-light font-bold uppercase tracking-wider block mb-1">Farmacéutica</span>
@@ -610,7 +624,7 @@
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
                 <div>
                     <span class="text-fama-mid font-bold tracking-wider uppercase text-xs mb-1 block">Conocimiento Técnico</span>
-                    <h3 class="text-3xl font-extrabold text-gray-900">Blog & Novedades Industriales</h3>
+                    <h3 class="text-3xl font-extrabold text-gray-900">Blog &amp; Novedades Industriales</h3>
                     <p class="text-gray-500 text-sm mt-1">Artículos sobre pisos epóxicos, normativas sanitarias y mantenimiento.</p>
                 </div>
 
@@ -624,11 +638,7 @@
 
             <!-- Contenedor del Blog -->
             <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Se cargan dinámicamente desde JavaScript o Google Sheets -->
-                <div class="col-span-3 text-center py-12">
-                    <i class="fas fa-circle-notch fa-spin text-3xl text-fama-mid mb-3"></i>
-                    <p class="text-gray-500 text-sm">Cargando artículos del blog...</p>
-                </div>
+                <!-- Se puebla dinámicamente mediante JS -->
             </div>
         </div>
     </section>
@@ -737,7 +747,7 @@
                 </div>
                 
                 <div class="text-sm text-center md:text-left">
-                    &copy; 2026 FAMA HUB E.I.R.L. Protección Industrial. Todos los derechos reservados.
+                    © 2026 FAMA HUB E.I.R.L. Protección Industrial. Todos los derechos reservados.
                 </div>
                 
                 <div class="flex space-x-6">
@@ -757,15 +767,15 @@
             <!-- Header Chat -->
             <div class="bg-fama-dark text-white p-4 rounded-t-2xl flex justify-between items-center shrink-0">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-inner">
-                        <i class="fas fa-robot text-fama-dark text-xl"></i>
+                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-fama-dark text-xl font-bold shadow-inner">
+                        <i class="fas fa-robot"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-sm">Famito</h4>
                         <p class="text-xs text-fama-light">En línea | Asistente Virtual FAMA</p>
                     </div>
                 </div>
-                <button onclick="toggleChat()" class="text-gray-300 hover:text-white p-2">
+                <button onclick="toggleChat()" class="text-gray-300 hover:text-white p-2 focus:outline-none">
                     <i class="fas fa-times text-xl"></i>
                 </button>
             </div>
@@ -774,7 +784,7 @@
             <div id="chat-messages" class="p-4 h-64 overflow-y-auto bg-fama-bg flex flex-col gap-3 custom-scroll">
                 <div class="flex flex-col gap-1 items-start">
                     <div class="bg-white border border-gray-200 text-gray-800 text-sm p-3 rounded-2xl rounded-tl-none shadow-sm inline-block max-w-[85%]">
-                        ¡Hola! 👋 Soy Famito, el asistente virtual de FAMA. ¿Tienes dudas sobre nuestros recubrimientos epóxicos, zócalos sanitarios o deseas cotizar tu proyecto?
+                        ¡Hola! 👋 Soy <strong>Famito</strong>, el asistente virtual de FAMA. ¿Tienes dudas sobre nuestros recubrimientos epóxicos, zócalos sanitarios o deseas cotizar tu proyecto?
                     </div>
                 </div>
                 
@@ -808,7 +818,7 @@
         </div>
 
         <!-- Botón flotante -->
-        <button id="chat-button" onclick="toggleChat()" class="bg-fama-dark hover:bg-fama-mid text-white w-14 h-14 md:w-16 md:h-16 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 focus:outline-none ring-4 ring-fama-light/30 z-50">
+        <button id="chat-button" onclick="toggleChat()" class="bg-fama-dark hover:bg-fama-mid text-white w-14 h-14 md:w-16 md:h-16 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 focus:outline-none ring-4 ring-fama-light/30 z-50 famito-btn-pulse">
             <i id="chat-icon" class="fas fa-comment-dots text-2xl md:text-3xl"></i>
         </button>
     </div>
@@ -848,7 +858,7 @@
                     Usar Datos Locales
                 </button>
                 <button onclick="saveSheetConfig()" class="px-5 py-2 bg-fama-dark hover:bg-fama-mid text-white rounded-lg font-bold text-xs shadow">
-                    Guardar & Cargar
+                    Guardar &amp; Cargar
                 </button>
             </div>
         </div>
@@ -929,7 +939,7 @@
                 </ul>
 
                 <div class="flex flex-col sm:flex-row justify-end items-center border-t border-gray-100 pt-6 mt-6">
-                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20cotizar%20Preparación%20de%20Pisos." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md flex items-center justify-center">
+                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20cotizar%20Preparaci%C3%B3n%20de%20Pisos." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md flex items-center justify-center">
                         <i class="fab fa-whatsapp mr-2 text-lg"></i> Cotizar por WhatsApp
                     </a>
                 </div>
@@ -942,7 +952,7 @@
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm" onclick="closeModal('modal-revestimiento')"></div>
         <div id="modal-revestimiento-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh]">
             <div class="relative h-48 md:h-64 w-full flex-shrink-0 bg-gray-200">
-                <img src="servicios/Revestimiento.webp" alt="Revestimiento de Pisos" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1000&auto=format&fit=crop';">
+                <img src="servicios/Revestimiento.webp" alt="Revestimiento de Pisos" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/1d5e66/ffffff?text=Revestimiento+Epoxico';">
                 <button onclick="closeModal('modal-revestimiento')" class="absolute top-4 right-4 text-white bg-black/40 hover:bg-red-500 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm transition-colors z-20 focus:outline-none">
                     <i class="fas fa-times text-xl"></i>
                 </button>
@@ -965,7 +975,7 @@
 
                 <div class="flex flex-col sm:flex-row justify-between items-center border-t border-gray-100 pt-6 mt-auto gap-4">
                     <p class="text-sm text-gray-500 font-medium text-center sm:text-left">Nuestros revestimientos garantizan protección, rendimiento y rentabilidad.</p>
-                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20una%20evaluación%20técnica%20para%20Revestimiento%20de%20Pisos." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md flex items-center justify-center whitespace-nowrap">
+                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20una%20evaluaci%C3%B3n%20t%C3%A9cnica%20para%20Revestimiento%20de%20Pisos." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md flex items-center justify-center whitespace-nowrap">
                         <i class="fab fa-whatsapp mr-2 text-lg"></i> Cotizar por WhatsApp
                     </a>
                 </div>
@@ -978,7 +988,7 @@
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-zocalos')"></div>
         <div id="modal-zocalos-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
             <div class="relative h-48 md:h-64 w-full flex-shrink-0 bg-gray-200">
-                <img src="servicios/Zocalos.webp" alt="Zócalos Sanitarios" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop';">
+                <img src="servicios/Zocalos.webp" alt="Zócalos Sanitarios" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/9bb4b8/ffffff?text=Zocalos+Sanitarios';">
                 <button onclick="closeModal('modal-zocalos')" class="absolute top-4 right-4 text-white bg-black/40 hover:bg-red-500 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm transition-colors z-20 focus:outline-none">
                     <i class="fas fa-times text-xl"></i>
                 </button>
@@ -999,7 +1009,7 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row justify-between items-center border-t border-gray-100 pt-6 mt-auto gap-4">
-                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20cotizar%20Zócalos%20Sanitarios." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md flex items-center justify-center whitespace-nowrap">
+                    <a href="https://wa.me/51951765830?text=Hola%20FAMA,%20deseo%20cotizar%20Z%C3%B3calos%20Sanitarios." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md flex items-center justify-center whitespace-nowrap">
                         <i class="fab fa-whatsapp mr-2 text-lg"></i> Cotizar por WhatsApp
                     </a>
                 </div>
@@ -1012,7 +1022,7 @@
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-mantenimiento')"></div>
         <div id="modal-mantenimiento-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
             <div class="relative h-48 md:h-64 w-full flex-shrink-0 bg-gray-200">
-                <img src="servicios/Mantenimiento.webp" alt="Mantenimiento de Pisos Industriales" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1000&auto=format&fit=crop';">
+                <img src="servicios/Mantenimiento.webp" alt="Mantenimiento de Pisos Industriales" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/0d474d/ffffff?text=Mantenimiento+Pisos';">
                 <button onclick="closeModal('modal-mantenimiento')" class="absolute top-4 right-4 text-white bg-black/40 hover:bg-red-500 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm transition-colors z-20 focus:outline-none">
                     <i class="fas fa-times text-xl"></i>
                 </button>
@@ -1034,7 +1044,7 @@
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-impermeabilizacion')"></div>
         <div id="modal-impermeabilizacion-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
             <div class="relative h-48 md:h-64 w-full flex-shrink-0 bg-gray-200">
-                <img src="servicios/Impermeabilizacion.webp" alt="Impermeabilización" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?q=80&w=1000&auto=format&fit=crop';">
+                <img src="servicios/Impermeabilizacion.webp" alt="Impermeabilización" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/1d5e66/ffffff?text=Impermeabilizacion';">
                 <button onclick="closeModal('modal-impermeabilizacion')" class="absolute top-4 right-4 text-white bg-black/40 hover:bg-red-500 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm transition-colors z-20 focus:outline-none">
                     <i class="fas fa-times text-xl"></i>
                 </button>
@@ -1056,7 +1066,7 @@
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-proyectos')"></div>
         <div id="modal-proyectos-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
             <div class="relative h-48 md:h-64 w-full flex-shrink-0 bg-gray-200">
-                <img src="servicios/ingenieria.webp" alt="Proyectos y Desarrollo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=1000&auto=format&fit=crop';">
+                <img src="servicios/ingenieria.webp" alt="Proyectos y Desarrollo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/9bb4b8/ffffff?text=Proyectos+Ingenieria';">
                 <button onclick="closeModal('modal-proyectos')" class="absolute top-4 right-4 text-white bg-black/40 hover:bg-red-500 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm transition-colors z-20 focus:outline-none">
                     <i class="fas fa-times text-xl"></i>
                 </button>
@@ -1079,15 +1089,19 @@
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        menu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
+        if (btn) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
             });
-        });
+        }
+
+        if (menu) {
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+        }
 
         // --- ANIMACIÓN MULTI-CANVAS ---
         const canvases = document.querySelectorAll('.fama-canvas');
@@ -1240,7 +1254,6 @@
                 beforeImg.style.width = rect.width + 'px';
             }
 
-            // Sync original width on load/resize
             const rect = container.getBoundingClientRect();
             beforeImg.style.width = rect.width + 'px';
 
@@ -1248,7 +1261,6 @@
             window.addEventListener('mouseup', () => { isDragging = false; });
             window.addEventListener('mousemove', (e) => { if (isDragging) updateSliderWidth(e.clientX); });
 
-            // Touch support
             container.addEventListener('touchstart', (e) => { isDragging = true; updateSliderWidth(e.touches[0].clientX); });
             window.addEventListener('touchend', () => { isDragging = false; });
             window.addEventListener('touchmove', (e) => { if (isDragging) updateSliderWidth(e.touches[0].clientX); });
@@ -1331,7 +1343,6 @@
         // --- SISTEMA DE BLOG CONECTADO A GOOGLE SHEETS ---
         let currentBlogArticles = [];
 
-        // Artículos demostrativos por defecto
         const fallbackBlogArticles = [
             {
                 title: "Importancia de la Curva Sanitaria en Plantas de Alimentos",
@@ -1475,29 +1486,32 @@
 
         let geminiChatHistory = [];
 
+        // Clave API de Gemini integrada
+        const apiKey = "AQ.Ab8RN6KK_ewZb37C4ghh3D3ZVPw9q0mV9lUN4rw_Q5x5NVXD3g";
+
         const FAMA_SYSTEM_INSTRUCTION = `
-Eres Famito, el Asistente Virtual Inteligente de FAMA HUB E.I.R.L. (FAMA Protección Industrial), empresa peruana especializada en revestimiento de pisos industriales, zócalos sanitarios, mantenimiento e impermeabilización.
+Eres Famito, el Asistente Virtual Inteligente oficial de FAMA HUB E.I.R.L. (FAMA Protección Industrial), empresa líder en el Perú en revestimientos de pisos industriales, zócalos sanitarios, mantenimiento e impermeabilización.
 
-INFORMACIÓN PRINCIPAL:
+DATOS OFICIALES DE FAMA:
 - Empresa: FAMA HUB E.I.R.L.
-- Teléfono / WhatsApp: +51 951 765 830 (Enlace: https://wa.me/51951765830).
-- Correo: info@fama.com.
-- Ubicación: Lima, Perú (Atención y obras a nivel nacional).
-- Experiencia: +10 años, +500 proyectos entregados, +50,000 m² revestidos.
+- WhatsApp / Teléfono: +51 951 765 830 (Enlace directo: https://wa.me/51951765830).
+- Email: info@fama.com
+- Ubicación: Lima, Perú (Movilizados a nivel nacional para obras).
+- Trayectoria: Más de 10 años de experiencia, +500 proyectos entregados, +50,000 m² de revestimientos poliméricos ejecutados.
 
-SERVICIOS:
-1. Preparación de Pisos: Granallado, fresado, desbastado con diamante, pruebas de humedad e inspección visual.
-2. Revestimientos Epóxicos y Poliuretano: Autonivelantes, antideslizantes, resistencia química, térmica (-40°C a 120°C) y mecánico para almacenes, alimentos, cárnicos, frigoríficos y farmacéuticas.
-3. Zócalos Sanitarios Epóxicos: Curva sanitaria (rondón), norma BPM/HACCP, secado rápido en 24 horas.
-4. Mantenimiento de Pisos: Sellado de grietas, relleno de baches y recuperación de nivelación.
-5. Impermeabilización: Membranas elastoméricas y acrílicas para losas, cisternas, techos y estacionamientos.
-6. Proyectos y Desarrollo: Supervisión de obras, topografía y dirección técnica.
+SERVICIOS DE FAMA:
+1. Preparación de Pisos Industriales: Evaluación técnica, granallado (blast cleaning), desbastado con diamantes, fresado, corrección de niveles y medición de humedad del concreto.
+2. Revestimiento de Pisos (Epóxico y Poliuretano): Sistemas autonivelantes epóxicos (1.5mm - 4mm) y Poliuretano Cementicio / Uretano (3mm - 9mm) resistentes a choques térmicos (-40°C a +120°C), ácidos cítricos, grasas animales y tránsito pesado.
+3. Zócalos Sanitarios Epóxicos: Curva sanitaria (media caña o rondón) sin juntas, indispensables para normativas DIGESA, BPM, HACCP y SENASA en plantas de alimentos, cárnicas, lácteos y farmacéuticas. Secado e instalación rápida (24h).
+4. Mantenimiento y Reparación de Pisos: Sellado de grietas, relleno de fisuras, bacheo especializado y renovación de capas de desgaste.
+5. Impermeabilización: Membranas elastoméricas de poliuretano e impermeabilizantes cementosos para losas, cisternas, techos, estacionamientos y reservorios.
+6. Proyectos y Desarrollo: Supervisión de obras civiles, levantamientos topográficos, metrados y dirección técnica.
 
-REGLAS DE RESPUESTA:
-- Preséntate amablemente como "Famito".
-- Responde de forma técnica, profesional pero directa y concisa (1 a 3 párrafos brevemente estructurados).
-- Utiliza formato HTML sencillo para destacar puntos fuertes como <strong>negrita</strong>.
-- Para cotizaciones, explica amablemente que se requiere evaluar los metros cuadrados (m2), estado actual de la losa y tipo de tránsito, e invita al usuario a hacer clic en el enlace de WhatsApp (+51 951 765 830) para contactar a un asesor.
+INSTRUCCIONES DE ATENCIÓN:
+- Saluda amablemente presentándote como Famito.
+- Sé cordial, técnico y enfocado en resolver dudas.
+- Mantén tus respuestas claras y breves (1 a 3 párrafos).
+- Cuando pregunten sobre cotizaciones o costos por m², indica que dependen del área total, el estado de la losa y el tipo de tráfico, e invita amablemente a consultar por WhatsApp al +51 951 765 830.
         `.trim();
 
         function toggleChat() {
@@ -1522,6 +1536,14 @@ REGLAS DE RESPUESTA:
             }
         }
 
+        function formatMarkdown(text) {
+            return text
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="text-green-600 font-bold underline">$1</a>')
+                .replace(/\n/g, '<br>');
+        }
+
         function appendMessage(sender, text) {
             const msgDiv = document.createElement('div');
             msgDiv.className = `flex flex-col gap-1 ${sender === 'user' ? 'items-end' : 'items-start'} animate-fade-in mb-2`;
@@ -1531,8 +1553,8 @@ REGLAS DE RESPUESTA:
                 bubble.className = "bg-fama-dark text-white text-sm p-3 rounded-2xl rounded-tr-none shadow-sm inline-block max-w-[85%]";
                 bubble.textContent = text; 
             } else {
-                bubble.className = "bg-white border border-gray-200 text-gray-800 text-sm p-3 rounded-2xl rounded-tl-none shadow-sm inline-block max-w-[85%]";
-                bubble.innerHTML = text; 
+                bubble.className = "bg-white border border-gray-200 text-gray-800 text-sm p-3 rounded-2xl rounded-tl-none shadow-sm inline-block max-w-[85%] leading-relaxed";
+                bubble.innerHTML = formatMarkdown(text); 
             }
             
             msgDiv.appendChild(bubble);
@@ -1558,6 +1580,26 @@ REGLAS DE RESPUESTA:
             processBotResponse(question);
         }
 
+        // MOTOR LOCAL DE RESPALDO (En caso la API no esté disponible o alcance límite de cuota)
+        function useLocalEngineFallback(question) {
+            const q = question.toLowerCase();
+            let ans = "";
+
+            if (q.includes('cotiz') || q.includes('precio') || q.includes('costo') || q.includes('cuanto') || q.includes('m2') || q.includes('valor')) {
+                ans = "Para brindarte una **cotización exacta**, evaluamos el metraje total ($m^2$), el estado de tu losa y el tipo de tráfico.<br><br>👉 [Cotizar directamente por WhatsApp al +51 951 765 830](https://wa.me/51951765830?text=Hola%20Famito,%20deseo%20una%20cotizaci%C3%B3n.)";
+            } else if (q.includes('zocalo') || q.includes('curva') || q.includes('bpm') || q.includes('haccp') || q.includes('sanitario')) {
+                ans = "Fabricamos e instalamos **zócalos sanitarios de mortero epóxico** con curvatura sin uniones, esenciales para normativas sanitarias BPM y HACCP en la industria alimentaria y farmacéutica.";
+            } else if (q.includes('mantenimiento') || q.includes('grieta') || q.includes('reparaci') || q.includes('junta')) {
+                ans = "Realizamos mantenimiento preventivo y correctivo, sellado de fisuras, bacheo y rehabilitación de capas de desgaste en pisos de concreto e industriales.";
+            } else if (q.includes('impermeabiliz') || q.includes('techo') || q.includes('cisterna') || q.includes('humedad')) {
+                ans = "Aplicamos membranas elastoméricas de poliuretano y revestimientos acrílico-cementosos en losas, cisternas, techos y estacionamientos para prevenir filtraciones.";
+            } else {
+                ans = "En **FAMA HUB E.I.R.L.** somos líderes en revestimientos epóxicos, poliuretano, zócalos sanitarios e impermeabilización a nivel nacional en Perú.<br><br>👉 [Hablar con un Asesor Técnico](https://wa.me/51951765830)";
+            }
+
+            appendMessage('bot', ans);
+        }
+
         async function processBotResponse(question) {
             const typingId = 'typing-' + Date.now();
             const typingDiv = document.createElement('div');
@@ -1565,7 +1607,7 @@ REGLAS DE RESPUESTA:
             typingDiv.className = 'flex flex-col gap-1 items-start mb-2';
             typingDiv.innerHTML = `
                 <div class="bg-white border border-gray-200 text-gray-500 text-xs p-3 rounded-2xl rounded-tl-none shadow-sm flex items-center gap-2">
-                    <i class="fas fa-circle-notch fa-spin text-fama-mid"></i> Famito está respondiendo...
+                    <i class="fas fa-circle-notch fa-spin text-fama-mid"></i> Famito está pensando...
                 </div>`;
             chatMessages.appendChild(typingDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -1575,7 +1617,6 @@ REGLAS DE RESPUESTA:
                 parts: [{ text: question }]
             });
 
-            const apiKey = "";
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
 
             const payload = {
@@ -1586,44 +1627,36 @@ REGLAS DE RESPUESTA:
             };
 
             let aiText = "";
-            let maxRetries = 3;
-            let delay = 1000;
 
-            for (let attempt = 0; attempt < maxRetries; attempt++) {
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
 
-                    if (response.ok) {
-                        const result = await response.json();
-                        const candidate = result.candidates?.[0];
-                        if (candidate && candidate.content?.parts?.[0]?.text) {
-                            aiText = candidate.content.parts[0].text;
-                            geminiChatHistory.push(candidate.content);
-                            break;
-                        }
+                if (response.ok) {
+                    const result = await response.json();
+                    const candidate = result.candidates?.[0];
+                    if (candidate && candidate.content?.parts?.[0]?.text) {
+                        aiText = candidate.content.parts[0].text;
+                        geminiChatHistory.push(candidate.content);
                     }
-                } catch (e) {
-                    // Retry
                 }
-
-                if (attempt < maxRetries - 1) {
-                    await new Promise(resolve => setTimeout(resolve, delay));
-                    delay *= 2;
-                }
+            } catch (e) {
+                console.warn("Fallo de API Gemini. Usando motor local de respaldo:", e);
             }
 
             const indicator = document.getElementById(typingId);
             if (indicator) indicator.remove();
 
-            if (!aiText) {
-                aiText = "Disculpa, tuve una breve interrupción. Puedes escribirnos por <a href='https://wa.me/51951765830?text=Hola%20FAMA,%20quisiera%20asesor%C3%ADa%20técnica' target='_blank' class='text-green-600 font-bold underline'><i class='fab fa-whatsapp'></i> WhatsApp al +51 951 765 830</a> para ayudarte de inmediato.";
+            if (aiText) {
+                appendMessage('bot', aiText);
+            } else {
+                useLocalEngineFallback(question);
             }
-
-            appendMessage('bot', aiText);
         }
 
         function handleFAQ(question) {
@@ -1669,5 +1702,6 @@ REGLAS DE RESPUESTA:
             document.body.style.overflow = 'auto';
         }
     </script>
+
 </body>
 </html>
