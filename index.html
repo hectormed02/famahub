@@ -12,7 +12,6 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Configuración de colores corporativos FAMA -->
     <script>
         tailwind.config = {
             theme: {
@@ -100,7 +99,6 @@
 </head>
 <body class="bg-white text-gray-800 font-sans antialiased relative">
 
-    <!-- NAVEGACIÓN -->
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -189,7 +187,6 @@
         </div>
     </nav>
 
-    <!-- INICIO (Hero Section) -->
     <section id="inicio" class="relative min-h-screen flex items-center justify-center bg-fama-dark overflow-hidden canvas-container pt-20">
         <canvas class="fama-canvas"></canvas>
         <div class="absolute inset-0 bg-gradient-to-r from-fama-dark/95 via-fama-dark/85 to-fama-mid/80 z-0 pointer-events-none"></div>
@@ -215,7 +212,6 @@
         </div>
     </section>
 
-    <!-- CIFRAS FLOTANTES -->
     <div class="relative z-20 max-w-5xl mx-auto px-4 -mt-12 md:-mt-16 mb-20 hidden md:block pointer-events-auto">
         <div class="bg-white rounded-2xl shadow-xl p-8 flex justify-around items-center border border-gray-100">
             <div class="text-center w-1/3 border-r border-gray-200">
@@ -233,7 +229,6 @@
         </div>
     </div>
 
-    <!-- NOSOTROS -->
     <section id="nosotros" class="py-12 md:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row gap-16">
@@ -277,7 +272,6 @@
         </div>
     </section>
 
-    <!-- COMPARADOR ANTES / DESPUÉS -->
     <section class="py-16 bg-gradient-to-b from-white to-fama-bg border-t border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -310,7 +304,6 @@
         </div>
     </section>
 
-    <!-- SERVICIOS -->
     <section id="servicios" class="py-20 bg-fama-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -440,7 +433,6 @@
         </div>
     </section>
 
-    <!-- BUSCADOR / RECOMENDADOR TÉCNICO POR INDUSTRIA -->
     <section id="recomendador" class="py-16 bg-white border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-gradient-to-r from-fama-dark to-fama-mid rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
@@ -487,7 +479,6 @@
         </div>
     </section>
 
-    <!-- PROYECTOS -->
     <section id="proyectos" class="relative py-20 bg-fama-dark overflow-hidden canvas-container">
         <canvas class="fama-canvas"></canvas>
         <div class="absolute inset-0 bg-gradient-to-r from-fama-dark/95 to-fama-mid/80 z-0 pointer-events-none"></div>
@@ -550,7 +541,6 @@
         </div>
     </section>
 
-    <!-- CLIENTES Y CERTIFICADOS -->
     <section id="clientes" class="py-16 bg-white border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h3 class="text-2xl font-bold mb-3 text-gray-900">Sectores e Industrias Atendidas</h3>
@@ -597,7 +587,6 @@
         </div>
     </section>
 
-    <!-- BLOG (Conectado a Google Sheets) -->
     <section id="blog" class="py-20 bg-fama-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
@@ -620,7 +609,6 @@
         </div>
     </section>
 
-    <!-- CONTACTO -->
     <section id="contacto" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row">
@@ -713,7 +701,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="bg-gray-900 text-gray-400 py-10 border-t-4 border-fama-mid">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
@@ -736,7 +723,6 @@
         </div>
     </footer>
 
-    <!-- CHATBOT WIDGET FAMITO -->
     <div id="chatbot-container" class="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-auto">
         <!-- Ventana del Chat -->
         <div id="chat-window" class="bg-white w-[90vw] sm:w-96 rounded-2xl shadow-2xl border border-gray-200 mb-4 flex flex-col hidden transform transition-transform origin-bottom-right scale-0 opacity-0 duration-300 max-h-[75vh]">
@@ -799,7 +785,6 @@
         </button>
     </div>
 
-    <!-- MODAL DE CONFIGURACIÓN DE GOOGLE SHEETS PARA EL BLOG -->
     <div id="modal-sheet-config" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm" onclick="closeModal('modal-sheet-config')"></div>
         <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-6 relative z-10 scale-95 transition-transform duration-300">
@@ -840,7 +825,6 @@
         </div>
     </div>
 
-    <!-- MODAL PARA LEER ARTÍCULO DE BLOG -->
     <div id="modal-blog-reader" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm" onclick="closeModal('modal-blog-reader')"></div>
         <div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh]">
@@ -866,7 +850,6 @@
         </div>
     </div>
 
-    <!-- Modal 1: Preparación de Pisos -->
     <div id="modal-preparacion" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-preparacion')"></div>
         <div id="modal-preparacion-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
@@ -967,7 +950,6 @@
         </div>
     </div>
 
-    <!-- Modal 2: Revestimiento -->
     <div id="modal-revestimiento" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-revestimiento')"></div>
         <div id="modal-revestimiento-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
@@ -1043,7 +1025,6 @@
         </div>
     </div>
 
-    <!-- Modal 3: Zócalos Sanitarios -->
     <div id="modal-zocalos" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-zocalos')"></div>
         <div id="modal-zocalos-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
@@ -1126,7 +1107,6 @@
         </div>
     </div>
 
-    <!-- Modal 4: Mantenimiento -->
     <div id="modal-mantenimiento" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-mantenimiento')"></div>
         <div id="modal-mantenimiento-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
@@ -1217,7 +1197,6 @@
         </div>
     </div>
 
-    <!-- Modal 5: Impermeabilización -->
     <div id="modal-impermeabilizacion" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-impermeabilizacion')"></div>
         <div id="modal-impermeabilizacion-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
@@ -1290,7 +1269,6 @@
         </div>
     </div>
 
-    <!-- Modal 6: Proyectos y Desarrollo -->
     <div id="modal-proyectos" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="absolute inset-0 bg-fama-dark/80 backdrop-blur-sm pointer-events-auto" onclick="closeModal('modal-proyectos')"></div>
         <div id="modal-proyectos-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative z-10 scale-95 transition-transform duration-300 flex flex-col max-h-[90vh] pointer-events-auto">
@@ -1350,9 +1328,7 @@
         </div>
     </div>
 
-    <!-- SCRIPTS DE LÓGICA E INTERACTIVIDAD -->
     <script>
-        // --- NAVEGACIÓN MÓVIL ---
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
@@ -1370,7 +1346,6 @@
             });
         }
 
-        // --- ANIMACIÓN MULTI-CANVAS ---
         const canvases = document.querySelectorAll('.fama-canvas');
         const canvasContexts = [];
         let mouse = { x: null, y: null, radius: 150 };
@@ -1498,7 +1473,6 @@
             initParticles();
         });
 
-        // --- SLIDER ANTES / DESPUÉS ---
         function initBeforeAfterSlider() {
             const container = document.getElementById('slider-container');
             const overlay = document.getElementById('slider-overlay');
@@ -1533,7 +1507,6 @@
             window.addEventListener('touchmove', (e) => { if (isDragging) updateSliderWidth(e.touches[0].clientX); });
         }
 
-        // --- RECOMENDADOR TÉCNICO ---
         const industryData = {
             alimentos: {
                 title: 'Sistema Epóxico Autonivelante / Poliuretano Sanitarios',
@@ -1589,7 +1562,6 @@
             }
         }
 
-        // --- FILTRO DE PROYECTOS ---
         function filterProjects(cat) {
             document.querySelectorAll('.proj-filter-btn').forEach(b => {
                 b.classList.remove('bg-fama-light', 'text-fama-dark');
@@ -1607,7 +1579,6 @@
             });
         }
 
-        // --- SISTEMA DE BLOG CONECTADO A GOOGLE SHEETS ---
         let currentBlogArticles = [];
 
         const fallbackBlogArticles = [
@@ -1732,7 +1703,6 @@
             loadBlogArticles();
         }
 
-        // --- ENVÍO DE FORMULARIO A WHATSAPP ---
         function handleContactSubmit(event) {
             event.preventDefault();
             const name = document.getElementById('form-name').value;
@@ -1745,7 +1715,6 @@
             window.open(`https://wa.me/51951765830?text=${text}`, '_blank');
         }
 
-        // --- CHATBOT FAMITO CONECTADO A GEMINI 2.5 FLASH API ---
         const chatWindow = document.getElementById('chat-window');
         const chatIcon = document.getElementById('chat-icon');
         const chatMessages = document.getElementById('chat-messages');
@@ -1759,12 +1728,12 @@
         const FAMA_SYSTEM_INSTRUCTION = `
 Tu nombre es Famito, el asistente virtual oficial de FAMA HUB E.I.R.L. (FAMA Protección Industrial).
 
-REGLAS STRICTAS DE RESPUESTA:
-1. DELIMITACIÓN ABSOLUTA DE CONTENIDO: Responde ÚNICAMENTE sobre la empresa FAMA HUB E.I.R.L., sus 6 servicios (1. Preparación de Pisos, 2. Revestimiento de Pisos Epóxicos/Poliuretano, 3. Zócalos Sanitarios BPM, 4. Mantenimiento de Pisos, 5. Impermeabilización, 6. Proyectos y Desarrollo), sus proyectos en Perú y sus datos de contacto (WhatsApp +51 951 765 830, info@fama.com, Lima Perú).
-2. RECHAZO DE TEMAS AJENOS: Si el usuario pregunta sobre cualquier otro tema que NO sea de FAMA HUB E.I.R.L. o pisos industriales (ejemplo: clima, deportes, cocina, programación, compras generales, etc.), responde cortésmente en 1 sola oración: "Disculpa, solo estoy capacitado para responder consultas sobre los servicios y proyectos de FAMA Protección Industrial."
-3. RESPUESTAS BREVES Y SÓLIDAS: Tus respuestas deben ser directas, sólidas y muy concisas (máximo 2 a 3 oraciones cortas o un listado muy breve de máximo 2 puntos).
-4. COTIZACIONES Y PRECIOS: Para cotizaciones o consultas de costos por m², indica brevemente que depende del metraje, estado del suelo y tipo de uso, e invita a cotizar directamente al WhatsApp (+51 951 765 830).
-5. FORMATO: Usa etiquetas HTML sencillas como <strong>negrita</strong> para resaltar puntos clave.
+REGLAS DE RESPUESTA:
+1. CONOCIMIENTO DE PISOS Y SERVICIOS: Eres experto en FAMA HUB E.I.R.L. Si el usuario escribe palabras sueltas o breves como "pisos", "servicios", "epoxico", "precios", "zócalos" o "mantenimiento", respóndele de inmediato explicando de forma sintética, sólida y profesional lo que ofrece FAMA.
+2. DELIMITACIÓN DE CONTENIDO: Responde únicamente sobre FAMA HUB E.I.R.L., sus 6 servicios (1. Preparación de Pisos, 2. Revestimiento Epóxico/Poliuretano, 3. Zócalos Sanitarios BPM, 4. Mantenimiento, 5. Impermeabilización, 6. Proyectos), sus proyectos en Perú y sus datos de contacto (+51 951 765 830, info@fama.com).
+3. RECHAZO DE TEMAS TOTALMENTE AJENOS: Si el usuario pregunta sobre temas que NO tienen nada que ver con construcción, pisos o FAMA (ej. deportes, recetas, clima, programación), responde cortésmente en 1 frase indicando que solo atiendes consultas sobre FAMA Protección Industrial.
+4. RESPUESTAS BREVES Y SÓLIDAS: Máximo 2 a 3 oraciones directas. Usa <strong>negrita</strong> para resaltar puntos clave.
+5. COTIZACIONES: Para precios por m², indica que depende del metraje, estado de la losa y tipo de tránsito, e invita a cotizar directamente al WhatsApp (+51 951 765 830).
         `.trim();
 
         function toggleChat() {
@@ -1833,29 +1802,33 @@ REGLAS STRICTAS DE RESPUESTA:
             processBotResponse(question);
         }
 
-        // MOTOR LOCAL DE RESPALDO SI LA API TIENE LÍMITE O FALLO DE RED
+        // MOTOR LOCAL DE RESPALDO AMPLIADO PARA MÁXIMA COBERTURA
         function useLocalEngineFallback(question) {
-            const q = question.toLowerCase();
+            const q = question.toLowerCase().trim();
             let ans = "";
 
-            if (q.includes('cotiz') || q.includes('precio') || q.includes('costo') || q.includes('cuanto') || q.includes('m2') || q.includes('valor')) {
+            if (q.includes('piso') || q.includes('pisos') || q.includes('revestimiento') || q.includes('epoxi') || q.includes('poliuretano') || q.includes('autonivelante')) {
+                ans = "En **FAMA HUB E.I.R.L.** aplicamos **pisos epóxicos y de poliuretano** de alto rendimiento, resistentes a tráficos pesados, químicos y humedad para la industria en general. 👉 <a href='https://wa.me/51951765830?text=Hola%20Famito,%20deseo%20informaci%C3%B3n%20sobre%20pisos%20industriales.' target='_blank' class='text-green-600 font-bold underline'>Consultar con un Asesor en WhatsApp</a>";
+            } else if (q.includes('servicio') || q.includes('servicios') || q.includes('que hacen') || q.includes('ofrecen')) {
+                ans = "Ofrecemos 6 servicios principales:<br>1. <strong>Preparación de Pisos</strong><br>2. <strong>Revestimiento Epóxico / Poliuretano</strong><br>3. <strong>Zócalos Sanitarios BPM</strong><br>4. <strong>Mantenimiento de Pisos</strong><br>5. <strong>Impermeabilización</strong><br>6. <strong>Proyectos y Desarrollo</strong>.";
+            } else if (q.includes('cotiz') || q.includes('precio') || q.includes('costo') || q.includes('cuanto') || q.includes('m2') || q.includes('valor')) {
                 ans = "Para brindarte una <strong>cotización exacta</strong> evaluamos el metraje ($m^2$), diagnóstico del suelo y uso. 👉 <a href='https://wa.me/51951765830?text=Hola%20Famito,%20deseo%20una%20cotizaci%C3%B3n.' target='_blank' class='text-green-600 font-bold underline'>Cotizar por WhatsApp al +51 951 765 830</a>";
             } else if (q.includes('zocalo') || q.includes('curva') || q.includes('bpm') || q.includes('haccp') || q.includes('sanitario')) {
                 ans = "Fabricamos e instalamos <strong>zócalos sanitarios de mortero epóxico</strong> con curva sanitaria continua sin uniones, esenciales para normativas BPM y HACCP. Habilitados en 24 horas.";
-            } else if (q.includes('mantenimiento') || q.includes('grieta') || q.includes('reparaci') || q.includes('junta')) {
+            } else if (q.includes('mantenimiento') || q.includes('grieta') || q.includes('reparaci') || q.includes('junta') || q.includes('desgaste')) {
                 ans = "Realizamos mantenimiento preventivo y correctivo, sellado de fisuras, reparación de desprendimientos y restauración de rugosidad antideslizante en pisos industriales.";
-            } else if (q.includes('impermeabiliz') || q.includes('techo') || q.includes('cisterna') || q.includes('humedad')) {
+            } else if (q.includes('impermeabiliz') || q.includes('techo') || q.includes('cisterna') || q.includes('humedad') || q.includes('filtrac')) {
                 ans = "Aplicamos membranas elastoméricas de poliuretano y recubrimientos acrílico-cementosos en losas, cisternas, techos y reservorios contra la humedad.";
-            } else if (q.includes('preparacion') || q.includes('granallado') || q.includes('fresado')) {
+            } else if (q.includes('preparacion') || q.includes('granallado') || q.includes('fresado') || q.includes('desbastado')) {
                 ans = "Realizamos preparación de superficies mediante granallado, preparación térmica, fresado y lijado con diamante para asegurar adherencia indestructible del piso.";
-            } else if (q.includes('proyectos') || q.includes('obra') || q.includes('supervision')) {
+            } else if (q.includes('proyectos') || q.includes('obra') || q.includes('supervision') || q.includes('ingenieria')) {
                 ans = "Ejecutamos y supervisamos obras civiles, proyectos de ingeniería, servicios de topografía y alquiler de maquinaria con personal multidisciplinario en todo el Perú.";
-            } else if (q.includes('contacto') || q.includes('telefono') || q.includes('ubicacion') || q.includes('donde') || q.includes('whatsapp')) {
+            } else if (q.includes('contacto') || q.includes('telefono') || q.includes('ubicacion') || q.includes('donde') || q.includes('whatsapp') || q.includes('direccion') || q.includes('correo') || q.includes('email')) {
                 ans = "Estamos ubicados en Lima con atención a nivel nacional. 👉 <a href='https://wa.me/51951765830' target='_blank' class='text-green-600 font-bold underline'>Escríbenos al WhatsApp +51 951 765 830</a> o a info@fama.com.";
-            } else if (q.includes('hola') || q.includes('buenos') || q.includes('tardes') || q.includes('dias') || q.includes('servicio')) {
-                ans = "¡Hola! 👋 Soy **Famito**, asistente de FAMA HUB E.I.R.L. Ofrecemos revestimientos epóxicos, zócalos sanitarios, mantenimiento, impermeabilización y proyectos en todo el Perú. ¿En qué puedo orientarte?";
+            } else if (q.includes('hola') || q.includes('buenos') || q.includes('tardes') || q.includes('dias') || q.includes('ayuda') || q.includes('famito')) {
+                ans = "¡Hola! 👋 Soy **Famito**, asistente de FAMA HUB E.I.R.L. Ofrecemos revestimientos epóxicos, zócalos sanitarios, mantenimiento, impermeabilización y proyectos en todo el Perú. ¿En qué puedo orientarte hoy?";
             } else {
-                ans = "Disculpa, solo estoy capacitado para responder consultas técnicas sobre los servicios y proyectos de FAMA Protección Industrial. 👉 <a href='https://wa.me/51951765830' target='_blank' class='text-green-600 font-bold underline'>Consultar con un Asesor en WhatsApp</a>";
+                ans = "En **FAMA Protección Industrial** somos especialistas en pisos epóxicos, poliuretano, zócalos sanitarios e impermeabilización. ¿Deseas información de algún servicio o cotizar un proyecto? 👉 <a href='https://wa.me/51951765830' target='_blank' class='text-green-600 font-bold underline'>Consultar con un Asesor por WhatsApp</a>";
             }
 
             appendMessage('bot', ans);
@@ -1868,7 +1841,7 @@ REGLAS STRICTAS DE RESPUESTA:
             typingDiv.className = 'flex flex-col gap-1 items-start mb-2';
             typingDiv.innerHTML = `
                 <div class="bg-white border border-gray-200 text-gray-500 text-xs p-3 rounded-2xl rounded-tl-none shadow-sm flex items-center gap-2">
-                    <i class="fas fa-circle-notch fa-spin text-fama-mid"></i> Famito está pensando...
+                    <i class="fas fa-circle-notch fa-spin text-fama-mid"></i> Famito está escribiendo...
                 </div>`;
             chatMessages.appendChild(typingDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -1878,7 +1851,7 @@ REGLAS STRICTAS DE RESPUESTA:
                 parts: [{ text: question }]
             });
 
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
 
             const payload = {
                 contents: geminiChatHistory,
@@ -1928,7 +1901,6 @@ REGLAS STRICTAS DE RESPUESTA:
             processBotResponse(question);
         }
 
-        // --- LÓGICA DE MODALES ---
         function openModal(id) {
             const modal = document.getElementById(id);
             if (!modal) return;
