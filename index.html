@@ -760,19 +760,19 @@
             <div id="chat-messages" class="p-4 h-64 overflow-y-auto bg-fama-bg flex flex-col gap-3 custom-scroll">
                 <div class="flex flex-col gap-1 items-start">
                     <div class="bg-white border border-gray-200 text-gray-800 text-sm p-3 rounded-2xl rounded-tl-none shadow-sm inline-block max-w-[85%]">
-                        ¡Hola! 👋 Soy <strong>Famito</strong>, el asistente virtual de FAMA. ¿Tienes dudas sobre nuestros recubrimientos epóxicos, zócalos sanitarios o deseas cotizar tu proyecto?
+                        ¡Hola! 👋 Soy <strong>Famito</strong>, el asistente virtual de FAMA. ¿Tienes dudas sobre nuestros revestimientos epóxicos, zócalos sanitarios o deseas cotizar tu proyecto?
                     </div>
                 </div>
                 
                 <div class="flex flex-col gap-2 mt-2" id="faq-options">
-                    <button onclick="handleFAQ('¿Qué tipos de pisos industriales aplican?')" class="text-left text-xs bg-fama-light/20 hover:bg-fama-light/40 text-fama-dark font-medium p-2 rounded-lg border border-fama-light/30 transition-colors">
-                        ¿Qué tipos de pisos industriales aplican?
+                    <button onclick="handleFAQ('¿Qué servicios ofrece FAMA?')" class="text-left text-xs bg-fama-light/20 hover:bg-fama-light/40 text-fama-dark font-medium p-2 rounded-lg border border-fama-light/30 transition-colors">
+                        ¿Qué servicios ofrece FAMA?
                     </button>
                     <button onclick="handleFAQ('Zócalos Sanitarios BPM')" class="text-left text-xs bg-fama-light/20 hover:bg-fama-light/40 text-fama-dark font-medium p-2 rounded-lg border border-fama-light/30 transition-colors">
                         Zócalos Sanitarios BPM
                     </button>
-                    <button onclick="handleFAQ('¿Cómo se calcula una cotización?')" class="text-left text-xs bg-fama-light/20 hover:bg-fama-light/40 text-fama-dark font-medium p-2 rounded-lg border border-fama-light/30 transition-colors">
-                        ¿Cómo se calcula una cotización?
+                    <button onclick="handleFAQ('¿Cómo solicito una cotización?')" class="text-left text-xs bg-fama-light/20 hover:bg-fama-light/40 text-fama-dark font-medium p-2 rounded-lg border border-fama-light/30 transition-colors">
+                        ¿Cómo solicito una cotización?
                     </button>
                 </div>
             </div>
@@ -865,10 +865,6 @@
             </div>
         </div>
     </div>
-
-    <!-- ========================================== -->
-    <!-- MODALES DE SERVICIOS (DETALLADOS 1 AL 6) -->
-    <!-- ========================================== -->
 
     <!-- Modal 1: Preparación de Pisos -->
     <div id="modal-preparacion" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
@@ -1749,7 +1745,7 @@
             window.open(`https://wa.me/51951765830?text=${text}`, '_blank');
         }
 
-        // --- CHATBOT FAMITO CONECTADO A GEMINI API ---
+        // --- CHATBOT FAMITO CONECTADO A GEMINI 2.5 FLASH API ---
         const chatWindow = document.getElementById('chat-window');
         const chatIcon = document.getElementById('chat-icon');
         const chatMessages = document.getElementById('chat-messages');
@@ -1761,27 +1757,14 @@
         const apiKey = "AQ.Ab8RN6KK_ewZb37C4ghh3D3ZVPw9q0mV9lUN4rw_Q5x5NVXD3g";
 
         const FAMA_SYSTEM_INSTRUCTION = `
-Eres Famito, el Asistente Virtual Oficial de FAMA HUB E.I.R.L. (FAMA Protección Industrial), empresa peruana especializada en la ejecución, reparación y mantenimiento de pisos industriales, zócalos sanitarios, impermeabilización y obras civiles en todo el Perú.
+Tu nombre es Famito, el asistente virtual oficial de FAMA HUB E.I.R.L. (FAMA Protección Industrial).
 
-DATOS DE FAMA HUB E.I.R.L.:
-- Teléfono/WhatsApp: +51 951 765 830 (Enlace directo: https://wa.me/51951765830)
-- Email: info@fama.com
-- Ubicación: Lima, Perú (Atención y operaciones en todo el territorio nacional)
-- Trayectoria: +10 años de experiencia, +500 proyectos entregados, +50,000 m² revestidos en Perú.
-
-NUESTROS 6 SERVICIOS PRINCIPALES:
-1. Preparación de Pisos Industriales: Base sólida para resultados duraderos. Diagnóstico completo (compresión, tracción y humedad). Métodos: Granallado (apertura de poro), preparación térmica (grasas), fresado y lijado industrial con diamante.
-2. Revestimiento de Pisos Industriales: Revestimientos Epóxicos (alta resistencia a químicos, ácidos diluidos, solventes y aceites, brillo e impermeabilidad) y Revestimientos de Poliuretano (resistencia térmica -40°C a +120°C, ideales para lácteos, cárnicos, frigoríficos, minería y automotriz, antideslizantes). Espesores de 1 mm a 9 mm.
-3. Zócalos Sanitarios de Mortero Epóxico: Fabricación, venta e instalación con curvatura media caña (rondón) de alta precisión. Cumplimiento con normas DIGESA, SENASA, BPM y HACCP. Secado e instalación rápida (24h).
-4. Mantenimiento de Pisos Industriales: Correctivo y preventivo. Evaluación técnica, rellenado de fisuras, reparación de desprendimientos y reacondicionamiento con capa de desgaste antideslizante.
-5. Impermeabilización de Pisos y Superficies: Protección contra corrosión del acero y humedad. Membranas elastoméricas de poliuretano y acrílico-cementosas para losas de estacionamiento, tanques, cisternas, techos y reservorios.
-6. Proyectos y Desarrollo: Ejecución integral de ingeniería y construcción, supervisión de obra, topografía, alquiler de maquinaria y capacitación técnica.
-
-INSTRUCCIONES DE ATENCIÓN:
-- Saluda siempre amablemente presentándote como Famito.
-- Responde con un tono técnico, cortés, profesional y conciso (1 a 3 párrafos brevemente estructurados).
-- Utiliza etiquetas HTML sencillas como <strong>negrita</strong> para resaltar puntos clave o enlaces de WhatsApp.
-- Cuando pregunten por cotizaciones o precios por m², aclara amablemente que la cotización precisa depende de evaluar el metraje ($m^2$), la preparación de superficie y el tipo de uso, e invita a hacer clic en el enlace de WhatsApp (+51 951 765 830) para cotizar directamente con un asesor técnico.
+REGLAS STRICTAS DE RESPUESTA:
+1. DELIMITACIÓN ABSOLUTA DE CONTENIDO: Responde ÚNICAMENTE sobre la empresa FAMA HUB E.I.R.L., sus 6 servicios (1. Preparación de Pisos, 2. Revestimiento de Pisos Epóxicos/Poliuretano, 3. Zócalos Sanitarios BPM, 4. Mantenimiento de Pisos, 5. Impermeabilización, 6. Proyectos y Desarrollo), sus proyectos en Perú y sus datos de contacto (WhatsApp +51 951 765 830, info@fama.com, Lima Perú).
+2. RECHAZO DE TEMAS AJENOS: Si el usuario pregunta sobre cualquier otro tema que NO sea de FAMA HUB E.I.R.L. o pisos industriales (ejemplo: clima, deportes, cocina, programación, compras generales, etc.), responde cortésmente en 1 sola oración: "Disculpa, solo estoy capacitado para responder consultas sobre los servicios y proyectos de FAMA Protección Industrial."
+3. RESPUESTAS BREVES Y SÓLIDAS: Tus respuestas deben ser directas, sólidas y muy concisas (máximo 2 a 3 oraciones cortas o un listado muy breve de máximo 2 puntos).
+4. COTIZACIONES Y PRECIOS: Para cotizaciones o consultas de costos por m², indica brevemente que depende del metraje, estado del suelo y tipo de uso, e invita a cotizar directamente al WhatsApp (+51 951 765 830).
+5. FORMATO: Usa etiquetas HTML sencillas como <strong>negrita</strong> para resaltar puntos clave.
         `.trim();
 
         function toggleChat() {
@@ -1850,21 +1833,29 @@ INSTRUCCIONES DE ATENCIÓN:
             processBotResponse(question);
         }
 
-        // MOTOR LOCAL DE RESPALDO
+        // MOTOR LOCAL DE RESPALDO SI LA API TIENE LÍMITE O FALLO DE RED
         function useLocalEngineFallback(question) {
             const q = question.toLowerCase();
             let ans = "";
 
             if (q.includes('cotiz') || q.includes('precio') || q.includes('costo') || q.includes('cuanto') || q.includes('m2') || q.includes('valor')) {
-                ans = "Para brindarte una **cotización exacta**, evaluamos el metraje total ($m^2$), el diagnóstico del suelo y el tipo de tránsito.<br><br>👉 [Cotizar directamente por WhatsApp al +51 951 765 830](https://wa.me/51951765830?text=Hola%20Famito,%20deseo%20una%20cotizaci%C3%B3n.)";
+                ans = "Para brindarte una <strong>cotización exacta</strong> evaluamos el metraje ($m^2$), diagnóstico del suelo y uso. 👉 <a href='https://wa.me/51951765830?text=Hola%20Famito,%20deseo%20una%20cotizaci%C3%B3n.' target='_blank' class='text-green-600 font-bold underline'>Cotizar por WhatsApp al +51 951 765 830</a>";
             } else if (q.includes('zocalo') || q.includes('curva') || q.includes('bpm') || q.includes('haccp') || q.includes('sanitario')) {
-                ans = "Fabricamos e instalamos **zócalos sanitarios de mortero epóxico** con curva de media caña sin uniones, esenciales para normativas sanitarias BPM y HACCP.";
+                ans = "Fabricamos e instalamos <strong>zócalos sanitarios de mortero epóxico</strong> con curva sanitaria continua sin uniones, esenciales para normativas BPM y HACCP. Habilitados en 24 horas.";
             } else if (q.includes('mantenimiento') || q.includes('grieta') || q.includes('reparaci') || q.includes('junta')) {
-                ans = "Ofrecemos mantenimiento preventivo y correctivo, rellenado de fisuras, reparación de desprendimientos y restauración de rugosidad en pisos industriales.";
+                ans = "Realizamos mantenimiento preventivo y correctivo, sellado de fisuras, reparación de desprendimientos y restauración de rugosidad antideslizante en pisos industriales.";
             } else if (q.includes('impermeabiliz') || q.includes('techo') || q.includes('cisterna') || q.includes('humedad')) {
-                ans = "Aplicamos membranas elastoméricas de poliuretano y revestimientos acrílico-cementosos en losas, cisternas, techos y reservorios contra filtraciones.";
+                ans = "Aplicamos membranas elastoméricas de poliuretano y recubrimientos acrílico-cementosos en losas, cisternas, techos y reservorios contra la humedad.";
+            } else if (q.includes('preparacion') || q.includes('granallado') || q.includes('fresado')) {
+                ans = "Realizamos preparación de superficies mediante granallado, preparación térmica, fresado y lijado con diamante para asegurar adherencia indestructible del piso.";
+            } else if (q.includes('proyectos') || q.includes('obra') || q.includes('supervision')) {
+                ans = "Ejecutamos y supervisamos obras civiles, proyectos de ingeniería, servicios de topografía y alquiler de maquinaria con personal multidisciplinario en todo el Perú.";
+            } else if (q.includes('contacto') || q.includes('telefono') || q.includes('ubicacion') || q.includes('donde') || q.includes('whatsapp')) {
+                ans = "Estamos ubicados en Lima con atención a nivel nacional. 👉 <a href='https://wa.me/51951765830' target='_blank' class='text-green-600 font-bold underline'>Escríbenos al WhatsApp +51 951 765 830</a> o a info@fama.com.";
+            } else if (q.includes('hola') || q.includes('buenos') || q.includes('tardes') || q.includes('dias') || q.includes('servicio')) {
+                ans = "¡Hola! 👋 Soy **Famito**, asistente de FAMA HUB E.I.R.L. Ofrecemos revestimientos epóxicos, zócalos sanitarios, mantenimiento, impermeabilización y proyectos en todo el Perú. ¿En qué puedo orientarte?";
             } else {
-                ans = "En **FAMA HUB E.I.R.L.** somos especialistas en revestimientos epóxicos, poliuretano, zócalos sanitarios e impermeabilización a nivel nacional en Perú.<br><br>👉 [Hablar con un Asesor Técnico en WhatsApp](https://wa.me/51951765830)";
+                ans = "Disculpa, solo estoy capacitado para responder consultas técnicas sobre los servicios y proyectos de FAMA Protección Industrial. 👉 <a href='https://wa.me/51951765830' target='_blank' class='text-green-600 font-bold underline'>Consultar con un Asesor en WhatsApp</a>";
             }
 
             appendMessage('bot', ans);
